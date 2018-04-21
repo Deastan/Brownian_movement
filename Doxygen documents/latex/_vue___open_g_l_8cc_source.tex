@@ -1,0 +1,217 @@
+\section{Vue\+\_\+\+Open\+G\+L.\+cc}
+\label{_vue___open_g_l_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vue\+\_\+\+Open\+G\+L.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vue\+\_\+\+Open\+G\+L.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "Vue_OpenGL.h"}
+00010 
+00011 \textcolor{comment}{/*================================================================================}
+00012 \textcolor{comment}{ * Implementation de Vue\_OpenGL}
+00013 \textcolor{comment}{ *================================================================================*/}
+00014 
+00025 \textcolor{keywordtype}{int} Vue\_OpenGL::TIMER\_ID(1);
+00026 
+00027 BEGIN\_EVENT\_TABLE(Vue_OpenGL, wxGLCanvas)
+00028     EVT\_PAINT(          Vue_OpenGL::dessine       )
+00029     EVT\_SIZE(           Vue_OpenGL::OnSize        )
+00030     EVT\_KEY\_DOWN(       Vue_OpenGL::OnKeyDown     )
+00031     EVT\_ENTER\_WINDOW(   Vue_OpenGL::OnEnterWindow )
+00032     EVT\_TIMER(TIMER\_ID, Vue_OpenGL::OnTimer       )
+00033 END\_EVENT\_TABLE()
+00034 
+00043 Vue_OpenGL::Vue_OpenGL( wxWindow*      parent
+00044                       , wxSize  const& taille
+00045                       , wxPoint const& position
+00046                       )
+00047 : wxGLCanvas(parent, wxID\_ANY, position, taille, 
+00048              wxSUNKEN\_BORDER|wxFULL\_REPAINT\_ON\_RESIZE , wxT(""))
+00049 , theta(0.0), phi(0.0), r(150.0) 
+00050 , timer(new wxTimer(this, TIMER\_ID))
+00051 \{\}
+00052 
+00061 Vue_OpenGL::Vue_OpenGL( wxWindow*      parent
+00062                       , \textcolor{keywordtype}{bool} reglage
+00063                       , wxSize  \textcolor{keyword}{const}& taille
+00064                       , wxPoint \textcolor{keyword}{const}& position
+00065                       )
+00066 : wxGLCanvas(parent, wxID\_ANY, position, taille, 
+00067              wxSUNKEN\_BORDER|wxFULL\_REPAINT\_ON\_RESIZE , wxT(\textcolor{stringliteral}{""}))
+00068 , theta(0.0), phi(0.0), r(150.0) 
+00069 , timer(new wxTimer(this, TIMER\_ID))
+00070 , systeme(reglage)
+00071 \{\}
+00072 
+00073 
+00074 \textcolor{keywordtype}{void} Vue_OpenGL::dessine(wxPaintEvent&)
+00075 \{
+00076   \textcolor{keywordflow}{if} (!GetContext()) \textcolor{keywordflow}{return};
+00077 
+00078   SetCurrent();
+00079 
+00080   \textcolor{comment}{// commence par effacer l'ancienne image}
+00081   glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);
+00082 
+00083   \textcolor{comment}{/* part du système de coordonnées de base }
+00084 \textcolor{comment}{   * (dessin à l'origine : matrice identité) */}
+00085   glMatrixMode(GL\_MODELVIEW);
+00086   glLoadIdentity();
+00087 
+00088   \textcolor{comment}{// place la caméra}
+00089   gluLookAt(r,   0.0, 0.0,
+00090             0.0, 0.0, 0.0,
+00091             0.0, 0.0, 1.0);
+00092   glRotated(theta, 0.0, 1.0, 0.0); 
+00093   glRotated(phi,   0.0, 0.0, 1.0);
+00094     
+00095     \textcolor{comment}{//appelle de la méthode dessine de systeme }
+00096     systeme.dessine();
+00097 
+00098   \textcolor{comment}{// Finalement, on envoie le dessin à l'écran}
+00099   glFlush();
+00100   SwapBuffers();
+00101 \}
+00102 
+00103 \textcolor{comment}{// ======================================================================}
+00104 \textcolor{keywordtype}{void} Vue_OpenGL::OnSize(wxSizeEvent& event)
+00105 \{
+00106   \textcolor{comment}{// Nécessaire pour mettre à jour le contexte sur certaines plateformes}
+00107   wxGLCanvas::OnSize(event);
+00108 
+00109   \textcolor{keywordflow}{if} (GetContext()) \{
+00110     \textcolor{comment}{// set GL viewport (not called by wxGLCanvas::OnSize on all platforms...)}
+00111     \textcolor{keywordtype}{int} w, h;
+00112     GetClientSize(&w, &h);
+00113     SetCurrent();
+00114     glViewport(0, 0, (GLint) w, (GLint) h);
+00115   \} 
+00116 \}
+00117 
+00118 \textcolor{comment}{// ======================================================================}
+00119 \textcolor{keywordtype}{void} Vue_OpenGL::OnKeyDown( wxKeyEvent& event )
+00120 \{
+00121   \textcolor{keywordflow}{switch}( event.GetKeyCode() ) \{
+00122   \textcolor{keywordflow}{case} WXK\_LEFT: 
+00123     RotatePhi( 2.0);
+00124     Refresh(\textcolor{keyword}{false});
+00125     \textcolor{keywordflow}{break};
+00126 
+00127   \textcolor{keywordflow}{case} WXK\_RIGHT: 
+00128     RotatePhi( -2.0);
+00129     Refresh(\textcolor{keyword}{false});
+00130     \textcolor{keywordflow}{break};
+00131 
+00132   \textcolor{keywordflow}{case} WXK\_UP: 
+00133     RotateTheta( 2.0);
+00134     Refresh(\textcolor{keyword}{false});
+00135     \textcolor{keywordflow}{break};
+00136 
+00137   \textcolor{keywordflow}{case} WXK\_DOWN: 
+00138     RotateTheta(-2.0);
+00139     Refresh(\textcolor{keyword}{false});
+00140     \textcolor{keywordflow}{break};
+00141 
+00142   \textcolor{keywordflow}{case} WXK\_HOME:
+00143     r     =  5.0;   \textcolor{comment}{// On revient à un point fixé}
+00144     theta = 35.0;
+00145     phi   = 20.0;
+00146     Refresh(\textcolor{keyword}{false});
+00147     \textcolor{keywordflow}{break};
+00148 
+00149   \textcolor{keywordflow}{case} WXK\_PAGEUP:
+00150     deplace(-1.0);    \textcolor{comment}{// On se rapproche}
+00151     Refresh(\textcolor{keyword}{false});
+00152     \textcolor{keywordflow}{break};
+00153 
+00154   \textcolor{keywordflow}{case} WXK\_PAGEDOWN:
+00155     deplace(1.0);     \textcolor{comment}{// On s'éloigne}
+00156     Refresh(\textcolor{keyword}{false});
+00157     \textcolor{keywordflow}{break};
+00158 
+00159   \textcolor{comment}{// Pause sur la touche "espace"}
+00160   \textcolor{keywordflow}{case} \textcolor{charliteral}{' '}:
+00161     \textcolor{keywordflow}{if} (timer->IsRunning()) \{
+00162       timer->Stop();
+00163     \} \textcolor{keywordflow}{else} \{
+00164       timer->Start();
+00165     \}
+00166     \textcolor{keywordflow}{break};
+00167     
+00168   \textcolor{keywordflow}{case} \textcolor{charliteral}{'A'}:
+00169     systeme.ajouterArgon(20, \textcolor{keyword}{true});
+00170     \textcolor{keywordflow}{break};
+00171   
+00172   \textcolor{keywordflow}{case} \textcolor{charliteral}{'F'}:
+00173     systeme.ajouterFluor(1, \textcolor{keyword}{true});
+00174     \textcolor{keywordflow}{break};
+00175   
+00176   \textcolor{keywordflow}{case} \textcolor{charliteral}{'H'}:
+00177     systeme.ajouterHelium(20, \textcolor{keyword}{true});
+00178     \textcolor{keywordflow}{break};
+00179   
+00180   \textcolor{keywordflow}{case} \textcolor{charliteral}{'N'}:
+00181     systeme.ajouterNeon(20, \textcolor{keyword}{true});
+00182     \textcolor{keywordflow}{break};
+00183   \}
+00184   
+00185   \textcolor{keyword}{event}.Skip();
+00186 \}
+00187 
+00188 \textcolor{comment}{// ======================================================================}
+00189 \textcolor{keywordtype}{void} Vue_OpenGL::RotateTheta(GLdouble deg)
+00190 \{
+00191   theta += deg;
+00192   \textcolor{keywordflow}{while} (theta < -180.0) \{ theta += 360.0; \}
+00193   \textcolor{keywordflow}{while} (theta >  180.0) \{ theta -= 360.0; \}
+00194 \}
+00195 
+00196 \textcolor{comment}{// ======================================================================}
+00197 \textcolor{keywordtype}{void} Vue_OpenGL::RotatePhi(GLdouble deg)
+00198 \{
+00199   phi += deg;
+00200   \textcolor{keywordflow}{while} (phi <   0.0) \{ phi += 360.0; \}
+00201   \textcolor{keywordflow}{while} (phi > 360.0) \{ phi -= 360.0; \}
+00202 \}
+00203 
+00204 \textcolor{comment}{// ======================================================================}
+00205 \textcolor{keywordtype}{void} Vue_OpenGL::deplace(GLdouble dr)
+00206 \{
+00207   r += dr;
+00208   \textcolor{keywordflow}{if} (r < 1.0) r = 1.0;
+00209   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r > 1000.0) r = 1000.0;
+00210 \}
+00211 
+00212 \textcolor{comment}{// ======================================================================}
+00213 \textcolor{keywordtype}{void} Vue_OpenGL::InitOpenGL() 
+00214 \{
+00215   \textcolor{comment}{// Initialisation OpenGL}
+00216 
+00217   SetCurrent();
+00218 
+00219   \textcolor{comment}{// active la gestion de la profondeur}
+00220   glEnable(GL\_DEPTH\_TEST);    
+00221 
+00222   \textcolor{comment}{// active la transparence}
+00223   glEnable (GL\_BLEND);
+00224   glBlendFunc (GL\_SRC\_ALPHA, GL\_ONE\_MINUS\_SRC\_ALPHA);
+00225 
+00226   \textcolor{comment}{// fixe la perspective}
+00227   glMatrixMode(GL\_PROJECTION);
+00228   glLoadIdentity();
+00229   gluPerspective(65.0, 4./3., 1.0, 1000.0);
+00230 
+00231   \textcolor{comment}{// fixe la couleur du fond à noir}
+00232   glClearColor(1.0, 1.0, 1.0, 1.0);
+00233 
+00234   \textcolor{comment}{// lance le Timer}
+00235   timer->Start(20);
+00236 \}
+00237 
+00238 \textcolor{comment}{// ======================================================================}
+00239 \textcolor{keywordtype}{void} Vue_OpenGL::OnTimer(wxTimerEvent& event)
+00240 \{
+00241   systeme.evolue(event.GetInterval() * 0.0001);
+00242 
+00243   \textcolor{comment}{// demande l'affichage}
+00244   Refresh(\textcolor{keyword}{false});
+00245 \}
+\end{DoxyCode}

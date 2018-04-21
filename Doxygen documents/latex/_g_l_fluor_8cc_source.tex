@@ -1,0 +1,65 @@
+\section{G\+L\+Fluor.\+cc}
+\label{_g_l_fluor_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Fluor.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Fluor.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "GLFluor.h"}
+00010 
+00011 \textcolor{comment}{/*================================================================================}
+00012 \textcolor{comment}{ * Definition des constructeurs et destructeur}
+00013 \textcolor{comment}{ *================================================================================*/}
+00022 GLFluor::GLFluor(Vecteur position, Vecteur vitesse)
+00023 :Particule(position, vitesse, 18.998, 0.42),  sphere(gluNewQuadric())
+00024 \{\}
+00034 GLFluor::GLFluor(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature)
+00035 :Particule(enceinte, tirage, temperature, 18.998, 0.42), sphere(gluNewQuadric())
+00036 \{\}
+00037 
+00038 GLFluor::~GLFluor() 
+00039 \{ 
+00040     gluDeleteQuadric(sphere); 
+00041 \}
+00042 
+00043 \textcolor{comment}{/*================================================================================}
+00044 \textcolor{comment}{ * Definition des méthodes }
+00045 \textcolor{comment}{ *================================================================================*/}
+00054 \textcolor{keywordtype}{void} GLFluor::evolue(\textcolor{keywordtype}{double} dt)
+00055 \{
+00056     Particule::evolue(dt);
+00057     enregistrerCoordonnee();
+00058 \}
+00063 \textcolor{keywordtype}{void} GLFluor::enregistrerCoordonnee()
+00064 \{   
+00066     \textcolor{keywordflow}{if}(dequePositions.size()>150)
+00067     \{
+00068         dequePositions.pop\_front();
+00069     \}
+00071     dequePositions.push\_back(\textcolor{keyword}{new} Vecteur(this->getPosition().getX(), this->
+      getPosition().getY(), this->getPosition().getZ()));
+00072 \}
+00073 
+00080 \textcolor{keywordtype}{void} GLFluor::dessine()\textcolor{keyword}{ const}
+00081 \textcolor{keyword}{}\{
+00082     
+00083     glColor4d(0.6, 0.34, 0.9, 1);
+00084     glBegin(GL\_LINE\_STRIP);
+00086     \textcolor{keywordflow}{if}(!dequePositions.empty())
+00087     \{
+00088         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i(0);i<dequePositions.size()-1;i++)
+00089         \{
+00090             glVertex3f((*dequePositions[i]).getX(), (*dequePositions[i]).getY(), (*dequePositions[i]).getZ(
+      ));
+00091         \}
+00092     \}
+00093     glEnd();
+00095     glColor4d(0.6, 0.34, 0.9, 1); 
+00096     
+00097     \textcolor{comment}{//ajouter le déplacement}
+00098     glPushMatrix();
+00099     glTranslated(this->getPosition().getX(), this->getPosition().getY(), this->
+      getPosition().getZ());
+00100     gluSphere(sphere,rayon,10,10); 
+00101     glPopMatrix();
+00102     
+00103 \}
+\end{DoxyCode}

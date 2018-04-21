@@ -1,0 +1,166 @@
+\section{Référence de la classe Fenetre}
+\label{class_fenetre}\index{Fenetre@{Fenetre}}
+
+
+{\ttfamily \#include $<$Fenetre.\+h$>$}
+
+Graphe d'héritage de Fenetre\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fenetre}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Fenetre} (wx\+String const \&titre, wx\+Size const \&taille=wx\+Default\+Size, wx\+Point const \&position=wx\+Default\+Position, long style=wx\+D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+T\+Y\+L\+E)
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments. \end{DoxyCompactList}\item 
+{\bf Fenetre} (wx\+String const \&titre, bool reglage, wx\+Size const \&taille=wx\+Default\+Size, wx\+Point const \&position=wx\+Default\+Position, long style=wx\+D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+T\+Y\+L\+E)
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments et reglage pour l'interface utilisateur. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Fenetre} ()
+\begin{DoxyCompactList}\small\item\em destructeur de fenetre \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf On\+Exit} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em méthode pour pouvoir refermer la fenetre \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Vue\+\_\+\+Open\+G\+L} $\ast$ {\bf fogl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Prototype de la classe \doxyref{Fenetre}{p.}{class_fenetre} pour l'Open\+G\+L et permet de créer une fenetre avec les caractéristiques que l'on souhaite. 
+
+Définition à la ligne {\bf 23} du fichier {\bf Fenetre.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Fenetre@{Fenetre}!Fenetre@{Fenetre}}
+\index{Fenetre@{Fenetre}!Fenetre@{Fenetre}}
+\subsubsection[{Fenetre}]{\setlength{\rightskip}{0pt plus 5cm}Fenetre\+::\+Fenetre (
+\begin{DoxyParamCaption}
+\item[{wx\+String const \&}]{titre, }
+\item[{wx\+Size const \&}]{taille = {\ttfamily wxDefaultSize}, }
+\item[{wx\+Point const \&}]{position = {\ttfamily wxDefaultPosition}, }
+\item[{long}]{style = {\ttfamily wxDEFAULT\+\_\+FRAME\+\_\+STYLE}}
+\end{DoxyParamCaption}
+)}\label{class_fenetre_a3b78862724264ec79d0332f8f65632aa}
+
+
+Constructeur avec arguments. 
+
+Constructeur de la classe \doxyref{Vecteur}{p.}{class_vecteur} avec trois arguements de type double \begin{DoxyVerb}\param titre : le nom que portera la fenetre
+\param taille : donne la taille de la fenetre
+\param position : place la fenetre à l'endroit voulu
+\param style : style de la fenêtre\end{DoxyVerb}
+ Barre de menu
+
+Barre de menu
+
+Barre de menu
+
+Barre de menu
+
+Affiche (montre) la fenetre
+
+Initialise Open\+G\+L 
+
+Définition à la ligne {\bf 28} du fichier {\bf Fenetre.\+cc}.
+
+\index{Fenetre@{Fenetre}!Fenetre@{Fenetre}}
+\index{Fenetre@{Fenetre}!Fenetre@{Fenetre}}
+\subsubsection[{Fenetre}]{\setlength{\rightskip}{0pt plus 5cm}Fenetre\+::\+Fenetre (
+\begin{DoxyParamCaption}
+\item[{wx\+String const \&}]{titre, }
+\item[{bool}]{reglage, }
+\item[{wx\+Size const \&}]{taille = {\ttfamily wxDefaultSize}, }
+\item[{wx\+Point const \&}]{position = {\ttfamily wxDefaultPosition}, }
+\item[{long}]{style = {\ttfamily wxDEFAULT\+\_\+FRAME\+\_\+STYLE}}
+\end{DoxyParamCaption}
+)}\label{class_fenetre_a0c4225ac5a9b265b860a610204a37024}
+
+
+Constructeur avec arguments et reglage pour l'interface utilisateur. 
+
+Constructeur de la classe, permet de gérer l'interface utilisateur Nous avons décider de le faire comem cela car ça nous permettait de le faire simplement en respectant une meilleure conception
+
+
+\begin{DoxyParams}{Paramètres}
+{\em titre} & \+: le nom que portera la fenetre \\
+\hline
+{\em reglage} & \+: permet de gérer les souahaits de l'utilisateur \\
+\hline
+{\em taille} & \+: donne la taille de la fenetre \\
+\hline
+{\em position} & \+: place la fenetre à l'endroit voulu \\
+\hline
+{\em style} & \+: style de la fenêtre \\
+\hline
+\end{DoxyParams}
+Barre de menu
+
+Barre de menu
+
+Barre de menu
+
+Barre de menu
+
+Affiche (montre) la fenetre
+
+Initialise Open\+G\+L 
+
+Définition à la ligne {\bf 65} du fichier {\bf Fenetre.\+cc}.
+
+\index{Fenetre@{Fenetre}!````~Fenetre@{$\sim$\+Fenetre}}
+\index{````~Fenetre@{$\sim$\+Fenetre}!Fenetre@{Fenetre}}
+\subsubsection[{$\sim$\+Fenetre}]{\setlength{\rightskip}{0pt plus 5cm}virtual Fenetre\+::$\sim$\+Fenetre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_fenetre_a74e5aa1f39a581ae746f3832200fd055}
+
+
+destructeur de fenetre 
+
+
+
+Définition à la ligne {\bf 42} du fichier {\bf Fenetre.\+h}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Fenetre@{Fenetre}!On\+Exit@{On\+Exit}}
+\index{On\+Exit@{On\+Exit}!Fenetre@{Fenetre}}
+\subsubsection[{On\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}void Fenetre\+::\+On\+Exit (
+\begin{DoxyParamCaption}
+\item[{wx\+Command\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{class_fenetre_a7d11a13eb53924e62623a4c80f51d431}
+
+
+méthode pour pouvoir refermer la fenetre 
+
+
+
+Définition à la ligne {\bf 46} du fichier {\bf Fenetre.\+h}.
+
+
+
+\subsection{Documentation des données membres}
+\index{Fenetre@{Fenetre}!fogl@{fogl}}
+\index{fogl@{fogl}!Fenetre@{Fenetre}}
+\subsubsection[{fogl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vue\+\_\+\+Open\+G\+L}$\ast$ Fenetre\+::fogl\hspace{0.3cm}{\ttfamily [protected]}}\label{class_fenetre_aff0b26df4f97c060347155fec97223fe}
+
+
+Définition à la ligne {\bf 49} du fichier {\bf Fenetre.\+h}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Fenetre.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Fenetre.\+cc}\end{DoxyCompactItemize}

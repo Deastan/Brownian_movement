@@ -1,0 +1,71 @@
+\section{Systeme.\+h}
+\label{_systeme_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Systeme.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Systeme.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_SYSTEME\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_SYSTEME\_H}
+00011 
+00012 \textcolor{preprocessor}{#include <memory>}
+00013 \textcolor{preprocessor}{#include <vector>}
+00014 
+00015 \textcolor{preprocessor}{#include "Particule.h"}
+00016 \textcolor{preprocessor}{#include "Enceinte.h"}
+00017 \textcolor{preprocessor}{#include "Canon.h"}
+00018 
+00023 \textcolor{keyword}{class }Systeme : \textcolor{keyword}{public} Dessinable
+00024 \{
+00025 \textcolor{comment}{/*================================================================================}
+00026 \textcolor{comment}{ * Definition des attributs}
+00027 \textcolor{comment}{ *================================================================================*/}
+00028     \textcolor{keyword}{private} :
+00030 
+00031     std::vector<std::unique\_ptr<Particule>> collectionParticules;
+00033     Enceinte enceinte;
+00035 
+00037     \textcolor{keywordtype}{double} temperature;
+00039     \textcolor{keywordtype}{double} epsilon;
+00041     GenerateurAleatoire tirage;
+00043 
+00044     Canon canon;
+00045     
+00046 \textcolor{comment}{/*================================================================================}
+00047 \textcolor{comment}{ * Prototypes des constructeurs et du destructeur}
+00048 \textcolor{comment}{ *================================================================================*/}    
+00049     \textcolor{keyword}{public} :
+00051     Systeme();
+00053     Systeme(\textcolor{keywordtype}{bool} reglage);
+00055     Systeme(\textcolor{keywordtype}{double} largeur, \textcolor{keywordtype}{double} longueur, \textcolor{keywordtype}{double} hauteur, \textcolor{keywordtype}{double} temperature); 
+00056     ~Systeme();
+00058     
+00059     \textcolor{keyword}{private} :
+00060     Systeme(Systeme \textcolor{keyword}{const}& autre) = \textcolor{keyword}{delete}; \textcolor{comment}{//suppression du constructeur de copie}
+00061     
+00062     
+00063 \textcolor{comment}{/*================================================================================}
+00064 \textcolor{comment}{ * Prototypes des methodes}
+00065 \textcolor{comment}{ *================================================================================*/}
+00066     \textcolor{keyword}{public} :
+00068     \textcolor{keywordtype}{void} ajouterArgon(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_argon, \textcolor{keywordtype}{bool} canon = \textcolor{keyword}{false});
+00070     \textcolor{keywordtype}{void} ajouterFluor(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_fluor, \textcolor{keywordtype}{bool} canon = \textcolor{keyword}{false});
+00072     \textcolor{keywordtype}{void} ajouterHelium(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_helium, \textcolor{keywordtype}{bool} canon = \textcolor{keyword}{false});
+00074     \textcolor{keywordtype}{void} ajouterNeon(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_neon, \textcolor{keywordtype}{bool} canon = \textcolor{keyword}{false});
+00076     \textcolor{keywordtype}{void} dessine() \textcolor{keyword}{const override};
+00078     \textcolor{keywordtype}{void} evolue(\textcolor{keywordtype}{double} dt);
+00079 
+00080     \textcolor{keyword}{private} :
+00082     \textcolor{keywordtype}{void} ajouterParticule(Particule* particule);
+00084     \textcolor{keywordtype}{bool} supprimerParticules();
+00085     
+00086     Systeme& operator=(Systeme aCopier) = \textcolor{keyword}{delete}; \textcolor{comment}{//suppression de l'operateur = pour un systemme}
+00087     
+00089     std::vector<size\_t> determine\_collisions\_possibles(std::unique\_ptr<Particule> \textcolor{keyword}{const}& p1);
+00092     \textcolor{keywordtype}{size\_t} choisi\_collision(std::vector<size\_t> \textcolor{keyword}{const}& collisions\_possibles);
+00094     \textcolor{keywordtype}{void} initialise(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_argon, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_fluor, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_helium, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} 
+      nbr\_neon);
+00096     \textcolor{keywordtype}{void} initialise();
+00098     \textcolor{keywordtype}{void} change\_epsilon(\textcolor{keywordtype}{double} rayon);
+00099 \};
+00100 
+00101 \textcolor{preprocessor}{#endif // PRJ\_SYSTEME\_H}
+\end{DoxyCode}

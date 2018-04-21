@@ -1,0 +1,50 @@
+\section{Particule.\+h}
+\label{_particule_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Particule.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Particule.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_PARTICULE\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_PARTICULE\_H}
+00011 
+00012 \textcolor{preprocessor}{#include "Vecteur.h"}
+00013 \textcolor{preprocessor}{#include "Dessinable.h"}
+00014 \textcolor{preprocessor}{#include "Enceinte.h"}
+00015 \textcolor{preprocessor}{#include "GenerateurAleatoire.h"}
+00016 
+00027 \textcolor{keyword}{class }Particule : \textcolor{keyword}{public} Dessinable
+00028 \{
+00029 \textcolor{comment}{/*================================================================================}
+00030 \textcolor{comment}{ * Definition des attributs}
+00031 \textcolor{comment}{ *================================================================================*/}    
+00032     \textcolor{keyword}{protected} :
+00034     Vecteur position;
+00036     Vecteur vitesse;
+00038     \textcolor{keywordtype}{double} \textcolor{keyword}{const} masse;
+00040     \textcolor{keywordtype}{double} \textcolor{keyword}{const} rayon;
+00041     
+00042 \textcolor{comment}{/*================================================================================}
+00043 \textcolor{comment}{ * Prototypage des constructeurs}
+00044 \textcolor{comment}{ *================================================================================*/}
+00045     \textcolor{keyword}{public} :
+00047     Particule();
+00049     Particule(Vecteur position, Vecteur vitesse, \textcolor{keywordtype}{double} masse, \textcolor{keywordtype}{double} rayon);
+00051     Particule(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature, \textcolor{keywordtype}{double} 
+      masse, \textcolor{keywordtype}{double} rayon);
+00052     
+00053 \textcolor{comment}{/*================================================================================}
+00054 \textcolor{comment}{ * Prototypage des methodes}
+00055 \textcolor{comment}{ *================================================================================*/}
+00057     Vecteur getPosition() \textcolor{keyword}{const};
+00059     std::ostream& afficher(std::ostream& sortie) \textcolor{keyword}{const};
+00061     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} evolue(\textcolor{keywordtype}{double} dt);
+00063     \textcolor{keywordtype}{void} gere_sorties(Enceinte \textcolor{keyword}{const}& enceinte);
+00065     Vecteur pavageCubique(\textcolor{keywordtype}{double} espsilon) \textcolor{keyword}{const};
+00067     \textcolor{keywordtype}{void} collision(Particule& p, GenerateurAleatoire& tirage);
+00069     \textcolor{keywordtype}{double} get_rayon();
+00070 
+00071 \};
+00072 
+00074 std::ostream& operator<<(std::ostream& sortie, Particule \textcolor{keyword}{const}& p);
+00075 
+00076 \textcolor{preprocessor}{#endif // PRJ\_PARTICULE\_H}
+\end{DoxyCode}

@@ -1,0 +1,38 @@
+\section{G\+L\+Neon.\+h}
+\label{_g_l_neon_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Neon.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Neon.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "wx/wxprec.h"}
+00010 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00011 \textcolor{preprocessor}{#include "wx/wx.h"}
+00012 \textcolor{preprocessor}{#endif}
+00013 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00014 
+00015 \textcolor{preprocessor}{#include "Particule.h"}
+00016 
+00024 \textcolor{keyword}{class }GLNeon : \textcolor{keyword}{public} Particule
+00025 \{
+00026     \textcolor{keyword}{public}:
+00027 \textcolor{comment}{/*================================================================================}
+00028 \textcolor{comment}{ * Prototyopes des constructeurs et destructeur}
+00029 \textcolor{comment}{ *================================================================================*/}
+00031     GLNeon(Vecteur position, Vecteur vitesse);
+00033     GLNeon(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature);
+00035     \textcolor{keyword}{virtual} ~GLNeon();
+00036     
+00037 \textcolor{comment}{/*================================================================================}
+00038 \textcolor{comment}{ * Prototypes des methodes}
+00039 \textcolor{comment}{ *================================================================================*/}
+00041     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} evolue(\textcolor{keywordtype}{double} dt);
+00043     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} dessine() \textcolor{keyword}{const};
+00044     
+00045 \textcolor{comment}{/*================================================================================}
+00046 \textcolor{comment}{ * Definition des attributs}
+00047 \textcolor{comment}{ *================================================================================*/}
+00048     \textcolor{keyword}{private}:
+00049     GLUquadric* sphere;
+00050 
+00051 \};
+00052 
+\end{DoxyCode}

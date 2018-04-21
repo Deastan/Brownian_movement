@@ -1,0 +1,211 @@
+\section{Référence de la classe Enceinte}
+\label{class_enceinte}\index{Enceinte@{Enceinte}}
+
+
+{\ttfamily \#include $<$Enceinte.\+h$>$}
+
+Graphe d'héritage de Enceinte\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enceinte}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Enceinte} ()
+\begin{DoxyCompactList}\small\item\em Constructeur sans paramètre. \end{DoxyCompactList}\item 
+{\bf Enceinte} (bool reglage)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètre bool pour l'interface utilisateur. \end{DoxyCompactList}\item 
+{\bf Enceinte} (double largeur, double longueur, double hauteur)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètres largeur, longueur et hauteur de l'enceinte. \end{DoxyCompactList}\item 
+double {\bf get\+Largeur} () const 
+\begin{DoxyCompactList}\small\item\em Prototype du getters de la largeur de l'enceinte. \end{DoxyCompactList}\item 
+double {\bf get\+Longueur} () const 
+\begin{DoxyCompactList}\small\item\em Prototype du getters de la longueur de l'enceinte. \end{DoxyCompactList}\item 
+double {\bf get\+Hauteur} () const 
+\begin{DoxyCompactList}\small\item\em Prototype du getters de la hauteur de l'enceinte. \end{DoxyCompactList}\item 
+void {\bf display} () const 
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode qui écrit dans le terminal la largeur hauteur et longueur de l'enceinte. \end{DoxyCompactList}\item 
+virtual void {\bf dessine} () const 
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode dessine en Open\+G\+L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Cette classe est celle qui permet de créer une enceinte, de la dessiner graĉe au fait qu'elle hérite de dessinable donc nous avons pu utiliser le polymophisme pour appeler la méthode dessine. 
+
+Définition à la ligne {\bf 19} du fichier {\bf Enceinte.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Enceinte@{Enceinte}!Enceinte@{Enceinte}}
+\index{Enceinte@{Enceinte}!Enceinte@{Enceinte}}
+\subsubsection[{Enceinte}]{\setlength{\rightskip}{0pt plus 5cm}Enceinte\+::\+Enceinte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_enceinte_abe74eac05c7cacb5ad09c0e99c4301a4}
+
+
+Constructeur sans paramètre. 
+
+Constructeur de la classe de l'enceinte mais qui initialise à largeur = 100, longueur =100, hauteur = 100 
+
+Définition à la ligne {\bf 27} du fichier {\bf Enceinte.\+cc}.
+
+\index{Enceinte@{Enceinte}!Enceinte@{Enceinte}}
+\index{Enceinte@{Enceinte}!Enceinte@{Enceinte}}
+\subsubsection[{Enceinte}]{\setlength{\rightskip}{0pt plus 5cm}Enceinte\+::\+Enceinte (
+\begin{DoxyParamCaption}
+\item[{bool}]{reglage}
+\end{DoxyParamCaption}
+)}\label{class_enceinte_ac535eaee140265078b89a559d08edc90}
+
+
+Constructeur avec paramètre bool pour l'interface utilisateur. 
+
+Constructeur de la classe de l'enceinte mais qui initialise aux valeurs prises comme paramètre
+
+
+\begin{DoxyParams}{Paramètres}
+{\em bool} & reglage \+: permet en fonction de l'utilisateur souhaite d'avoir un appel différents du constructeur \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 38} du fichier {\bf Enceinte.\+cc}.
+
+\index{Enceinte@{Enceinte}!Enceinte@{Enceinte}}
+\index{Enceinte@{Enceinte}!Enceinte@{Enceinte}}
+\subsubsection[{Enceinte}]{\setlength{\rightskip}{0pt plus 5cm}Enceinte\+::\+Enceinte (
+\begin{DoxyParamCaption}
+\item[{double}]{largeur, }
+\item[{double}]{longueur, }
+\item[{double}]{hauteur}
+\end{DoxyParamCaption}
+)}\label{class_enceinte_a2fb9ccf810a5fbfd846913c597335928}
+
+
+Constructeur avec paramètres largeur, longueur et hauteur de l'enceinte. 
+
+Constructeur de la classe de l'enceinte mais qui initialise aux valeurs prises comme paramètre
+
+
+\begin{DoxyParams}{Paramètres}
+{\em double} & largeur \\
+\hline
+{\em double} & longueur \\
+\hline
+{\em double} & hauteur \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 64} du fichier {\bf Enceinte.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Enceinte@{Enceinte}!dessine@{dessine}}
+\index{dessine@{dessine}!Enceinte@{Enceinte}}
+\subsubsection[{dessine}]{\setlength{\rightskip}{0pt plus 5cm}void Enceinte\+::dessine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_enceinte_aa2cdbb9cd5acf1a8593bc182f5ced6d1}
+
+
+Prototype de la méthode dessine en Open\+G\+L. 
+
+définition de la méthode dessine de l'enceinte en Open\+G\+L
+
+elle va prendre prendre une couleur noire, et dessiner des traits qui vont faire le tours de l'enceinte 
+
+Implémente {\bf Dessinable} \doxyref{}{p.}{class_dessinable_aea37dacb2b67d6650a435d72c9a6fe79}.
+
+
+
+Définition à la ligne {\bf 113} du fichier {\bf Enceinte.\+cc}.
+
+\index{Enceinte@{Enceinte}!display@{display}}
+\index{display@{display}!Enceinte@{Enceinte}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Enceinte\+::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_enceinte_ad2ae6703d36a71931c5cf05f9e72bbe7}
+
+
+Prototype de la méthode qui écrit dans le terminal la largeur hauteur et longueur de l'enceinte. 
+
+méthode pour afficher dans le terminal la dimension de l'enceinte 
+
+Définition à la ligne {\bf 101} du fichier {\bf Enceinte.\+cc}.
+
+\index{Enceinte@{Enceinte}!get\+Hauteur@{get\+Hauteur}}
+\index{get\+Hauteur@{get\+Hauteur}!Enceinte@{Enceinte}}
+\subsubsection[{get\+Hauteur}]{\setlength{\rightskip}{0pt plus 5cm}double Enceinte\+::get\+Hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_enceinte_a313cc6bc2baf718a99cf0b10bb9e7f51}
+
+
+Prototype du getters de la hauteur de l'enceinte. 
+
+Methode qui permet de retourner les attributs privés de la hauteur
+
+\begin{DoxyReturn}{Renvoie}
+la hauteur 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 94} du fichier {\bf Enceinte.\+cc}.
+
+\index{Enceinte@{Enceinte}!get\+Largeur@{get\+Largeur}}
+\index{get\+Largeur@{get\+Largeur}!Enceinte@{Enceinte}}
+\subsubsection[{get\+Largeur}]{\setlength{\rightskip}{0pt plus 5cm}double Enceinte\+::get\+Largeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_enceinte_a553db9446669114f47a28e59ebbd4064}
+
+
+Prototype du getters de la largeur de l'enceinte. 
+
+Methode qui permet de retourner les attributs privés de la largeur
+
+\begin{DoxyReturn}{Renvoie}
+la largeur 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 76} du fichier {\bf Enceinte.\+cc}.
+
+\index{Enceinte@{Enceinte}!get\+Longueur@{get\+Longueur}}
+\index{get\+Longueur@{get\+Longueur}!Enceinte@{Enceinte}}
+\subsubsection[{get\+Longueur}]{\setlength{\rightskip}{0pt plus 5cm}double Enceinte\+::get\+Longueur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_enceinte_ab5a4c9f43bc1640f14e0e960e8fe76b9}
+
+
+Prototype du getters de la longueur de l'enceinte. 
+
+Methode qui permet de retourner les attributs privés de la longueur
+
+\begin{DoxyReturn}{Renvoie}
+la longueur 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 85} du fichier {\bf Enceinte.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Enceinte.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Enceinte.\+cc}\end{DoxyCompactItemize}

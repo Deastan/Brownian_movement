@@ -1,0 +1,59 @@
+\section{Vue\+\_\+\+Open\+G\+L.\+h}
+\label{_vue___open_g_l_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vue\+\_\+\+Open\+G\+L.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vue\+\_\+\+Open\+G\+L.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_VUE\_OPENGL\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_VUE\_OPENGL\_H}
+00011 
+00012 \textcolor{preprocessor}{#include "wx/wxprec.h"}
+00013 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00014 \textcolor{preprocessor}{#include "wx/wx.h"}
+00015 \textcolor{preprocessor}{#endif}
+00016 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00017 \textcolor{preprocessor}{#include "Systeme.h"}
+00018 \textcolor{preprocessor}{#include <GL/gl.h>}
+00019 \textcolor{preprocessor}{#include <GL/glu.h>}
+00020 
+00021 
+00030 \textcolor{keyword}{class }Vue_OpenGL : \textcolor{keyword}{public} wxGLCanvas
+00031 \{
+00032     \textcolor{keyword}{public}:
+00034     Vue_OpenGL( wxWindow*      parent
+00035             , wxSize  \textcolor{keyword}{const}& taille   = wxDefaultSize     
+00036             , wxPoint \textcolor{keyword}{const}& position = wxDefaultPosition
+00037            
+00038             );
+00040     Vue_OpenGL( wxWindow*      parent
+00041             , \textcolor{keywordtype}{bool} reglage
+00042             , wxSize  \textcolor{keyword}{const}& taille   = wxDefaultSize     
+00043             , wxPoint \textcolor{keyword}{const}& position = wxDefaultPosition
+00044            
+00045             );
+00051     \textcolor{keyword}{virtual} ~Vue_OpenGL() \{\};
+00052     
+00054     \textcolor{keywordtype}{void} InitOpenGL();
+00055 
+00056     \textcolor{keyword}{protected}:
+00058     \textcolor{keywordtype}{void} dessine(wxPaintEvent& evenement);
+00059     \textcolor{keywordtype}{void} OnSize(wxSizeEvent& evenement);
+00061     \textcolor{keywordtype}{void} OnKeyDown(wxKeyEvent& evenement);
+00063     \textcolor{keywordtype}{void} OnEnterWindow(wxMouseEvent& evenement) \{ SetFocus(); \}
+00065     \textcolor{keywordtype}{void} OnTimer(wxTimerEvent& event);
+00067     \textcolor{keywordtype}{void} RotateTheta(GLdouble deg);
+00069     \textcolor{keywordtype}{void} RotatePhi(GLdouble deg);
+00071     \textcolor{keywordtype}{void} deplace(\textcolor{keywordtype}{double} dr);
+00072   
+00073     \textcolor{keyword}{private}:
+00074     Systeme systeme;
+00075     \textcolor{keywordtype}{double} theta;
+00076     \textcolor{keywordtype}{double} phi;
+00077     \textcolor{keywordtype}{double} r;
+00078     \textcolor{comment}{// le "Timer"}
+00079     wxTimer* timer;
+00080     \textcolor{keyword}{static} \textcolor{keywordtype}{int} TIMER\_ID;
+00081 
+00082 DECLARE\_EVENT\_TABLE()
+00083 \};
+00084 \textcolor{preprocessor}{#endif }
+\end{DoxyCode}

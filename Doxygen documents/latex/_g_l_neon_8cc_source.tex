@@ -1,0 +1,43 @@
+\section{G\+L\+Neon.\+cc}
+\label{_g_l_neon_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Neon.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Neon.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "GLNeon.h"}
+00010 
+00011 \textcolor{comment}{/*================================================================================}
+00012 \textcolor{comment}{ * Definition des constructeurs et destructeur}
+00013 \textcolor{comment}{ *================================================================================*/}
+00020 GLNeon::GLNeon(Vecteur position, Vecteur vitesse)
+00021 :Particule(position, vitesse, 20.1797, 0.38), sphere(gluNewQuadric())
+00022 \{\}
+00030 GLNeon::GLNeon(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature)
+00031 :Particule(enceinte, tirage, temperature, 20.1797, 0.38), sphere(gluNewQuadric())
+00032 \{\}
+00033 
+00034 GLNeon::~GLNeon() 
+00035 \{ 
+00036     gluDeleteQuadric(sphere); 
+00037 \}
+00038 
+00039 \textcolor{comment}{/*================================================================================}
+00040 \textcolor{comment}{ * Definition des méthodes }
+00041 \textcolor{comment}{ *================================================================================*/}
+00046 \textcolor{keywordtype}{void} GLNeon::evolue(\textcolor{keywordtype}{double} dt)
+00047 \{
+00048     Particule::evolue(dt);
+00049 \}
+00050 
+00055 \textcolor{keywordtype}{void} GLNeon::dessine()\textcolor{keyword}{ const}
+00056 \textcolor{keyword}{}\{   glColor4d(1.0, 0.0, 0.0, 1); 
+00057 
+00058     \textcolor{comment}{//ajouter le déplacement}
+00059     glPushMatrix();
+00060     
+00061     glTranslated(this->getPosition().getX(), this->getPosition().getY(), this->
+      getPosition().getZ());
+00062     
+00063     gluSphere(sphere,rayon,10,10); 
+00064     glPopMatrix();
+00065 \}
+\end{DoxyCode}

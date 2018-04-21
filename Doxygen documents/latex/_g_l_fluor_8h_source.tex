@@ -1,0 +1,42 @@
+\section{G\+L\+Fluor.\+h}
+\label{_g_l_fluor_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Fluor.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Fluor.\+h}}
+
+\begin{DoxyCode}
+00001 
+00010 \textcolor{preprocessor}{#include "wx/wxprec.h"}
+00011 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00012 \textcolor{preprocessor}{#include "wx/wx.h"}
+00013 \textcolor{preprocessor}{#endif}
+00014 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00015 
+00016 \textcolor{preprocessor}{#include <vector>}
+00017 \textcolor{preprocessor}{#include <deque>}
+00018 \textcolor{preprocessor}{#include "Vecteur.h"}
+00019 \textcolor{preprocessor}{#include "Particule.h"}
+00020 
+00032 \textcolor{keyword}{class }GLFluor : \textcolor{keyword}{public} Particule
+00033 \{
+00034     \textcolor{keyword}{public}:
+00035 \textcolor{comment}{/*================================================================================}
+00036 \textcolor{comment}{ * Prototyopes des constructeurs et destructeur}
+00037 \textcolor{comment}{ *================================================================================*/}
+00039     GLFluor(Vecteur position, Vecteur vitesse);
+00041     GLFluor(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature);
+00043     \textcolor{keyword}{virtual} ~GLFluor();
+00044     
+00045 \textcolor{comment}{/*================================================================================}
+00046 \textcolor{comment}{ * Prototypes des methodes}
+00047 \textcolor{comment}{ *================================================================================*/}
+00049     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} evolue(\textcolor{keywordtype}{double} dt);
+00051     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} dessine() \textcolor{keyword}{const};
+00053     \textcolor{keywordtype}{void} enregistrerCoordonnee();
+00054     
+00055 \textcolor{comment}{/*================================================================================}
+00056 \textcolor{comment}{ * Definition des attributs}
+00057 \textcolor{comment}{ *================================================================================*/}
+00058     \textcolor{keyword}{private}:
+00059     GLUquadric* sphere;
+00060     std::deque<Vecteur*> dequePositions;
+00061 \};
+00062 
+\end{DoxyCode}

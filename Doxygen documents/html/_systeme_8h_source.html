@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Simulation d&#39;un gaz parfait:  Fichier source de /Users/burkhard/Dropbox/projet d&#39;info/maximilian-g065/Simulation d&#39;un gaz parfait/Systeme.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation d&#39;un gaz parfait
+   &#160;<span id="projectnumber">2.0</span>
+   </div>
+   <div id="projectbrief">par Emma Geoffray et Jonathan Bukhard</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1fc57af7395e7964fd1dc446c4fdc94a.html">maximilian-g065</a></li><li class="navelem"><a class="el" href="dir_998f0679318d51041f3dc98303027884.html">Simulation d'un gaz parfait</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Systeme.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_systeme_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef PRJ_SYSTEME_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define PRJ_SYSTEME_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_particule_8h.html">Particule.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_enceinte_8h.html">Enceinte.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_canon_8h.html">Canon.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_systeme.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_systeme.html">Systeme</a> : <span class="keyword">public</span> <a class="code" href="class_dessinable.html">Dessinable</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * Definition des attributs</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::vector&lt;std::unique_ptr&lt;Particule&gt;&gt; collectionParticules;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_enceinte.html">Enceinte</a> enceinte;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">double</span> temperature;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">double</span> epsilon;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_generateur_aleatoire.html">GenerateurAleatoire</a> tirage;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_canon.html">Canon</a> canon;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * Prototypes des constructeurs et du destructeur</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> *================================================================================*/</span>    </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme</a>(<span class="keywordtype">bool</span> reglage);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme</a>(<span class="keywordtype">double</span> largeur, <span class="keywordtype">double</span> longueur, <span class="keywordtype">double</span> hauteur, <span class="keywordtype">double</span> temperature); </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_systeme.html#ae5b0d713664daee67f170ddc0bdf5c4f">~Systeme</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme</a>(<a class="code" href="class_systeme.html">Systeme</a> <span class="keyword">const</span>&amp; autre) = <span class="keyword">delete</span>; <span class="comment">//suppression du constructeur de copie</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> * Prototypes des methodes</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">ajouterArgon</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_argon, <span class="keywordtype">bool</span> canon = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">ajouterFluor</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_fluor, <span class="keywordtype">bool</span> canon = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">ajouterHelium</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_helium, <span class="keywordtype">bool</span> canon = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">ajouterNeon</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_neon, <span class="keywordtype">bool</span> canon = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">dessine</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">evolue</a>(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> ajouterParticule(<a class="code" href="class_particule.html">Particule</a>* particule);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> supprimerParticules();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_systeme.html">Systeme</a>&amp; operator=(<a class="code" href="class_systeme.html">Systeme</a> aCopier) = <span class="keyword">delete</span>; <span class="comment">//suppression de l&#39;operateur = pour un systemme</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::vector&lt;size_t&gt; determine_collisions_possibles(std::unique_ptr&lt;Particule&gt; <span class="keyword">const</span>&amp; p1);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">size_t</span> choisi_collision(std::vector&lt;size_t&gt; <span class="keyword">const</span>&amp; collisions_possibles);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> initialise(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_argon, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_fluor, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_helium, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_neon);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> initialise();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> change_epsilon(<span class="keywordtype">double</span> rayon);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif // PRJ_SYSTEME_H</span></div>
+<div class="ttc" id="class_systeme_html_ae5b0d713664daee67f170ddc0bdf5c4f"><div class="ttname"><a href="class_systeme.html#ae5b0d713664daee67f170ddc0bdf5c4f">Systeme::~Systeme</a></div><div class="ttdeci">~Systeme()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00084">Systeme.cc:84</a></div></div>
+<div class="ttc" id="class_systeme_html_a57d47c92404c5ebb87724545a750b445"><div class="ttname"><a href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">Systeme::ajouterFluor</a></div><div class="ttdeci">void ajouterFluor(unsigned int nbr_fluor, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_fluor particules de Fluor. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00185">Systeme.cc:185</a></div></div>
+<div class="ttc" id="class_systeme_html_a3308846e3013176c71954ba5e3ae23d1"><div class="ttname"><a href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">Systeme::evolue</a></div><div class="ttdeci">void evolue(double dt)</div><div class="ttdoc">Evolue le systeme d&#39;un temps dt. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00126">Systeme.cc:126</a></div></div>
+<div class="ttc" id="class_canon_html"><div class="ttname"><a href="class_canon.html">Canon</a></div><div class="ttdoc">Prototype de la classe Canon. </div><div class="ttdef"><b>Definition:</b> <a href="_canon_8h_source.html#l00029">Canon.h:29</a></div></div>
+<div class="ttc" id="class_particule_html"><div class="ttname"><a href="class_particule.html">Particule</a></div><div class="ttdoc">Classe mère dont hérite toutes les classes de type : TXTNom et GLNom Représentation d&#39;une particule (...</div><div class="ttdef"><b>Definition:</b> <a href="_particule_8h_source.html#l00027">Particule.h:27</a></div></div>
+<div class="ttc" id="class_systeme_html_a2599ade4fd47e65b7192d227f60a5482"><div class="ttname"><a href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme::Systeme</a></div><div class="ttdeci">Systeme()</div><div class="ttdoc">Constructeur par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00027">Systeme.cc:27</a></div></div>
+<div class="ttc" id="class_systeme_html"><div class="ttname"><a href="class_systeme.html">Systeme</a></div><div class="ttdoc">Permet de créer, de dessiner et de faire évoluer des objets de type Systeme formés d&#39;une enceinte et ...</div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8h_source.html#l00023">Systeme.h:23</a></div></div>
+<div class="ttc" id="_canon_8h_html"><div class="ttname"><a href="_canon_8h.html">Canon.h</a></div><div class="ttdoc">est la classe qui contient l&#39;objet enceinte qui est la boîte où seront nos particules ...</div></div>
+<div class="ttc" id="class_dessinable_html"><div class="ttname"><a href="class_dessinable.html">Dessinable</a></div><div class="ttdef"><b>Definition:</b> <a href="_dessinable_8h_source.html#l00012">Dessinable.h:12</a></div></div>
+<div class="ttc" id="_enceinte_8h_html"><div class="ttname"><a href="_enceinte_8h.html">Enceinte.h</a></div><div class="ttdoc">est la classe qui contient l&#39;objet enceinte qui est la boîte où seront nos particules ...</div></div>
+<div class="ttc" id="class_systeme_html_abc34a6c64e42d303be77d5df97ff377f"><div class="ttname"><a href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">Systeme::dessine</a></div><div class="ttdeci">void dessine() const override</div><div class="ttdoc">Dessine le systeme (version graphique) </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00099">Systeme.cc:99</a></div></div>
+<div class="ttc" id="class_systeme_html_ae08dde7f90dfa367d96be1351f7c8c14"><div class="ttname"><a href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">Systeme::ajouterNeon</a></div><div class="ttdeci">void ajouterNeon(unsigned int nbr_neon, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_neon particules de Neon. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00227">Systeme.cc:227</a></div></div>
+<div class="ttc" id="class_systeme_html_ad99fa9b3d52815b1c24c2e886291fa45"><div class="ttname"><a href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">Systeme::ajouterHelium</a></div><div class="ttdeci">void ajouterHelium(unsigned int nbr_helium, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_helium particules d&#39;Helium. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00206">Systeme.cc:206</a></div></div>
+<div class="ttc" id="class_enceinte_html"><div class="ttname"><a href="class_enceinte.html">Enceinte</a></div><div class="ttdef"><b>Definition:</b> <a href="_enceinte_8h_source.html#l00019">Enceinte.h:19</a></div></div>
+<div class="ttc" id="_particule_8h_html"><div class="ttname"><a href="_particule_8h.html">Particule.h</a></div><div class="ttdoc">Prototype de la classe mère Particule. </div></div>
+<div class="ttc" id="class_generateur_aleatoire_html"><div class="ttname"><a href="class_generateur_aleatoire.html">GenerateurAleatoire</a></div><div class="ttdoc">Représente des objets capables de générer des nombres aléatoires. </div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8h_source.html#l00020">GenerateurAleatoire.h:20</a></div></div>
+<div class="ttc" id="class_systeme_html_a8a1047862e11ebfe4b267dbc5ab67a17"><div class="ttname"><a href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">Systeme::ajouterArgon</a></div><div class="ttdeci">void ajouterArgon(unsigned int nbr_argon, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_argon particules d&#39;Argon. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00164">Systeme.cc:164</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 26 Mai 2014 23:22:52 pour Simulation d&#39;un gaz parfait par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

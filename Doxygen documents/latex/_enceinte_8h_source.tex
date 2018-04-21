@@ -1,0 +1,40 @@
+\section{Enceinte.\+h}
+\label{_enceinte_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Enceinte.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Enceinte.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_ENCEINTE\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_ENCEINTE\_H}
+00011 
+00012 \textcolor{preprocessor}{#include "Dessinable.h"}
+00013 
+00019 \textcolor{keyword}{class }Enceinte : \textcolor{keyword}{public} Dessinable
+00020 \{
+00021 \textcolor{comment}{/*================================================================================}
+00022 \textcolor{comment}{ * Definition des attributs}
+00023 \textcolor{comment}{ *================================================================================*/}
+00024     \textcolor{keyword}{private}:
+00025     \textcolor{keywordtype}{double} largeur;
+00026     \textcolor{keywordtype}{double} longueur;
+00027     \textcolor{keywordtype}{double} hauteur; 
+00028     
+00029     \textcolor{keyword}{public}:
+00030 \textcolor{comment}{/*================================================================================}
+00031 \textcolor{comment}{ * Prototypage des constructeurs}
+00032 \textcolor{comment}{ *================================================================================*/}
+00034     Enceinte();
+00036     Enceinte(\textcolor{keywordtype}{bool} reglage);
+00038     Enceinte(\textcolor{keywordtype}{double} largeur, \textcolor{keywordtype}{double} longueur, \textcolor{keywordtype}{double} hauteur);
+00039     
+00040 \textcolor{comment}{/*================================================================================}
+00041 \textcolor{comment}{ * Prototypage des méthodes}
+00042 \textcolor{comment}{ *================================================================================*/}
+00044     \textcolor{keywordtype}{double} getLargeur() \textcolor{keyword}{const};
+00046     \textcolor{keywordtype}{double} getLongueur() \textcolor{keyword}{const};
+00048     \textcolor{keywordtype}{double} getHauteur() \textcolor{keyword}{const};
+00050     \textcolor{keywordtype}{void} display() \textcolor{keyword}{const};
+00052     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} dessine() \textcolor{keyword}{const};
+00053 \};
+00054 
+00055 \textcolor{preprocessor}{#endif // PRJ\_ENCEINTE\_H}
+\end{DoxyCode}

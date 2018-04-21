@@ -1,0 +1,60 @@
+\section{Vecteur.\+h}
+\label{_vecteur_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vecteur.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vecteur.\+h}}
+
+\begin{DoxyCode}
+00001 
+00010 \textcolor{preprocessor}{#ifndef PRJ\_VECTEUR\_H}
+00011 \textcolor{preprocessor}{#define PRJ\_VECTEUR\_H}
+00012 
+00013 \textcolor{preprocessor}{#include <iostream>}
+00014 
+00015 
+00023 \textcolor{keyword}{class }Vecteur
+00024 \{
+00025     \textcolor{keyword}{private} :
+00026 \textcolor{comment}{/*================================================================================}
+00027 \textcolor{comment}{ * Definition des attributs}
+00028 \textcolor{comment}{ *================================================================================*/}
+00029     \textcolor{keywordtype}{double} x;
+00030     \textcolor{keywordtype}{double} y;
+00031     \textcolor{keywordtype}{double} z;
+00032     
+00033     \textcolor{keyword}{public}:
+00034 \textcolor{comment}{/*================================================================================}
+00035 \textcolor{comment}{ * Prototyopes des constructeurs}
+00036 \textcolor{comment}{ *================================================================================*/}
+00038     Vecteur();
+00040     Vecteur(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z);
+00041     
+00042 \textcolor{comment}{/*================================================================================}
+00043 \textcolor{comment}{ * Prototypes des methodes}
+00044 \textcolor{comment}{ *================================================================================*/}
+00046     \textcolor{keywordtype}{double} getX() \textcolor{keyword}{const};
+00048     \textcolor{keywordtype}{double} getY() \textcolor{keyword}{const};
+00050     \textcolor{keywordtype}{double} getZ() \textcolor{keyword}{const};
+00052     \textcolor{keywordtype}{bool} operator==(Vecteur \textcolor{keyword}{const}&) \textcolor{keyword}{const};
+00054     \textcolor{keywordtype}{bool} operator!=(Vecteur \textcolor{keyword}{const}& v) \textcolor{keyword}{const};
+00056     Vecteur& operator+=(Vecteur \textcolor{keyword}{const}& v1);
+00058     Vecteur& operator-=(Vecteur \textcolor{keyword}{const}& v1);
+00060     Vecteur& operator*=(\textcolor{keywordtype}{double} \textcolor{keyword}{const}& scalaire);    
+00062     \textcolor{keywordtype}{double} operator*(\textcolor{keyword}{const} Vecteur& v1) \textcolor{keyword}{const};
+00064     Vecteur& operator^=(Vecteur \textcolor{keyword}{const}& v1);\textcolor{comment}{// ATTENTION XOR a une plus grande priorité à cause du ou
+       exclusif donc toujours mettre des parentaises entre !!!!!}
+00066 \textcolor{comment}{}    \textcolor{keyword}{const} Vecteur operator-(); 
+00068     std::ostream& afficher(std::ostream& sortie) \textcolor{keyword}{const};
+00069 
+00070 \};
+00071 
+00072 \textcolor{comment}{/*================================================================================}
+00073 \textcolor{comment}{ * Prototypes des fonctions}
+00074 \textcolor{comment}{ *================================================================================*/}
+00076 std::ostream& operator<<(std::ostream& sortie, Vecteur \textcolor{keyword}{const}& v1);
+00078 \textcolor{keyword}{const} Vecteur operator+(Vecteur v1, Vecteur \textcolor{keyword}{const}& v2);
+00080 \textcolor{keyword}{const} Vecteur operator-(Vecteur v1, Vecteur \textcolor{keyword}{const}& v2);
+00082 \textcolor{keyword}{const} Vecteur operator*(\textcolor{keywordtype}{double} scalaire, Vecteur v1);
+00084 \textcolor{keyword}{const} Vecteur operator*(Vecteur v1, \textcolor{keywordtype}{double} scalaire);
+00086 \textcolor{keyword}{const} Vecteur operator^(Vecteur v1, Vecteur \textcolor{keyword}{const}& v2);\textcolor{comment}{// ATTENTION XOR a une plus grande priorité à cause
+       du ou exclusif donc toujours mettre des parentaises entre !!!!!}
+00087 
+00088 \textcolor{preprocessor}{#endif // PRJ\_VECTEUR\_H}
+\end{DoxyCode}

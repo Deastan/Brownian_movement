@@ -1,0 +1,27 @@
+CXX=clang++
+
+CXXFLAGS = -std=c++11 `wx-config --cxxflags`
+LDLIBS   = `wx-config --libs gl,core,base` -lGLU -lGL
+
+
+all:: GUI
+
+Enceinte.o : Enceinte.h Enceinte.cc
+Canon.o : Canon.h Canon.cc
+Systeme.o : Systeme.h Systeme.cc
+Vecteur.o : Vecteur.h Vecteur.cc
+GenerateurAleatoire.o : GenerateurAleatoire.h GenerateurAleatoire.cc
+Particule.o : Particule.h Particule.cc
+
+Vue_OpenGL.o : Vue_OpenGL.h Vue_OpenGL.cc
+Fenetre.o : Fenetre.h Fenetre.cc
+GUI.o : GUI.h GUI.cc
+GLNeon.o :GLNeon.cc GLNeon.h
+GLHelium.o : GLHelium.cc GLHelium.h
+GLArgon.o : GLArgon.h GLArgon.cc
+GLFluor.o : GLFluor.h GLFluor.cc
+
+GUI : Fenetre.o Vue_OpenGL.o Particule.o GenerateurAleatoire.o Vecteur.o Systeme.o Enceinte.o Canon.o GLNeon.o GLHelium.o GLArgon.o GLFluor.o
+
+clean:
+	@-/bin/rm -f *.o

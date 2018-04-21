@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Simulation d&#39;un gaz parfait:  Fichier source de /Users/burkhard/Dropbox/projet d&#39;info/maximilian-g065/Simulation d&#39;un gaz parfait/GenerateurAleatoire.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation d&#39;un gaz parfait
+   &#160;<span id="projectnumber">2.0</span>
+   </div>
+   <div id="projectbrief">par Emma Geoffray et Jonathan Bukhard</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1fc57af7395e7964fd1dc446c4fdc94a.html">maximilian-g065</a></li><li class="navelem"><a class="el" href="dir_998f0679318d51041f3dc98303027884.html">Simulation d'un gaz parfait</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GenerateurAleatoire.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_generateur_aleatoire_8cc.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_generateur_aleatoire_8h.html">GenerateurAleatoire.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_generateur_aleatoire.html#ac816c2c7554428f5f6c1af497e788a96">   16</a></span>&#160;<a class="code" href="class_generateur_aleatoire.html#ac816c2c7554428f5f6c1af497e788a96">GenerateurAleatoire::GenerateurAleatoire</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; : generateur(std::random_device()())</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_generateur_aleatoire.html#a0bcc05dfe4e809c0bf9f4aff45d5dafa">   23</a></span>&#160;<a class="code" href="class_generateur_aleatoire.html#ac816c2c7554428f5f6c1af497e788a96">GenerateurAleatoire::GenerateurAleatoire</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> graine)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; : generateur(graine)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">   32</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">GenerateurAleatoire::uniforme_entier</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> distribution_uniforme_entier(generateur, std::uniform_int_distribution&lt;int&gt;::param_type{min, max});</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_generateur_aleatoire.html#a39d2eddd31748b5f35dfdc7bc7c7a7d2">   41</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_generateur_aleatoire.html#a39d2eddd31748b5f35dfdc7bc7c7a7d2">GenerateurAleatoire::uniforme_reel</a>(<span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> distribution_uniforme_reel(generateur, std::uniform_real_distribution&lt;double&gt;::param_type{min, max});</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_generateur_aleatoire.html#af6a12956bb6af401e9f2d850b52a2b14">   50</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_generateur_aleatoire.html#af6a12956bb6af401e9f2d850b52a2b14">GenerateurAleatoire::gaussienne</a>(<span class="keywordtype">double</span> moyenne, <span class="keywordtype">double</span> ecart_type) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> distribution_gaussienne(generateur, std::normal_distribution&lt;double&gt;::param_type{moyenne, ecart_type});</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="_generateur_aleatoire_8h_html"><div class="ttname"><a href="_generateur_aleatoire_8h.html">GenerateurAleatoire.h</a></div><div class="ttdoc">Prototype de la classe qui permet de générer des nombres aléatoires. </div></div>
+<div class="ttc" id="class_generateur_aleatoire_html_a986164a020693bee0a8043fcd0c3953f"><div class="ttname"><a href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">GenerateurAleatoire::uniforme_entier</a></div><div class="ttdeci">int uniforme_entier(int min, int max)</div><div class="ttdoc">Méthode permettant de tirer uniformément un entier sur l&#39;intervalle [min, max]. </div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8cc_source.html#l00032">GenerateurAleatoire.cc:32</a></div></div>
+<div class="ttc" id="class_generateur_aleatoire_html_a39d2eddd31748b5f35dfdc7bc7c7a7d2"><div class="ttname"><a href="class_generateur_aleatoire.html#a39d2eddd31748b5f35dfdc7bc7c7a7d2">GenerateurAleatoire::uniforme_reel</a></div><div class="ttdeci">double uniforme_reel(double min, double max)</div><div class="ttdoc">Méthode permettant de tirer uniformément un réel sur l&#39;intervalle [min, max[. </div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8cc_source.html#l00041">GenerateurAleatoire.cc:41</a></div></div>
+<div class="ttc" id="class_generateur_aleatoire_html_af6a12956bb6af401e9f2d850b52a2b14"><div class="ttname"><a href="class_generateur_aleatoire.html#af6a12956bb6af401e9f2d850b52a2b14">GenerateurAleatoire::gaussienne</a></div><div class="ttdeci">double gaussienne(double moyenne, double ecart_type)</div><div class="ttdoc">Méthode permettant de tirer un réel suivant la loi normale des probablités (dîtes loi de Gauss) ...</div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8cc_source.html#l00050">GenerateurAleatoire.cc:50</a></div></div>
+<div class="ttc" id="class_generateur_aleatoire_html_ac816c2c7554428f5f6c1af497e788a96"><div class="ttname"><a href="class_generateur_aleatoire.html#ac816c2c7554428f5f6c1af497e788a96">GenerateurAleatoire::GenerateurAleatoire</a></div><div class="ttdeci">GenerateurAleatoire()</div><div class="ttdoc">Constructeur par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8cc_source.html#l00016">GenerateurAleatoire.cc:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 26 Mai 2014 23:22:51 pour Simulation d&#39;un gaz parfait par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

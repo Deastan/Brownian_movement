@@ -1,0 +1,380 @@
+\section{Référence de la classe Vecteur}
+\label{class_vecteur}\index{Vecteur@{Vecteur}}
+
+
+Prototype de la classe \doxyref{Vecteur}{p.}{class_vecteur}.  
+
+
+
+
+{\ttfamily \#include $<$Vecteur.\+h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Vecteur} ()
+\begin{DoxyCompactList}\small\item\em Constructeur sans arguments. \end{DoxyCompactList}\item 
+{\bf Vecteur} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments qui prends les coordonnées du vecteurs. \end{DoxyCompactList}\item 
+double {\bf get\+X} () const 
+\begin{DoxyCompactList}\small\item\em Prototype du getters de la première coordonnée. \end{DoxyCompactList}\item 
+double {\bf get\+Y} () const 
+\begin{DoxyCompactList}\small\item\em Prototype du getters de la deuxième coordonnée. \end{DoxyCompactList}\item 
+double {\bf get\+Z} () const 
+\begin{DoxyCompactList}\small\item\em Prototype du getters de la deuxième coordonnée. \end{DoxyCompactList}\item 
+bool {\bf operator==} ({\bf Vecteur} const \&) const 
+\begin{DoxyCompactList}\small\item\em Prototype comparateurs ==. \end{DoxyCompactList}\item 
+bool {\bf operator!=} ({\bf Vecteur} const \&v) const 
+\begin{DoxyCompactList}\small\item\em Prototype comparateurs !=. \end{DoxyCompactList}\item 
+{\bf Vecteur} \& {\bf operator+=} ({\bf Vecteur} const \&v1)
+\begin{DoxyCompactList}\small\item\em Prototype méthodes +=. \end{DoxyCompactList}\item 
+{\bf Vecteur} \& {\bf operator-\/=} ({\bf Vecteur} const \&v1)
+\begin{DoxyCompactList}\small\item\em Prototype méthodes -\/=. \end{DoxyCompactList}\item 
+{\bf Vecteur} \& {\bf operator$\ast$=} (double const \&scalaire)
+\begin{DoxyCompactList}\small\item\em Prototype multiplication par un scalaire. \end{DoxyCompactList}\item 
+double {\bf operator$\ast$} (const {\bf Vecteur} \&v1) const 
+\begin{DoxyCompactList}\small\item\em Prototype produit scalaire. \end{DoxyCompactList}\item 
+{\bf Vecteur} \& {\bf operator$^\wedge$=} ({\bf Vecteur} const \&v1)
+\begin{DoxyCompactList}\small\item\em Prototype produit vectoriel. \end{DoxyCompactList}\item 
+const {\bf Vecteur} {\bf operator-\/} ()
+\begin{DoxyCompactList}\small\item\em Prototype vecteur opposé \end{DoxyCompactList}\item 
+std\+::ostream \& {\bf afficher} (std\+::ostream \&sortie) const 
+\begin{DoxyCompactList}\small\item\em Prototype méthode afficher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Prototype de la classe \doxyref{Vecteur}{p.}{class_vecteur}. 
+
+Cette classe est celle qui permet de créer un vecteur, de gérer le calcul vectoriel de notre programme. 
+
+Définition à la ligne {\bf 23} du fichier {\bf Vecteur.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Vecteur@{Vecteur}!Vecteur@{Vecteur}}
+\index{Vecteur@{Vecteur}!Vecteur@{Vecteur}}
+\subsubsection[{Vecteur}]{\setlength{\rightskip}{0pt plus 5cm}Vecteur\+::\+Vecteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_a8227543ef6aadc8f9fbbc93de68af43b}
+
+
+Constructeur sans arguments. 
+
+Constructeur de la classe \doxyref{Vecteur}{p.}{class_vecteur} sans arguments 
+
+Définition à la ligne {\bf 20} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!Vecteur@{Vecteur}}
+\index{Vecteur@{Vecteur}!Vecteur@{Vecteur}}
+\subsubsection[{Vecteur}]{\setlength{\rightskip}{0pt plus 5cm}Vecteur\+::\+Vecteur (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_a74467c37b0023c84ee3f64d09348a660}
+
+
+Constructeur avec arguments qui prends les coordonnées du vecteurs. 
+
+Constructeur de la classe \doxyref{Vecteur}{p.}{class_vecteur} avec trois arguements de type double
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & \+: première coordonnée x \\
+\hline
+{\em y} & \+: deuxième coordonnée y \\
+\hline
+{\em z} & \+: troisième coordonnée z \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 30} du fichier {\bf Vecteur.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Vecteur@{Vecteur}!afficher@{afficher}}
+\index{afficher@{afficher}!Vecteur@{Vecteur}}
+\subsubsection[{afficher}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& Vecteur\+::afficher (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{sortie}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_ac0d4143f79e766d00a55ba86f7ba44fa}
+
+
+Prototype méthode afficher. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ostream\&} & sortie \+: permet de choisir le flot de sortie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un ostream\& pour pouvoir faire des \char`\"{}appels multiples\char`\"{} 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 172} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!get\+X@{get\+X}}
+\index{get\+X@{get\+X}!Vecteur@{Vecteur}}
+\subsubsection[{get\+X}]{\setlength{\rightskip}{0pt plus 5cm}double Vecteur\+::get\+X (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_a42f7a7f1dc44e088c278d3b3363c5a33}
+
+
+Prototype du getters de la première coordonnée. 
+
+Methode qui permet de retourner les attributs privés du \doxyref{Vecteur}{p.}{class_vecteur}
+
+\begin{DoxyReturn}{Renvoie}
+la coordonée en x 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 41} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!get\+Y@{get\+Y}}
+\index{get\+Y@{get\+Y}!Vecteur@{Vecteur}}
+\subsubsection[{get\+Y}]{\setlength{\rightskip}{0pt plus 5cm}double Vecteur\+::get\+Y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_a323d689fb951261b557ea65b10af3893}
+
+
+Prototype du getters de la deuxième coordonnée. 
+
+Methode qui permet de retourner les attributs privés du \doxyref{Vecteur}{p.}{class_vecteur}
+
+\begin{DoxyReturn}{Renvoie}
+la coordonée en y 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 50} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!get\+Z@{get\+Z}}
+\index{get\+Z@{get\+Z}!Vecteur@{Vecteur}}
+\subsubsection[{get\+Z}]{\setlength{\rightskip}{0pt plus 5cm}double Vecteur\+::get\+Z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_a9ceff1802cdc94554cb8556fb9d94058}
+
+
+Prototype du getters de la deuxième coordonnée. 
+
+Methode qui permet de retourner les attributs privés du \doxyref{Vecteur}{p.}{class_vecteur}
+
+\begin{DoxyReturn}{Renvoie}
+la coordonée en z 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 59} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Vecteur@{Vecteur}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Vecteur\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_a07fd3198ced9a6f4b746e1d406a5796f}
+
+
+Prototype comparateurs !=. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v \+: permet de comparer la différence au deuxième vecteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si le vecteur est différents de v sinon il retourne false 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 84} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vecteur@{Vecteur}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}double Vecteur\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vecteur} \&}]{v1}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_a5ee19aab50156659ac236029316209ea}
+
+
+Prototype produit scalaire. 
+
+fait le produit scalaire de deux vecteurs
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v1 \+: permet de calculer le produit scalaire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+un double (nombre réel) qui est le produit scalaire 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 163} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vecteur@{Vecteur}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} \& Vecteur\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{double const \&}]{scalaire}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_a46ab3e3e8a9baf796d7cce7ec6f56c74}
+
+
+Prototype multiplication par un scalaire. 
+
+permet de multiplier le vecteur à un nombre scalaire et de l'enregistrer dans le vecteur appelant
+
+
+\begin{DoxyParams}{Paramètres}
+{\em double} & const\& scalaire \+: le nombre par lequel on va multiplier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le vecteur appelant 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 133} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vecteur@{Vecteur}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} \& Vecteur\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur} const \&}]{v1}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_ae5976277e40ef72d4bd9e206010ebae9}
+
+
+Prototype méthodes +=. 
+
+aditionne le vecteur appelant au vecteur v en paramètre et l'enregistre dans l'objet appelant
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v \+: permet d'additionner le deuxième vecteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le vecteur appelant 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 95} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vecteur@{Vecteur}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vecteur} Vecteur\+::operator-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_a57540f656ae1f3e6ee9ff22cd37ef081}
+
+
+Prototype vecteur opposé 
+
+fait l'opposer du vecteur appelant
+
+\begin{DoxyReturn}{Renvoie}
+le vecteur appelant opposé 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 122} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vecteur@{Vecteur}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} \& Vecteur\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur} const \&}]{v1}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_a2e64b160a4df2b937b98a4f8341c0bd7}
+
+
+Prototype méthodes -\/=. 
+
+soustrait le vecteur appelant au vecteur v en paramètre et l'enregistre dans l'objet appelant
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v \+: permet de soustraire le deuxième vecteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le vecteur appelant 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 109} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator==@{operator==}}
+\index{operator==@{operator==}!Vecteur@{Vecteur}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Vecteur\+::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{class_vecteur_a9201e305c2028d0d596c24327560f8ca}
+
+
+Prototype comparateurs ==. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v \+: permet de comparer au deuxième vecteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true s'il sont égale et false sinon 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 68} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur@{Vecteur}!operator$^\wedge$=@{operator$^\wedge$=}}
+\index{operator$^\wedge$=@{operator$^\wedge$=}!Vecteur@{Vecteur}}
+\subsubsection[{operator$^\wedge$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} \& Vecteur\+::operator$^\wedge$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur} const \&}]{v1}
+\end{DoxyParamCaption}
+)}\label{class_vecteur_a70e7d84a9e5bb9fe9ef06b6697324294}
+
+
+Prototype produit vectoriel. 
+
+permet de faire le produit vectoriel avec le vecteur en paramètre et l'enregistrer dans le vecteur appelant le calcul ce fait comme le produit vectoriel usuels
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v1 \+: permet de calculer le produit vectoriel avec le deuxième vecteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+le vecteur appelant qui est le produit vectoriel des deux vecteurs 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 148} du fichier {\bf Vecteur.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Vecteur.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Vecteur.\+cc}\end{DoxyCompactItemize}

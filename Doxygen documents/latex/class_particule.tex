@@ -1,0 +1,320 @@
+\section{Référence de la classe Particule}
+\label{class_particule}\index{Particule@{Particule}}
+
+
+Classe mère dont hérite toutes les classes de type \+: T\+X\+T\+Nom et G\+L\+Nom Représentation d'une particule (ici version graphique)  
+
+
+
+
+{\ttfamily \#include $<$Particule.\+h$>$}
+
+Graphe d'héritage de Particule\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.926829cm]{class_particule}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Particule} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+{\bf Particule} ({\bf Vecteur} {\bf position}, {\bf Vecteur} {\bf vitesse}, double {\bf masse}, double {\bf rayon})
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+{\bf Particule} ({\bf Enceinte} const \&enceinte, {\bf Generateur\+Aleatoire} \&tirage, double temperature, double {\bf masse}, double {\bf rayon})
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+{\bf Vecteur} {\bf get\+Position} () const 
+\begin{DoxyCompactList}\small\item\em Getter de position de la particule. \end{DoxyCompactList}\item 
+std\+::ostream \& {\bf afficher} (std\+::ostream \&sortie) const 
+\begin{DoxyCompactList}\small\item\em Permet d'afficher les différents attributs de la particule. \end{DoxyCompactList}\item 
+virtual void {\bf evolue} (double dt)
+\begin{DoxyCompactList}\small\item\em S'occupe de faire évoluer la particule d'un temps dt. \end{DoxyCompactList}\item 
+void {\bf gere\+\_\+sorties} ({\bf Enceinte} const \&enceinte)
+\begin{DoxyCompactList}\small\item\em Gére les sorties de l'enceinte. \end{DoxyCompactList}\item 
+{\bf Vecteur} {\bf pavage\+Cubique} (double espsilon) const 
+\begin{DoxyCompactList}\small\item\em Calcul le pavage cubique autour d'une particule. \end{DoxyCompactList}\item 
+void {\bf collision} ({\bf Particule} \&p, {\bf Generateur\+Aleatoire} \&tirage)
+\begin{DoxyCompactList}\small\item\em Effectue la collision de deux particules. \end{DoxyCompactList}\item 
+double {\bf get\+\_\+rayon} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Vecteur} {\bf position}
+\item 
+{\bf Vecteur} {\bf vitesse}
+\item 
+double const {\bf masse}
+\item 
+double const {\bf rayon}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe mère dont hérite toutes les classes de type \+: T\+X\+T\+Nom et G\+L\+Nom Représentation d'une particule (ici version graphique) 
+
+C'est une classe virtuelle pure, on ne peut donc pas créer d'instances de cette classe car il n'est pas logique de créer l'objet générale mais plutôt des classes spécialisées. Elle permet d'avoir une structure générale et des méthodes que chacunes des particules devra redéfinir. 
+
+Définition à la ligne {\bf 27} du fichier {\bf Particule.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Particule@{Particule}!Particule@{Particule}}
+\index{Particule@{Particule}!Particule@{Particule}}
+\subsubsection[{Particule}]{\setlength{\rightskip}{0pt plus 5cm}Particule\+::\+Particule (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_particule_ac19d3be1dc7c116c39afedfbe34f99a7}
+
+
+Constructeur par défaut. 
+
+Initialise tous les paramètres de type vecteur comme des vecteurs nuls et ceux de type double à 0 
+
+Définition à la ligne {\bf 18} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!Particule@{Particule}}
+\index{Particule@{Particule}!Particule@{Particule}}
+\subsubsection[{Particule}]{\setlength{\rightskip}{0pt plus 5cm}Particule\+::\+Particule (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{position, }
+\item[{{\bf Vecteur}}]{vitesse, }
+\item[{double}]{masse, }
+\item[{double}]{rayon}
+\end{DoxyParamCaption}
+)}\label{class_particule_ae77bbc2fbc9a212d4eb03d075873b687}
+
+
+Constructeur. 
+
+Permet d'initialiser une particule en fournissant une position, une vitesse, une masse et un rayon 
+\begin{DoxyParams}{Paramètres}
+{\em position} & \doxyref{Vecteur}{p.}{class_vecteur} indiquant la position de la particule \\
+\hline
+{\em vitesse} & \doxyref{Vecteur}{p.}{class_vecteur} indiquant la vitesse de la particule \\
+\hline
+{\em masse} & Nombre réel indiquant la masse de la particule \\
+\hline
+{\em rayon} & Nombre réel indiquant le rayon de la particule \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 27} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!Particule@{Particule}}
+\index{Particule@{Particule}!Particule@{Particule}}
+\subsubsection[{Particule}]{\setlength{\rightskip}{0pt plus 5cm}Particule\+::\+Particule (
+\begin{DoxyParamCaption}
+\item[{{\bf Enceinte} const \&}]{enceinte, }
+\item[{{\bf Generateur\+Aleatoire} \&}]{tirage, }
+\item[{double}]{temperature, }
+\item[{double}]{masse, }
+\item[{double}]{rayon}
+\end{DoxyParamCaption}
+)}\label{class_particule_aeb9d4042dfb2df93f28066f8556ccafc}
+
+
+Constructeur. 
+
+Permet d'initialiser aléatoirement la position et la vitesse de la particule sur une enceinte 
+\begin{DoxyParams}{Paramètres}
+{\em enceinte} & \doxyref{Enceinte}{p.}{class_enceinte} dans laquelle doit se trouver la particule \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 33} du fichier {\bf Particule.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Particule@{Particule}!afficher@{afficher}}
+\index{afficher@{afficher}!Particule@{Particule}}
+\subsubsection[{afficher}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& Particule\+::afficher (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{sortie}
+\end{DoxyParamCaption}
+) const}\label{class_particule_a95c61ca247604a3107cbad1b22a6f9a6}
+
+
+Permet d'afficher les différents attributs de la particule. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em sortie} & ostream sur lequel l'affichage s'effectue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+ostream sur lequel l'affichage a été fait 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 57} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!collision@{collision}}
+\index{collision@{collision}!Particule@{Particule}}
+\subsubsection[{collision}]{\setlength{\rightskip}{0pt plus 5cm}void Particule\+::collision (
+\begin{DoxyParamCaption}
+\item[{{\bf Particule} \&}]{p, }
+\item[{{\bf Generateur\+Aleatoire} \&}]{tirage}
+\end{DoxyParamCaption}
+)}\label{class_particule_a91283a1702ac9f40728e58613ad97ac9}
+
+
+Effectue la collision de deux particules. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \doxyref{Particule}{p.}{class_particule} avec laquelle $\ast$this entre en collision \\
+\hline
+{\em tirage} & \doxyref{Generateur\+Aleatoire}{p.}{class_generateur_aleatoire} permettant d'effectuer différents tirages de nombres dans la méthode \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 132} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!evolue@{evolue}}
+\index{evolue@{evolue}!Particule@{Particule}}
+\subsubsection[{evolue}]{\setlength{\rightskip}{0pt plus 5cm}void Particule\+::evolue (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_particule_a7c6a97e2b65d4326d36b6d3b6251b79c}
+
+
+S'occupe de faire évoluer la particule d'un temps dt. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dt} & Pas de temps \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée dans {\bf G\+L\+Fluor} \doxyref{}{p.}{class_g_l_fluor_a9fbbc20c3f158575d39fce6c9ca85931}, {\bf G\+L\+Argon} \doxyref{}{p.}{class_g_l_argon_a18a22f3feb53956d69c52031d4f86b96}, {\bf G\+L\+Neon} \doxyref{}{p.}{class_g_l_neon_a2ecf779982ed593522f8f1defb18d4fb}, et {\bf G\+L\+Helium} \doxyref{}{p.}{class_g_l_helium_ae26ea4b2eebe39c9d86be7db52e7d507}.
+
+
+
+Définition à la ligne {\bf 64} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!gere\+\_\+sorties@{gere\+\_\+sorties}}
+\index{gere\+\_\+sorties@{gere\+\_\+sorties}!Particule@{Particule}}
+\subsubsection[{gere\+\_\+sorties}]{\setlength{\rightskip}{0pt plus 5cm}void Particule\+::gere\+\_\+sorties (
+\begin{DoxyParamCaption}
+\item[{{\bf Enceinte} const \&}]{enceinte}
+\end{DoxyParamCaption}
+)}\label{class_particule_abdd1239a60f7099dcecd8a8269ce1b4d}
+
+
+Gére les sorties de l'enceinte. 
+
+Détermine si la particule sort ou non de l'enceinte. Si elle sort effectivement (c'est à dire le B\+O\+R\+D de la particule est sorti de l'enceinte), on change les Vecteurs position et vitesse en conséquence 
+\begin{DoxyParams}{Paramètres}
+{\em enceinte} & \doxyref{Enceinte}{p.}{class_enceinte} dans laquelle la particule se trouve et doit rester \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 73} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!get\+\_\+rayon@{get\+\_\+rayon}}
+\index{get\+\_\+rayon@{get\+\_\+rayon}!Particule@{Particule}}
+\subsubsection[{get\+\_\+rayon}]{\setlength{\rightskip}{0pt plus 5cm}double Particule\+::get\+\_\+rayon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_particule_a50d7ab965780895a97d00a13cbb2dfde}
+
+
+Getter. 
+
+Utile pour déterminer le pas d'espace epsilon du systeme \begin{DoxyReturn}{Renvoie}
+Retourne le rayon de la particule 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 150} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Particule@{Particule}}
+\subsubsection[{get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} Particule\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_particule_a1c4d2cb7bc6a5357d459ac941d1fd8e1}
+
+
+Getter de position de la particule. 
+
+Utile pour donner la postion aux méthodes de translation dans dessine de chaque particule \begin{DoxyReturn}{Renvoie}
+Retourne le vecteur position de la particule 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 51} du fichier {\bf Particule.\+cc}.
+
+\index{Particule@{Particule}!pavage\+Cubique@{pavage\+Cubique}}
+\index{pavage\+Cubique@{pavage\+Cubique}!Particule@{Particule}}
+\subsubsection[{pavage\+Cubique}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} Particule\+::pavage\+Cubique (
+\begin{DoxyParamCaption}
+\item[{double}]{epsilon}
+\end{DoxyParamCaption}
+) const}\label{class_particule_a8e04aa83dad72fac99f3401523995c95}
+
+
+Calcul le pavage cubique autour d'une particule. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em epsilon} & Pas d'espace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne un vecteur qui représente le pavage cubique autour de la particule (et peut-\/être comparé avec le vecteur de pavage d'une autre particule) 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 124} du fichier {\bf Particule.\+cc}.
+
+
+
+\subsection{Documentation des données membres}
+\index{Particule@{Particule}!masse@{masse}}
+\index{masse@{masse}!Particule@{Particule}}
+\subsubsection[{masse}]{\setlength{\rightskip}{0pt plus 5cm}double const Particule\+::masse\hspace{0.3cm}{\ttfamily [protected]}}\label{class_particule_a0ee84f95c71e804553be406f4fa098ed}
+Nombre réel représentant la masse de la particule (nécessaire pour le calcul des nouvelles vitesses lors d'une collision) 
+
+Définition à la ligne {\bf 38} du fichier {\bf Particule.\+h}.
+
+\index{Particule@{Particule}!position@{position}}
+\index{position@{position}!Particule@{Particule}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} Particule\+::position\hspace{0.3cm}{\ttfamily [protected]}}\label{class_particule_ac4ebb70316848d69fb600ee2d64e12bf}
+\doxyref{Vecteur}{p.}{class_vecteur} représentant la position de la particule dans l'enceinte 
+
+Définition à la ligne {\bf 34} du fichier {\bf Particule.\+h}.
+
+\index{Particule@{Particule}!rayon@{rayon}}
+\index{rayon@{rayon}!Particule@{Particule}}
+\subsubsection[{rayon}]{\setlength{\rightskip}{0pt plus 5cm}double const Particule\+::rayon\hspace{0.3cm}{\ttfamily [protected]}}\label{class_particule_a77a5348e4ed4309e9c4bf2624afa5804}
+Nombre réel représentant le rayon de la particule (nécessaire pour déterminer si des particules entrent en collision) 
+
+Définition à la ligne {\bf 40} du fichier {\bf Particule.\+h}.
+
+\index{Particule@{Particule}!vitesse@{vitesse}}
+\index{vitesse@{vitesse}!Particule@{Particule}}
+\subsubsection[{vitesse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vecteur} Particule\+::vitesse\hspace{0.3cm}{\ttfamily [protected]}}\label{class_particule_af9eef46b603338ea88b238a777041204}
+\doxyref{Vecteur}{p.}{class_vecteur} représentant la vitesse de la particule 
+
+Définition à la ligne {\bf 36} du fichier {\bf Particule.\+h}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Particule.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Particule.\+cc}\end{DoxyCompactItemize}

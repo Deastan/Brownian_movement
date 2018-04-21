@@ -1,0 +1,58 @@
+\section{Fenetre.\+cc}
+\label{_fenetre_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Fenetre.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Fenetre.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "Fenetre.h"}
+00010 
+00011 \textcolor{comment}{/* ===================================================================}
+00012 \textcolor{comment}{   Implementation de Fenetre}
+00013 \textcolor{comment}{   =================================================================== */}
+00014 
+00015 BEGIN\_EVENT\_TABLE(Fenetre, wxFrame)
+00016     EVT\_MENU( wxID\_EXIT, Fenetre::OnExit )
+00017 END\_EVENT\_TABLE()
+00018 
+00019 \textcolor{comment}{// ======================================================================}
+00020 
+00028 Fenetre::Fenetre( wxString const& titre
+00029                 , wxSize   const& taille
+00030                 , wxPoint  const& position
+00031                 , \textcolor{keywordtype}{long}            style
+00032                 )
+00033 : wxFrame(0, wxID\_ANY, titre, position, taille, style)
+00034 , fogl(new Vue_OpenGL(this))
+00035 \{
+00037   wxMenu* winMenu = \textcolor{keyword}{new} wxMenu;
+00039   winMenu->Append(wxID\_EXIT, wxT(\textcolor{stringliteral}{"&Close"}));
+00041   wxMenuBar* menuBar = \textcolor{keyword}{new} wxMenuBar;
+00043   menuBar->Append(winMenu, wxT(\textcolor{stringliteral}{"&Window"}));
+00044 
+00045   SetMenuBar(menuBar);
+00046 
+00048   Show(\textcolor{keyword}{true});
+00049 
+00051   fogl->InitOpenGL();
+00052 \}
+00053 
+00065 Fenetre::Fenetre( wxString \textcolor{keyword}{const}& titre 
+00066                 , \textcolor{keywordtype}{bool} reglage
+00067                 , wxSize   \textcolor{keyword}{const}& taille
+00068                 , wxPoint  \textcolor{keyword}{const}& position
+00069                 , \textcolor{keywordtype}{long}            style
+00070                 )
+00071 : wxFrame(0, wxID\_ANY, titre, position, taille, style)
+00072 , fogl(new Vue_OpenGL(this, reglage))
+00073 \{
+00075   wxMenu* winMenu = \textcolor{keyword}{new} wxMenu;
+00077   winMenu->Append(wxID\_EXIT, wxT(\textcolor{stringliteral}{"&Close"}));
+00079   wxMenuBar* menuBar = \textcolor{keyword}{new} wxMenuBar;
+00081   menuBar->Append(winMenu, wxT(\textcolor{stringliteral}{"&Window"}));
+00082 
+00083   SetMenuBar(menuBar);
+00084 
+00086   Show(\textcolor{keyword}{true});
+00087 
+00089   fogl->InitOpenGL();
+00090 \}
+\end{DoxyCode}

@@ -1,0 +1,104 @@
+\section{Référence de la classe Canon}
+\label{class_canon}\index{Canon@{Canon}}
+
+
+Prototype de la classe \doxyref{Canon}{p.}{class_canon}.  
+
+
+
+
+{\ttfamily \#include $<$Canon.\+h$>$}
+
+Graphe d'héritage de Canon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_canon}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Canon} ()
+\begin{DoxyCompactList}\small\item\em Constructeur sans paramètre. \end{DoxyCompactList}\item 
+{\bf $\sim$\+Canon} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \doxyref{Canon}{p.}{class_canon} qui détruit chacune des parties du canons. \end{DoxyCompactList}\item 
+virtual void {\bf dessine} () const 
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode dessine en Open\+G\+L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Prototype de la classe \doxyref{Canon}{p.}{class_canon}. 
+
+Cette classe est celle qui permet de créer et de dessiner un canon à particule. Nous avons dessidé de le faire car nous voulions ajouté des particules au systeme.
+
+Elle hérite de dessinable car il fallait avoir une méthode dessine et cela respecte le bonne programmation car on utilise l'héritage. 
+
+Définition à la ligne {\bf 29} du fichier {\bf Canon.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Canon@{Canon}!Canon@{Canon}}
+\index{Canon@{Canon}!Canon@{Canon}}
+\subsubsection[{Canon}]{\setlength{\rightskip}{0pt plus 5cm}Canon\+::\+Canon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_canon_af33c1f50936632b864bb9af1fdd20453}
+
+
+Constructeur sans paramètre. 
+
+Constructeur de la classe du \doxyref{Canon}{p.}{class_canon} qui initialise la longueur et le rayon et les quadrics qui permette d'avoir chacune des composants de notre canon cylindre \+: structure principale Boule \+: permet d'avoir un arrondi sur le bout du canon roue1 et roue2 sont les roues du canon enjoliveurs sont les caches de roues 
+
+Définition à la ligne {\bf 32} du fichier {\bf Canon.\+cc}.
+
+\index{Canon@{Canon}!````~Canon@{$\sim$\+Canon}}
+\index{````~Canon@{$\sim$\+Canon}!Canon@{Canon}}
+\subsubsection[{$\sim$\+Canon}]{\setlength{\rightskip}{0pt plus 5cm}Canon\+::$\sim$\+Canon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_canon_ab168cf031c119b320cd62bd0188a2389}
+
+
+Destructeur de \doxyref{Canon}{p.}{class_canon} qui détruit chacune des parties du canons. 
+
+
+
+Définition à la ligne {\bf 53} du fichier {\bf Canon.\+h}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Canon@{Canon}!dessine@{dessine}}
+\index{dessine@{dessine}!Canon@{Canon}}
+\subsubsection[{dessine}]{\setlength{\rightskip}{0pt plus 5cm}void Canon\+::dessine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_canon_a2b43d0c2037d44c89b4c6d57b2f00fc1}
+
+
+Prototype de la méthode dessine en Open\+G\+L. 
+
+elle va prendre prendre une couleur noire, et dessiner le canon qui a plusieurs composants dans les différents endroits graĉe aux matrices de translations, rotations dessin du cylindre du canon
+
+dessin du fond du canon
+
+dessin de la roue 1
+
+dessin de la roue deux 
+
+Implémente {\bf Dessinable} \doxyref{}{p.}{class_dessinable_aea37dacb2b67d6650a435d72c9a6fe79}.
+
+
+
+Définition à la ligne {\bf 46} du fichier {\bf Canon.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Canon.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Canon.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,196 @@
+\section{Référence de la classe G\+L\+Fluor}
+\label{class_g_l_fluor}\index{G\+L\+Fluor@{G\+L\+Fluor}}
+
+
+Prototype de la classe G\+Lluor.  
+
+
+
+
+{\ttfamily \#include $<$G\+L\+Fluor.\+h$>$}
+
+Graphe d'héritage de G\+L\+Fluor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_g_l_fluor}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf G\+L\+Fluor} ({\bf Vecteur} {\bf position}, {\bf Vecteur} {\bf vitesse})
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments sans la température du système. \end{DoxyCompactList}\item 
+{\bf G\+L\+Fluor} ({\bf Enceinte} const \&enceinte, {\bf Generateur\+Aleatoire} \&tirage, double temperature)
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments avec la température du système et le tirage aléatoire des vecteurs positions. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+G\+L\+Fluor} ()
+\begin{DoxyCompactList}\small\item\em Dstructeurs. \end{DoxyCompactList}\item 
+virtual void {\bf evolue} (double dt)
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode evolue. \end{DoxyCompactList}\item 
+virtual void {\bf dessine} () const 
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode evolue. \end{DoxyCompactList}\item 
+void {\bf enregistrer\+Coordonnee} ()
+\begin{DoxyCompactList}\small\item\em Prototye de la méthode qui va enregistrer les coordonnées. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Prototype de la classe G\+Lluor. 
+
+Cette classe est celle qui permet de créer une particule de fluor en Open\+G\+L et permet aussi de suivre à la trace cette particule grâce à un deque qui enregistre chaque position pendant un certain intervalle. Nous avos pas besoins de toutes les positions d'ou le fait que nous supprimons après 150 pas de temps les anciennes positions. Nous avos choisis un deque car il fallait une faible complexité pour détruire la première ligne. 
+
+Définition à la ligne {\bf 32} du fichier {\bf G\+L\+Fluor.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{G\+L\+Fluor@{G\+L\+Fluor}!G\+L\+Fluor@{G\+L\+Fluor}}
+\index{G\+L\+Fluor@{G\+L\+Fluor}!G\+L\+Fluor@{G\+L\+Fluor}}
+\subsubsection[{G\+L\+Fluor}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Fluor\+::\+G\+L\+Fluor (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{position, }
+\item[{{\bf Vecteur}}]{vitesse}
+\end{DoxyParamCaption}
+)}\label{class_g_l_fluor_acfc934283cbecc868492a28eadbd0390}
+
+
+Constructeur avec arguments sans la température du système. 
+
+Construteur.
+
+sans le paramètre de température, initialise un rayon et une masse à notre particule
+
+
+\begin{DoxyParams}{Paramètres}
+{\em position} & \+: est la position de la particule que l'on souhaite \\
+\hline
+{\em vitesse} & \+: est la vitesse de la particule que l'on souhaite \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 22} du fichier {\bf G\+L\+Fluor.\+cc}.
+
+\index{G\+L\+Fluor@{G\+L\+Fluor}!G\+L\+Fluor@{G\+L\+Fluor}}
+\index{G\+L\+Fluor@{G\+L\+Fluor}!G\+L\+Fluor@{G\+L\+Fluor}}
+\subsubsection[{G\+L\+Fluor}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Fluor\+::\+G\+L\+Fluor (
+\begin{DoxyParamCaption}
+\item[{{\bf Enceinte} const \&}]{enceinte, }
+\item[{{\bf Generateur\+Aleatoire} \&}]{tirage, }
+\item[{double}]{temperature}
+\end{DoxyParamCaption}
+)}\label{class_g_l_fluor_a69e04138661d93c35dc7b5a69d794296}
+
+
+Constructeur avec arguments avec la température du système et le tirage aléatoire des vecteurs positions. 
+
+Construteur.
+
+sans le paramètre de température, initialise un rayon et une masse à notre particule
+
+
+\begin{DoxyParams}{Paramètres}
+{\em enceinte} & \+: permet de connaitre les dimmensions de l'emceinte pour calculer les positions \\
+\hline
+{\em tirage} & \+: donne une position aléatoire de la particule dans l'enceinte \\
+\hline
+{\em gtempérature} & \+: la température que l'on souhaite pour calculer la vitesse \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 34} du fichier {\bf G\+L\+Fluor.\+cc}.
+
+\index{G\+L\+Fluor@{G\+L\+Fluor}!````~G\+L\+Fluor@{$\sim$\+G\+L\+Fluor}}
+\index{````~G\+L\+Fluor@{$\sim$\+G\+L\+Fluor}!G\+L\+Fluor@{G\+L\+Fluor}}
+\subsubsection[{$\sim$\+G\+L\+Fluor}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Fluor\+::$\sim$\+G\+L\+Fluor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_fluor_a4b7eb611e78635965d15f058262f79de}
+
+
+Dstructeurs. 
+
+
+
+Définition à la ligne {\bf 38} du fichier {\bf G\+L\+Fluor.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{G\+L\+Fluor@{G\+L\+Fluor}!dessine@{dessine}}
+\index{dessine@{dessine}!G\+L\+Fluor@{G\+L\+Fluor}}
+\subsubsection[{dessine}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Fluor\+::dessine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_fluor_ab4b02adef320b55887fea80a70c53131}
+
+
+Prototype de la méthode evolue. 
+
+dessine les points contenu dans le tableau(deque)
+
+dessine la particule de couleur à la position souhaitée par une matrice de translation permet de parcourir le tableau et de le dssiner
+
+dessine les particlues
+
+couleur mauve
+
+J'ai remis 10 partout 
+
+Implémente {\bf Dessinable} \doxyref{}{p.}{class_dessinable_aea37dacb2b67d6650a435d72c9a6fe79}.
+
+
+
+Définition à la ligne {\bf 80} du fichier {\bf G\+L\+Fluor.\+cc}.
+
+\index{G\+L\+Fluor@{G\+L\+Fluor}!enregistrer\+Coordonnee@{enregistrer\+Coordonnee}}
+\index{enregistrer\+Coordonnee@{enregistrer\+Coordonnee}!G\+L\+Fluor@{G\+L\+Fluor}}
+\subsubsection[{enregistrer\+Coordonnee}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Fluor\+::enregistrer\+Coordonnee (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_g_l_fluor_a1071ae99d4253fe736dc1f5bf3f4990d}
+
+
+Prototye de la méthode qui va enregistrer les coordonnées. 
+
+méthode qui enregistre la position/coordonnée de la particule et ensuite appelle la méthode évolue de la classe particule supprime la première valeur du tableau après 150 pas de temps (complexité de 1)
+
+ajoute la dernière positions au deque 
+
+Définition à la ligne {\bf 63} du fichier {\bf G\+L\+Fluor.\+cc}.
+
+\index{G\+L\+Fluor@{G\+L\+Fluor}!evolue@{evolue}}
+\index{evolue@{evolue}!G\+L\+Fluor@{G\+L\+Fluor}}
+\subsubsection[{evolue}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Fluor\+::evolue (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_fluor_a9fbbc20c3f158575d39fce6c9ca85931}
+
+
+Prototype de la méthode evolue. 
+
+spéciale pour le fluor car on enresitre ça position dans un deque (une sorte de tableau) pour pouvoir afficher la trajectoire Nous avons fait appel à evolue car c'est la seul méthode qui nous permettait d'enregistrer a tout instant
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dt} & \+: le pas de temps \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de {\bf Particule} \doxyref{}{p.}{class_particule_a7c6a97e2b65d4326d36b6d3b6251b79c}.
+
+
+
+Définition à la ligne {\bf 54} du fichier {\bf G\+L\+Fluor.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf G\+L\+Fluor.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf G\+L\+Fluor.\+cc}\end{DoxyCompactItemize}

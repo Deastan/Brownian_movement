@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Simulation d&#39;un gaz parfait:  Fichier source de /Users/burkhard/Dropbox/projet d&#39;info/maximilian-g065/Simulation d&#39;un gaz parfait/Vue_OpenGL.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation d&#39;un gaz parfait
+   &#160;<span id="projectnumber">2.0</span>
+   </div>
+   <div id="projectbrief">par Emma Geoffray et Jonathan Bukhard</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1fc57af7395e7964fd1dc446c4fdc94a.html">maximilian-g065</a></li><li class="navelem"><a class="el" href="dir_998f0679318d51041f3dc98303027884.html">Simulation d'un gaz parfait</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Vue_OpenGL.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vue___open_g_l_8cc.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vue___open_g_l_8h.html">Vue_OpenGL.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Implementation de Vue_OpenGL</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> Vue_OpenGL::TIMER_ID(1);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;BEGIN_EVENT_TABLE(<a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>, wxGLCanvas)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    EVT_PAINT(          <a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>::dessine       )</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    EVT_SIZE(           <a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>::OnSize        )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    EVT_KEY_DOWN(       <a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>::OnKeyDown     )</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    EVT_ENTER_WINDOW(   <a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>::OnEnterWindow )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    EVT_TIMER(TIMER_ID, <a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>::OnTimer       )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;END_EVENT_TABLE()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a8b6c60ae47c2b0d988f39ea788aa4ed4">   43</a></span>&#160;<a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>::<a class="code" href="class_vue___open_g_l.html">Vue_OpenGL</a>( wxWindow*      parent</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                      , wxSize  const&amp; taille</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                      , wxPoint const&amp; position</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                      )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;: wxGLCanvas(parent, wxID_ANY, position, taille, </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;             wxSUNKEN_BORDER|wxFULL_REPAINT_ON_RESIZE , wxT(&quot;&quot;))</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;, theta(0.0), phi(0.0), r(150.0) </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;, timer(new wxTimer(this, TIMER_ID))</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a89f69951ff60193ed93e0653c268fcc1">   61</a></span>&#160;<a class="code" href="class_vue___open_g_l.html#a8b6c60ae47c2b0d988f39ea788aa4ed4">Vue_OpenGL::Vue_OpenGL</a>( wxWindow*      parent</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                      , <span class="keywordtype">bool</span> reglage</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                      , wxSize  <span class="keyword">const</span>&amp; taille</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                      , wxPoint <span class="keyword">const</span>&amp; position</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      )</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;: wxGLCanvas(parent, wxID_ANY, position, taille, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             wxSUNKEN_BORDER|wxFULL_REPAINT_ON_RESIZE , wxT(<span class="stringliteral">&quot;&quot;</span>))</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;, theta(0.0), phi(0.0), r(150.0) </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;, timer(new wxTimer(this, TIMER_ID))</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;, systeme(reglage)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a73b8426ef156d44965e29842a7cc91ed">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#a73b8426ef156d44965e29842a7cc91ed">Vue_OpenGL::dessine</a>(wxPaintEvent&amp;)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">if</span> (!GetContext()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  SetCurrent();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// commence par effacer l&#39;ancienne image</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">/* part du système de coordonnées de base </span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">   * (dessin à l&#39;origine : matrice identité) */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  glMatrixMode(GL_MODELVIEW);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  glLoadIdentity();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// place la caméra</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  gluLookAt(r,   0.0, 0.0,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            0.0, 0.0, 0.0,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            0.0, 0.0, 1.0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  glRotated(theta, 0.0, 1.0, 0.0); </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  glRotated(phi,   0.0, 0.0, 1.0);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//appelle de la méthode dessine de systeme </span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    systeme.<a class="code" href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">dessine</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">// Finalement, on envoie le dessin à l&#39;écran</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  glFlush();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  SwapBuffers();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a8ba5bfc69bc8719ae9024d603de3dd55">  104</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#a8ba5bfc69bc8719ae9024d603de3dd55">Vue_OpenGL::OnSize</a>(wxSizeEvent&amp; event)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">// Nécessaire pour mettre à jour le contexte sur certaines plateformes</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  wxGLCanvas::OnSize(event);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (GetContext()) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// set GL viewport (not called by wxGLCanvas::OnSize on all platforms...)</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">int</span> w, h;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    GetClientSize(&amp;w, &amp;h);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    SetCurrent();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    glViewport(0, 0, (GLint) w, (GLint) h);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  } </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#aa92d4dcdce7b7afbc6507d8f8cead104">  119</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#aa92d4dcdce7b7afbc6507d8f8cead104">Vue_OpenGL::OnKeyDown</a>( wxKeyEvent&amp; event )</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">switch</span>( event.GetKeyCode() ) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">case</span> WXK_LEFT: </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="class_vue___open_g_l.html#a1da1dad7d2da5a1ef3f834cd4ac5a35e">RotatePhi</a>( 2.0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">case</span> WXK_RIGHT: </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="class_vue___open_g_l.html#a1da1dad7d2da5a1ef3f834cd4ac5a35e">RotatePhi</a>( -2.0);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">case</span> WXK_UP: </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="class_vue___open_g_l.html#a088c8fb20c9ba9c25cd5aa5eaeac4e5c">RotateTheta</a>( 2.0);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">case</span> WXK_DOWN: </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="class_vue___open_g_l.html#a088c8fb20c9ba9c25cd5aa5eaeac4e5c">RotateTheta</a>(-2.0);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">case</span> WXK_HOME:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    r     =  5.0;   <span class="comment">// On revient à un point fixé</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    theta = 35.0;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    phi   = 20.0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">case</span> WXK_PAGEUP:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="class_vue___open_g_l.html#afdcf7b3ea31efc02c773aba58eb6617c">deplace</a>(-1.0);    <span class="comment">// On se rapproche</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">case</span> WXK_PAGEDOWN:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="class_vue___open_g_l.html#afdcf7b3ea31efc02c773aba58eb6617c">deplace</a>(1.0);     <span class="comment">// On s&#39;éloigne</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">// Pause sur la touche &quot;espace&quot;</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">case</span> <span class="charliteral">&#39; &#39;</span>:</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (timer-&gt;IsRunning()) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      timer-&gt;Stop();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      timer-&gt;Start();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    systeme.<a class="code" href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">ajouterArgon</a>(20, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">case</span> <span class="charliteral">&#39;F&#39;</span>:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    systeme.<a class="code" href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">ajouterFluor</a>(1, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">case</span> <span class="charliteral">&#39;H&#39;</span>:</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    systeme.<a class="code" href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">ajouterHelium</a>(20, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordflow">case</span> <span class="charliteral">&#39;N&#39;</span>:</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    systeme.<a class="code" href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">ajouterNeon</a>(20, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keyword">event</span>.Skip();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a088c8fb20c9ba9c25cd5aa5eaeac4e5c">  189</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#a088c8fb20c9ba9c25cd5aa5eaeac4e5c">Vue_OpenGL::RotateTheta</a>(GLdouble deg)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  theta += deg;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">while</span> (theta &lt; -180.0) { theta += 360.0; }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">while</span> (theta &gt;  180.0) { theta -= 360.0; }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a1da1dad7d2da5a1ef3f834cd4ac5a35e">  197</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#a1da1dad7d2da5a1ef3f834cd4ac5a35e">Vue_OpenGL::RotatePhi</a>(GLdouble deg)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  phi += deg;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordflow">while</span> (phi &lt;   0.0) { phi += 360.0; }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">while</span> (phi &gt; 360.0) { phi -= 360.0; }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#afdcf7b3ea31efc02c773aba58eb6617c">  205</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#afdcf7b3ea31efc02c773aba58eb6617c">Vue_OpenGL::deplace</a>(GLdouble dr)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  r += dr;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordflow">if</span> (r &lt; 1.0) r = 1.0;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &gt; 1000.0) r = 1000.0;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a6ed4a73bf485eeb80d1ffbd209eb523f">  213</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#a6ed4a73bf485eeb80d1ffbd209eb523f">Vue_OpenGL::InitOpenGL</a>() </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="comment">// Initialisation OpenGL</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  SetCurrent();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="comment">// active la gestion de la profondeur</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  glEnable(GL_DEPTH_TEST);    </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// active la transparence</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  glEnable (GL_BLEND);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// fixe la perspective</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  glMatrixMode(GL_PROJECTION);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  glLoadIdentity();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  gluPerspective(65.0, 4./3., 1.0, 1000.0);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="comment">// fixe la couleur du fond à noir</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  glClearColor(1.0, 1.0, 1.0, 1.0);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">// lance le Timer</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  timer-&gt;Start(20);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// ======================================================================</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="class_vue___open_g_l.html#a115fe5326875d273202e9917c45b2cf5">  239</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_vue___open_g_l.html#a115fe5326875d273202e9917c45b2cf5">Vue_OpenGL::OnTimer</a>(wxTimerEvent&amp; event)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  systeme.<a class="code" href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">evolue</a>(event.GetInterval() * 0.0001);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="comment">// demande l&#39;affichage</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  Refresh(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="ttc" id="class_vue___open_g_l_html_a1da1dad7d2da5a1ef3f834cd4ac5a35e"><div class="ttname"><a href="class_vue___open_g_l.html#a1da1dad7d2da5a1ef3f834cd4ac5a35e">Vue_OpenGL::RotatePhi</a></div><div class="ttdeci">void RotatePhi(GLdouble deg)</div><div class="ttdoc">prototype de la méthode qui fait la rotation de l&#39;angle phi pour la caméra </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00197">Vue_OpenGL.cc:197</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_a8b6c60ae47c2b0d988f39ea788aa4ed4"><div class="ttname"><a href="class_vue___open_g_l.html#a8b6c60ae47c2b0d988f39ea788aa4ed4">Vue_OpenGL::Vue_OpenGL</a></div><div class="ttdeci">Vue_OpenGL(wxWindow *parent, wxSize const &amp;taille=wxDefaultSize, wxPoint const &amp;position=wxDefaultPosition)</div><div class="ttdoc">constructeur Vue_OpenGL </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00043">Vue_OpenGL.cc:43</a></div></div>
+<div class="ttc" id="_vue___open_g_l_8h_html"><div class="ttname"><a href="_vue___open_g_l_8h.html">Vue_OpenGL.h</a></div></div>
+<div class="ttc" id="class_systeme_html_a57d47c92404c5ebb87724545a750b445"><div class="ttname"><a href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">Systeme::ajouterFluor</a></div><div class="ttdeci">void ajouterFluor(unsigned int nbr_fluor, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_fluor particules de Fluor. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00185">Systeme.cc:185</a></div></div>
+<div class="ttc" id="class_systeme_html_a3308846e3013176c71954ba5e3ae23d1"><div class="ttname"><a href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">Systeme::evolue</a></div><div class="ttdeci">void evolue(double dt)</div><div class="ttdoc">Evolue le systeme d&#39;un temps dt. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00126">Systeme.cc:126</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_aa92d4dcdce7b7afbc6507d8f8cead104"><div class="ttname"><a href="class_vue___open_g_l.html#aa92d4dcdce7b7afbc6507d8f8cead104">Vue_OpenGL::OnKeyDown</a></div><div class="ttdeci">void OnKeyDown(wxKeyEvent &amp;evenement)</div><div class="ttdoc">prototype de la méthode qui gère les événements du claviers </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00119">Vue_OpenGL.cc:119</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_a115fe5326875d273202e9917c45b2cf5"><div class="ttname"><a href="class_vue___open_g_l.html#a115fe5326875d273202e9917c45b2cf5">Vue_OpenGL::OnTimer</a></div><div class="ttdeci">void OnTimer(wxTimerEvent &amp;event)</div><div class="ttdoc">prototype de la méthode du Timer qui va appeler la méthode évolue du système </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00239">Vue_OpenGL.cc:239</a></div></div>
+<div class="ttc" id="class_systeme_html_abc34a6c64e42d303be77d5df97ff377f"><div class="ttname"><a href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">Systeme::dessine</a></div><div class="ttdeci">void dessine() const override</div><div class="ttdoc">Dessine le systeme (version graphique) </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00099">Systeme.cc:99</a></div></div>
+<div class="ttc" id="class_systeme_html_ae08dde7f90dfa367d96be1351f7c8c14"><div class="ttname"><a href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">Systeme::ajouterNeon</a></div><div class="ttdeci">void ajouterNeon(unsigned int nbr_neon, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_neon particules de Neon. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00227">Systeme.cc:227</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_a8ba5bfc69bc8719ae9024d603de3dd55"><div class="ttname"><a href="class_vue___open_g_l.html#a8ba5bfc69bc8719ae9024d603de3dd55">Vue_OpenGL::OnSize</a></div><div class="ttdeci">void OnSize(wxSizeEvent &amp;evenement)</div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00104">Vue_OpenGL.cc:104</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_a73b8426ef156d44965e29842a7cc91ed"><div class="ttname"><a href="class_vue___open_g_l.html#a73b8426ef156d44965e29842a7cc91ed">Vue_OpenGL::dessine</a></div><div class="ttdeci">void dessine(wxPaintEvent &amp;evenement)</div><div class="ttdoc">prototype de la méthode dessine </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00074">Vue_OpenGL.cc:74</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_a6ed4a73bf485eeb80d1ffbd209eb523f"><div class="ttname"><a href="class_vue___open_g_l.html#a6ed4a73bf485eeb80d1ffbd209eb523f">Vue_OpenGL::InitOpenGL</a></div><div class="ttdeci">void InitOpenGL()</div><div class="ttdoc">prototype public de la méthode qui va appeler evolue de systeme </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00213">Vue_OpenGL.cc:213</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_a088c8fb20c9ba9c25cd5aa5eaeac4e5c"><div class="ttname"><a href="class_vue___open_g_l.html#a088c8fb20c9ba9c25cd5aa5eaeac4e5c">Vue_OpenGL::RotateTheta</a></div><div class="ttdeci">void RotateTheta(GLdouble deg)</div><div class="ttdoc">prototype de la méthode qui fait la rotation de l&#39;angle theta pour la caméra </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00189">Vue_OpenGL.cc:189</a></div></div>
+<div class="ttc" id="class_systeme_html_ad99fa9b3d52815b1c24c2e886291fa45"><div class="ttname"><a href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">Systeme::ajouterHelium</a></div><div class="ttdeci">void ajouterHelium(unsigned int nbr_helium, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_helium particules d&#39;Helium. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00206">Systeme.cc:206</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html"><div class="ttname"><a href="class_vue___open_g_l.html">Vue_OpenGL</a></div><div class="ttdoc">Prototype de la classe Vue_OpenGL. </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8h_source.html#l00030">Vue_OpenGL.h:30</a></div></div>
+<div class="ttc" id="class_vue___open_g_l_html_afdcf7b3ea31efc02c773aba58eb6617c"><div class="ttname"><a href="class_vue___open_g_l.html#afdcf7b3ea31efc02c773aba58eb6617c">Vue_OpenGL::deplace</a></div><div class="ttdeci">void deplace(double dr)</div><div class="ttdoc">prototype de la méthode qui fait le déplacement de la caméra </div><div class="ttdef"><b>Definition:</b> <a href="_vue___open_g_l_8cc_source.html#l00205">Vue_OpenGL.cc:205</a></div></div>
+<div class="ttc" id="class_systeme_html_a8a1047862e11ebfe4b267dbc5ab67a17"><div class="ttname"><a href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">Systeme::ajouterArgon</a></div><div class="ttdeci">void ajouterArgon(unsigned int nbr_argon, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_argon particules d&#39;Argon. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00164">Systeme.cc:164</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 26 Mai 2014 23:22:52 pour Simulation d&#39;un gaz parfait par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

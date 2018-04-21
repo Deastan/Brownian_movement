@@ -1,0 +1,80 @@
+JOURNAL
+
+Mis à jour une fois par semaine.
+Les jours des semaines sont le vendredi, jour ou l’on avait le cours de programmation.
+
+Semaine 1 (21.02.2014) :
+- lecture de la présentation du projet
+- discussion sur l'organisation générale du projet
+
+Semaine 2 (28.02.2014) :
+- création de la première classe vecteur
+- compilation séparée de la classe vecteur
+- constructeur de vecteur
+- création des nouveaux fichiers journal et réponses
+
+Semaine 3 (07.03.2014) :
+- Surcharge des opérateurs +,-,*,XOR pour l'objet vecteur
+- Debut de lecture du tutoriel de openGl
+
+Semaine 4 (14.03.2014) :
+- Surcharge de tous les opérateurs (+=,<<,...)
+- Contrôle de tout le code et vérifications des méthodes
+- Mise à jour du journal et du fichier réponse
+
+Semaine 5 (21.03.2014) :
+- Partage du travail
+- Classe Enceinte et classe Particule fini le P5
+- Mise à jour du journal et du fichier réponse
+
+Semaine 6 (28.03.2014) :
+- Partage du travail
+- Chacun a fait sa classe système et les classes TXTArgon et TXTNeon
+- On s’est vu pour discuter et améliorer les classes et être sur que tout fonctionne jusque là.
+- Mise à jour du journal et du fichier réponse
+
+Semaine 7 (04.04.2014) :
+- Nous travaillons les exercices pour bien comprendre les concepts et assurer les bases.
+- Préparations de la série notée
+
+Semaine 8 (11.04.2014) :
+- Série notée.
+- début de la conception et comprendre comment réaliser l’exercice P9
+
+Semaine 9 (18.04.2014) :
+- Nous continuons sur la compréhension du P9 et écrivons le début de la gestion des collisions
+- Reprise de l'OpenGL et suivre le tutoriel de M Jamila Sam
+
+Semaine 10 (25.04.2014) :
+- On s’est vu pour voir le travailler accompli, discuter
+- Réorganisation du travail
+- fini le P9 et qui fonctionne
+- Mise à jour des fichiers
+- Mise à jour du journal et du fichier réponse
+
+Semaine 11 (02.05.2014) :
+- adaptation du code  de l’exercice P10 à notre code de la simulation
+- mis le P9 avec la simulation graphique qui marche P11
+- Mise à jour du journal et du fichier réponse
+
+Semaine 12 (09.05.2014) :
+- exercice P12 pensé, écrit, fonctionne
+- continuer a finir l’interface graphique, enceinte, rajout de particules, amélioration du code
+- Optimisation de certaine fonction mieux repensée
+- Mise à jour du journal et du fichier réponse
+
+Semaine 13 (16.05.2014) :
+- création de la dernière particule de fluor qui permet de suivre la trajectoire de celle-ci
+- Nous avons décidé d’arrêter de faire le P14 car nous avions pas le temps avec les autres cours
+- adaptation les commentaires pour faire un fichier de conception avec doxygen
+- Mise à jour du journal et du fichier réponse
+
+Semaine 14 (23.05.2014) :
+- examen de programmation
+- nous avons commencé à finaliser notre projet, en créant le fichier readme, fichier de conception 
+- nous avons créer un interface utilisateur pour qu’il puisse aisément lancer l’application de simulation. Nous aurions voulu faire mieux que des boites de dialogues car c’est pas forcément très agréable et il y a mieux mais faut de temps car beaucoups de cours.
+
+Semaine 15 (30.05.2014) :
+-Finalisation du projet et rendu
+
+Globalement nous sommes très content de ce projet, et nous sommes aussi content de l’entente que nous avons eu dans le groupe. Une très bonne gestion du travail a permis d’être très performant.

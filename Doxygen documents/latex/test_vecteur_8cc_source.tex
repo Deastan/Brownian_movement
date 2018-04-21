@@ -1,0 +1,73 @@
+\section{test\+Vecteur.\+cc}
+\label{test_vecteur_8cc_source}\index{/\+Users/burkhard/\+Dropbox/\+Projet d'info/\+Approche\+Fin/test\+Vecteur.\+cc@{/\+Users/burkhard/\+Dropbox/\+Projet d'info/\+Approche\+Fin/test\+Vecteur.\+cc}}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include <iostream>}
+00002 \textcolor{preprocessor}{#include "Vecteur.h"}
+00003 
+00004 \textcolor{keyword}{using namespace }std;
+00005 
+00006 
+00007 \textcolor{keywordtype}{int} main()
+00008 \{
+00009     \textcolor{comment}{// un vecteur en 3D :}
+00010     Vecteur vect1(1.0, 2.0, -0.1);
+00011 
+00012     \textcolor{comment}{// d'autres vecteurs en 3D}
+00013     Vecteur vect2(2.6, -3.5, 4.4);
+00014     Vecteur vect3(vect1);  \textcolor{comment}{// copie de V1}
+00015     Vecteur vect4;         \textcolor{comment}{// le vecteur nul}
+00016 
+00017     cout << \textcolor{stringliteral}{"Vecteur 1 : "} << vect1 << endl;
+00018     cout << \textcolor{stringliteral}{"Vecteur 2 : "} << vect2 << endl;
+00019     cout << \textcolor{stringliteral}{"Vecteur 4 : "} << vect4 << endl;
+00020 
+00021     cout << \textcolor{stringliteral}{"Le vecteur 1 est "};
+00022     \textcolor{keywordflow}{if} (vect1 == vect2) \{
+00023         cout << \textcolor{stringliteral}{"égal au"};
+00024     \} \textcolor{keywordflow}{else} \{
+00025         cout << \textcolor{stringliteral}{"différent du"};
+00026     \}
+00027     cout << \textcolor{stringliteral}{" vecteur 2,"} << endl << \textcolor{stringliteral}{"et est "};
+00028     \textcolor{keywordflow}{if} (vect1 != vect3) \{
+00029         cout << \textcolor{stringliteral}{"différent du"};
+00030     \} \textcolor{keywordflow}{else} \{
+00031         cout << \textcolor{stringliteral}{"égal au"};
+00032     \}
+00033     cout << \textcolor{stringliteral}{" vecteur 3."} << endl;
+00034     
+00035     \textcolor{comment}{// test += et -= :}
+00036     vect1 += vect2;
+00037     cout << \textcolor{stringliteral}{"vecteur 1 += vecteur 2 : "} << vect1 << endl;
+00038     vect1 -= vect2;
+00039     cout << \textcolor{stringliteral}{"vecteur 1 -= vecteur 2 :"} << vect1 << endl;
+00040     \textcolor{comment}{// le vecteur 1 doit avoir repris sa valeur initiale}
+00041     
+00042     \textcolor{comment}{// test + et - :}
+00043     cout << \textcolor{stringliteral}{"vecteur 1 + vecteur 2 = "} << vect1 + vect2 << endl
+00044          << \textcolor{stringliteral}{"vecteur 1 - vecteur 2 = "} << vect1 - vect2 << endl;
+00045          
+00046     \textcolor{comment}{// test multiplication par un scalaire :}
+00047     cout << \textcolor{stringliteral}{"3 * (vecteur 1) = "} << 3 * vect1 << endl
+00048          << \textcolor{stringliteral}{"(vecteur 1) * 3 = "} << vect1 * 3 << endl;
+00049     
+00050     \textcolor{comment}{// test *= :}
+00051     vect1 *= 2;
+00052     cout << \textcolor{stringliteral}{"vecteur 1 *= 2 : "} << vect1 << endl;
+00053     vect1 *= 0.5;
+00054     cout << \textcolor{stringliteral}{"vecteur 1 *= 0.5 : "} << vect1 << endl;
+00055        \textcolor{comment}{// le vecteur 1 doit avoir repris sa valeur initiale}
+00056     
+00057     \textcolor{comment}{// test produit vectoriel :}
+00058     cout << \textcolor{stringliteral}{"Produit vectoriel :"} << endl
+00059          << \textcolor{stringliteral}{"vecteur 1 ^ vecteur 4 = "} << (vect1 ^ vect4) << endl;
+00060     vect1 ^= vect2;
+00061     cout << \textcolor{stringliteral}{"vecteur 1 ^= vecteur 2 : "} << vect1 << endl;
+00062          
+00063     \textcolor{comment}{// test produit scalaire :}
+00064     cout << \textcolor{stringliteral}{"Produit scalaire :"} << endl
+00065          << \textcolor{stringliteral}{"vecteur 3 * vecteur 2 = "} << vect3 * vect2 << endl;
+00066     
+00067     \textcolor{keywordflow}{return} 0;
+00068 \}
+\end{DoxyCode}

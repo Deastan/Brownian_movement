@@ -1,0 +1,195 @@
+\section{Référence du fichier /\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vecteur.h}
+\label{_vecteur_8h}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vecteur.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Vecteur.\+h}}
+
+
+est le prototype de la classe qui nous pourmet de gérer la position et la vitesse de nos particules mais aussi de tous l'espace qui les entours.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Vecteur}
+\begin{DoxyCompactList}\small\item\em Prototype de la classe \doxyref{Vecteur}{p.}{class_vecteur}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& {\bf operator$<$$<$} (std\+::ostream \&sortie, {\bf Vecteur} const \&v1)
+\begin{DoxyCompactList}\small\item\em Prototype fonction $<$$<$. \end{DoxyCompactList}\item 
+const {\bf Vecteur} {\bf operator+} ({\bf Vecteur} v1, {\bf Vecteur} const \&v2)
+\begin{DoxyCompactList}\small\item\em Prototype fonction + entre deux vecteurs. \end{DoxyCompactList}\item 
+const {\bf Vecteur} {\bf operator-\/} ({\bf Vecteur} v1, {\bf Vecteur} const \&v2)
+\begin{DoxyCompactList}\small\item\em Prototype fonction -\/ soustraction entre deux vecteurs. \end{DoxyCompactList}\item 
+const {\bf Vecteur} {\bf operator$\ast$} (double scalaire, {\bf Vecteur} v1)
+\begin{DoxyCompactList}\small\item\em Prototype fonction multiplication par un scalire avant. \end{DoxyCompactList}\item 
+const {\bf Vecteur} {\bf operator$\ast$} ({\bf Vecteur} v1, double scalaire)
+\begin{DoxyCompactList}\small\item\em Prototype fonction multiplication par un scalire arrière. \end{DoxyCompactList}\item 
+const {\bf Vecteur} {\bf operator$^\wedge$} ({\bf Vecteur} v1, {\bf Vecteur} const \&v2)
+\begin{DoxyCompactList}\small\item\em Prototype fonction $^\wedge$ prduit vectoriel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+est le prototype de la classe qui nous pourmet de gérer la position et la vitesse de nos particules mais aussi de tous l'espace qui les entours. 
+
+\begin{DoxyAuthor}{Auteur}
+Emma Geoffray et Jonathan Burkhard 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+mars 2014 
+\end{DoxyDate}
+
+
+Définition dans le fichier {\bf Vecteur.\+h}.
+
+
+
+\subsection{Documentation des fonctions}
+\index{Vecteur.\+h@{Vecteur.\+h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vecteur.\+h@{Vecteur.\+h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vecteur} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{double}]{scalaire, }
+\item[{{\bf Vecteur}}]{v1}
+\end{DoxyParamCaption}
+)}\label{_vecteur_8h_a85d7ca37434bb65a65f5868696f04c22}
+
+
+Prototype fonction multiplication par un scalire avant. 
+
+Prototype fonction multiplication par un scalire avant.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em double} & scalaire \+: pour la multiplaction avant le vecteur \\
+\hline
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & v1 \+: sert pour la multiplaction par le scalaire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne le vecteur modifier 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 228} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur.\+h@{Vecteur.\+h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vecteur.\+h@{Vecteur.\+h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vecteur} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{v1, }
+\item[{double}]{scalaire}
+\end{DoxyParamCaption}
+)}\label{_vecteur_8h_a21345f9cdf1cb4981e0c809ae48e188e}
+
+
+Prototype fonction multiplication par un scalire arrière. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & v1 \+: sert pour la multiplaction par le scalaire \\
+\hline
+{\em double} & scalaire \+: pour la multiplaction avant le vecteur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne le vecteur modifier 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 239} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur.\+h@{Vecteur.\+h}!operator+@{operator+}}
+\index{operator+@{operator+}!Vecteur.\+h@{Vecteur.\+h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vecteur} operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{v1, }
+\item[{{\bf Vecteur} const \&}]{v2}
+\end{DoxyParamCaption}
+)}\label{_vecteur_8h_a9dab57d4b95b2b07b556e57db34e237d}
+
+
+Prototype fonction + entre deux vecteurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & v1 \+: sert pour l'addition, on prends la copie pour ne pas changer le vecteur 1 \\
+\hline
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v2 \+: sert pour l'addition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne le vecteur modifier 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 204} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur.\+h@{Vecteur.\+h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vecteur.\+h@{Vecteur.\+h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vecteur} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{v1, }
+\item[{{\bf Vecteur} const \&}]{v2}
+\end{DoxyParamCaption}
+)}\label{_vecteur_8h_a72eb905ad4efc0b51b3f10903a993023}
+
+
+Prototype fonction -\/ soustraction entre deux vecteurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & v1 \+: sert pour la soustraction, on prends la copie pour ne pas changer le vecteur 1 \\
+\hline
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v2 \+: sert pour la soustraction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne le vecteur modifier 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 215} du fichier {\bf Vecteur.\+cc}.
+
+\index{Vecteur.\+h@{Vecteur.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Vecteur.\+h@{Vecteur.\+h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{sortie, }
+\item[{{\bf Vecteur} const \&}]{v1}
+\end{DoxyParamCaption}
+)}\label{_vecteur_8h_ae7f8830a441c21e08619275e87d87d26}
+
+
+Prototype fonction $<$$<$. 
+
+\index{Vecteur.\+h@{Vecteur.\+h}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!Vecteur.\+h@{Vecteur.\+h}}
+\subsubsection[{operator$^\wedge$}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vecteur} operator$^\wedge$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{v1, }
+\item[{{\bf Vecteur} const \&}]{v2}
+\end{DoxyParamCaption}
+)}\label{_vecteur_8h_aea4879a17308d60d15d2f2240014fe00}
+
+
+Prototype fonction $^\wedge$ prduit vectoriel. 
+
+pour le produit vectoriel de deux vecteurs
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & v1 \+: sert pour la multiplaction par le scalaire \\
+\hline
+{\em \doxyref{Vecteur}{p.}{class_vecteur}} & const\& v2 \+: on ne modifie pas le vecteur mais on le veut comme référence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne le vecteur modifier 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 252} du fichier {\bf Vecteur.\+cc}.
+

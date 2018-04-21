@@ -1,0 +1,56 @@
+\section{Canon.\+h}
+\label{_canon_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Canon.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Canon.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_CANON\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_CANON\_H}
+00011 \textcolor{preprocessor}{#include "wx/wxprec.h"}
+00012 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00013 \textcolor{preprocessor}{#include "wx/wx.h"}
+00014 \textcolor{preprocessor}{#endif}
+00015 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00016 \textcolor{preprocessor}{#include "Dessinable.h"}
+00017 
+00029 \textcolor{keyword}{class }Canon : \textcolor{keyword}{public} Dessinable
+00030 \{
+00031 \textcolor{comment}{/*================================================================================}
+00032 \textcolor{comment}{ * Definition des attributs}
+00033 \textcolor{comment}{ *================================================================================*/}
+00034     \textcolor{keyword}{private}:
+00035     \textcolor{keywordtype}{double} rayon;
+00036     \textcolor{keywordtype}{double} longueur;
+00037     GLUquadric* cylindre;
+00038     GLUquadric* bouleFond;
+00039     GLUquadric* roue1;
+00040     GLUquadric* roue2;
+00041     GLUquadric* enjoliveur1;
+00042     GLUquadric* enjoliveur2;
+00043     
+00044     
+00045     \textcolor{keyword}{public}:
+00046 \textcolor{comment}{/*================================================================================}
+00047 \textcolor{comment}{ * Prototype du constructeur}
+00048 \textcolor{comment}{ *================================================================================*/}
+00050     Canon();
+00051     
+00053     ~Canon() 
+00054     \{
+00055         gluDeleteQuadric(cylindre);
+00056         gluDeleteQuadric(bouleFond);
+00057         gluDeleteQuadric(roue1);
+00058         gluDeleteQuadric(roue2);
+00059         gluDeleteQuadric(enjoliveur1);
+00060         gluDeleteQuadric(enjoliveur2);
+00061     \}
+00062     
+00063     
+00064 \textcolor{comment}{/*================================================================================}
+00065 \textcolor{comment}{ * Prototype des méthodes}
+00066 \textcolor{comment}{ *================================================================================*/}
+00067 
+00069     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} dessine() \textcolor{keyword}{const};
+00070 \};
+00071 
+00072 \textcolor{preprocessor}{#endif // PRJ\_CANON\_H}
+\end{DoxyCode}

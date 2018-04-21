@@ -1,0 +1,32 @@
+\section{Generateur\+Aleatoire.\+cc}
+\label{_generateur_aleatoire_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Generateur\+Aleatoire.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Generateur\+Aleatoire.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "GenerateurAleatoire.h"}
+00010 
+00011 \textcolor{keyword}{using namespace }std;
+00012 
+00016 GenerateurAleatoire::GenerateurAleatoire()
+00017  : generateur(std::random\_device()())
+00018 \{\}
+00019 
+00023 GenerateurAleatoire::GenerateurAleatoire(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} graine)
+00024  : generateur(graine)
+00025 \{\}
+00026 
+00032 \textcolor{keywordtype}{int} GenerateurAleatoire::uniforme_entier(\textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max) \{
+00033     \textcolor{keywordflow}{return} distribution\_uniforme\_entier(generateur, std::uniform\_int\_distribution<int>::param\_type\{min, max
+      \});
+00034 \}
+00035 
+00041 \textcolor{keywordtype}{double} GenerateurAleatoire::uniforme_reel(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max) \{
+00042     \textcolor{keywordflow}{return} distribution\_uniforme\_reel(generateur, std::uniform\_real\_distribution<double>::param\_type\{min, 
+      max\});
+00043 \}
+00044 
+00050 \textcolor{keywordtype}{double} GenerateurAleatoire::gaussienne(\textcolor{keywordtype}{double} moyenne, \textcolor{keywordtype}{double} ecart\_type) \{
+00051     \textcolor{keywordflow}{return} distribution\_gaussienne(generateur, std::normal\_distribution<double>::param\_type\{moyenne, 
+      ecart\_type\});
+00052 \}
+\end{DoxyCode}

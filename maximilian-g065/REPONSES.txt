@@ -1,0 +1,97 @@
+REPONSES
+
+Question 1.1 :
+
+Comment représentez vous ces vecteurs tridimensionnels ? Comment sont ils organisés : quels attributs ? quelles méthodes ? quels droits d'accès ?
+
+Nous avons décidé de représenter les vecteurs à l'aide de trois attributs (private) : leurs coordonnées x, y et z (tous trois de type double).
+Nous avons ensuite créé des méthodes set et get pour chacun des attributs (nous les avons par la suite supprimées et remplacées par un constructeur), puis des méthodes addition, soustraction, etc (remplacées plus tard par une surcharge d'opérateurs).
+Toutes ces méthodes sont publiques.
+
+Question 4.1 :
+
+Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+
+Nous n'avons pas besoin de modifier le constructeur de copie car nous 
+faisons juste une copie de surface.
+
+Question 4.2 :
+
+Pourquoi, contrairement à ce qui est trop souvent fait, l'écriture des deux premiers constructeurs avec une seule méthode en utilisant des valeurs par défaut aux arguments n'est-elle pas une très bonne idée ? 
+
+Cela ne donne pas une bonne lisibilité du code car ça le rend très lourd.
+
+Question 4.3 :
+
+Si l'on souhaitait ajouter un constructeur par coordonnées sphériques (deux angles et une longueur),
+
+	a) que cela impliquerait-il au niveau des attributs de la classe ?
+    b) quelle serait la difficulté majeure (voire l'impossibilité) de sa réalisation en C++ ? (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
+
+
+a) Pour les attributs, ça ne change rien car l’on mettrait un constructeur qui transformerait les coordonnées sphériques en coord. cartésiennes. Ce qui implique que les attributs restent les mêmes s’il est possible de créer un constructeur.
+
+b) Il y aurait des constructeurs ayant la même définition, 
+même signature et le compilateur ne saurait pas lequel prendre donc impossible.
+Par contre on pourrait changer la signature. Et la il n’y aurait aucun problème.
+
+Question 4.4 :
+
+Quels opérateurs avez vous introduits ?
+
+Nous avons mis toutes les opérateurs que nous trouvions utiles pour la suite de notre projets.
+Comparateurs == et !=
+Méthodes += et -= 
+Multiplication par un scalaire 
+Produit scalaire
+Produit vectoriel
+Vecteur opposé
+Méthode afficher :
+
+Question 7.1 :
+
+La méthode dessine de dessinable est virtuelle pure. Cela oblige de la redéfinir de les classes filles ce qui fait qu’a chaque appel de la méthode elle va dépendre du type effectif de la particule. Donc c’est une méthode polymorphisme.
+
+Question 8.1 :
+
+Pour une classe contentant des pointeurs, il faut faire attention au constructeur de copie qui fait juste une copie de surface par défaut alors que parfois on voudrait faire une copie profonde. Il y faut aussi faire attention aux destructeurs car il faut détruire les objets et leur adresse. Il faut faire attention à la durée de vie des objets et faire attention à l’unicité des objets (plusieurs pointeurs qui pointent vers un même objet peuvent poser problème  car si on modifie à un endroit cela fait que l’on change l’objet pour tout les pointeurs qui pointent vers celui-ci). Une solution est donc d’utiliser les unique_ptr.
+Tout cela dépend de ce que l’on veut faire.
+
+Question 8.2 : 
+
+On a décidé de voir la classe système comme un contenant. Elle contient un tableau qui contient l’adresse de chaque particule (unique_ptr). Nous avons fait le choix de prendre les unique_ptr car ils désallouent automatiquement la mémoire et que deux pointeurs ne peuvent alors plus pointer vers le même objet.
+
+Question 8.3 : 
+
+Il y a un constructeur de copie par défaut, et un opérateur d’affectation par défaut que nous avons supprimés car nous ne voulons pas qu’il soit possible de les appeler. On ne veux pas dupliquer un même système, Systeme étant une “grosse” classe, faire une copie coûterait trop de mémoire.
+
+Question 8.4 : 
+
+Quand on modifie un des trois, il faut réfléchir si on doit pas modifier les autres.
+Ici nous n’avons pas fait appel au destructeur car le destructeur par défaut suffit.
+La méthode qui supprime toutes les particules, supprime chacune des particules et remet les adresses à nullptr donc c’est suffisant.
+
+Question 9.1 : 
+Comment (et à quel(s) endroit(s)) intégrez vous ces deux aspects ? 
+
+Nous avons décidé de les mettre dans la particule car cela évite de mettre des getters et des setters un peu partout, ce qui casserait l’encapsulation.
+
+Comment nous l'avons fait ? En créant 3 méthodes :
+- void evolue(double dt) : permettant d’évoluer la particule dans le "temps"
+- void gere_sortie(Enceinte enceinte) : gère les sorties de la particule de l'enceinte
+- Vecteur pavageCubique(double epsilon) const : fait le quadrillage autour de la position de la particule et retourne un Vecteur avec les éléments
+
+Question 9.2 : 
+Quelle est la complexité de l'algorithme de simulation lorsqu'il utilise cette méthode pour savoir si deux particules se rencontrent ? 
+
+Elle est O(n) car pour une particule donnée, il parcourt une fois le tableau pour tester la collision avec toutes les autres.
+
+Question 11.1 :
+Nous avons pensé qu’il fallait que Enceinte hérite de Dessinable pour avoir la méthode dessine qui sera redéfinie dans le dessine de enceinte. Evidement cela fait marcher le polymorphisme grâce au mot clé virtual dans Dessinable qui permet de gérer les liens dynamiquement.
+
+Question 13.1 :
+Nous avons créé une particule comme les autres avec le nom du fluor. On lui a ajouté un attributs qui est un deque (une liste/tableau).
+Cette nouvelle particule à une méthode enregistrerPoisition() qui permet de garder les coordonnées et elle est appelée dans la méthode évolue et il a fallu repenser la conception de notre système. Donc evolue est devenue une méthode vituelle et la définir dans les autres particules pour que celle-ci appelle “evolue normal”. Celle du fluor enregistre en plus la position lors de l’appelle d’évolué.
+Sinon pour le dessins, cela change juste qu’il faut redessiner chacune des positions à l’aide d’une boucle qui parcours le tableau des positions.
+
+Pour les deux questions suivantes, nous y avons réfléchit mais pas faites dans notre projet.

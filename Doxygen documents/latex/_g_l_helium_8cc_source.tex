@@ -1,0 +1,44 @@
+\section{G\+L\+Helium.\+cc}
+\label{_g_l_helium_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Helium.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+L\+Helium.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "GLHelium.h"}
+00010 
+00011 \textcolor{comment}{/*================================================================================}
+00012 \textcolor{comment}{ * Definition des constructeurs et destructeur}
+00013 \textcolor{comment}{ *================================================================================*/}
+00020 GLHelium::GLHelium(Vecteur position, Vecteur vitesse)
+00021 :Particule(position, vitesse, 4.002602, 0.31), sphere(gluNewQuadric())
+00022 \{\}
+00030 GLHelium::GLHelium(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature)
+00031 :Particule(enceinte, tirage, temperature, 4.002602, 0.31), sphere(gluNewQuadric())
+00032 \{\}
+00033 
+00034 GLHelium::~GLHelium() 
+00035 \{ 
+00036     gluDeleteQuadric(sphere); 
+00037 \}
+00038 
+00039 \textcolor{comment}{/*================================================================================}
+00040 \textcolor{comment}{ * Definition des méthodes }
+00041 \textcolor{comment}{ *================================================================================*/}
+00046 \textcolor{keywordtype}{void} GLHelium::evolue(\textcolor{keywordtype}{double} dt)
+00047 \{
+00048     Particule::evolue(dt);
+00049 \}
+00050 
+00055 \textcolor{keywordtype}{void} GLHelium::dessine()\textcolor{keyword}{ const}
+00056 \textcolor{keyword}{}\{   
+00057     glColor4d(1.0, 0.5, 0.0, 1);  
+00058 
+00059     \textcolor{comment}{//ajouter le déplacement}
+00060     glPushMatrix();
+00061     
+00062     glTranslated(this->getPosition().getX(), this->getPosition().getY(), this->
+      getPosition().getZ());
+00063     
+00064     gluSphere(sphere,rayon,10,10); 
+00065     glPopMatrix();
+00066 \}
+\end{DoxyCode}

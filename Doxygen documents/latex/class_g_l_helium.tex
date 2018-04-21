@@ -1,0 +1,165 @@
+\section{Référence de la classe G\+L\+Helium}
+\label{class_g_l_helium}\index{G\+L\+Helium@{G\+L\+Helium}}
+
+
+Prototype de la classe \doxyref{G\+L\+Helium}{p.}{class_g_l_helium}.  
+
+
+
+
+{\ttfamily \#include $<$G\+L\+Helium.\+h$>$}
+
+Graphe d'héritage de G\+L\+Helium\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_g_l_helium}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf G\+L\+Helium} ({\bf Vecteur} {\bf position}, {\bf Vecteur} {\bf vitesse})
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments sans la température du système. \end{DoxyCompactList}\item 
+{\bf G\+L\+Helium} ({\bf Enceinte} const \&enceinte, {\bf Generateur\+Aleatoire} \&tirage, double temperature)
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments avec la température du système et le tirage aléatoire des vecteurs positions. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+G\+L\+Helium} ()
+\begin{DoxyCompactList}\small\item\em Dstructeurs. \end{DoxyCompactList}\item 
+virtual void {\bf evolue} (double dt)
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode evolue. \end{DoxyCompactList}\item 
+virtual void {\bf dessine} () const 
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode evolue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Prototype de la classe \doxyref{G\+L\+Helium}{p.}{class_g_l_helium}. 
+
+Cette classe est celle qui permet de créer une particule d'helium en Open\+G 
+
+Définition à la ligne {\bf 23} du fichier {\bf G\+L\+Helium.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{G\+L\+Helium@{G\+L\+Helium}!G\+L\+Helium@{G\+L\+Helium}}
+\index{G\+L\+Helium@{G\+L\+Helium}!G\+L\+Helium@{G\+L\+Helium}}
+\subsubsection[{G\+L\+Helium}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Helium\+::\+G\+L\+Helium (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{position, }
+\item[{{\bf Vecteur}}]{vitesse}
+\end{DoxyParamCaption}
+)}\label{class_g_l_helium_ac225aa981f016d8cf08823178e69f1b2}
+
+
+Constructeur avec arguments sans la température du système. 
+
+sans le paramètre de température, initialise un rayon et une masse à notre particule
+
+
+\begin{DoxyParams}{Paramètres}
+{\em position} & \+: est la position de la particule que l'on souhaite \\
+\hline
+{\em vitesse} & \+: est la vitesse de la particule que l'on souhaite \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 20} du fichier {\bf G\+L\+Helium.\+cc}.
+
+\index{G\+L\+Helium@{G\+L\+Helium}!G\+L\+Helium@{G\+L\+Helium}}
+\index{G\+L\+Helium@{G\+L\+Helium}!G\+L\+Helium@{G\+L\+Helium}}
+\subsubsection[{G\+L\+Helium}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Helium\+::\+G\+L\+Helium (
+\begin{DoxyParamCaption}
+\item[{{\bf Enceinte} const \&}]{enceinte, }
+\item[{{\bf Generateur\+Aleatoire} \&}]{tirage, }
+\item[{double}]{temperature}
+\end{DoxyParamCaption}
+)}\label{class_g_l_helium_a259d6f61ae97df566b2e91db34bc97fa}
+
+
+Constructeur avec arguments avec la température du système et le tirage aléatoire des vecteurs positions. 
+
+sans le paramètre de température, initialise un rayon et une masse à notre particule
+
+
+\begin{DoxyParams}{Paramètres}
+{\em enceinte} & \+: permet de connaitre les dimmensions de l'emceinte pour calculer les positions \\
+\hline
+{\em tirage} & \+: donne une position aléatoire de la particule dans l'enceinte \\
+\hline
+{\em gtempérature} & \+: la température que l'on souhaite pour calculer la vitesse \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 30} du fichier {\bf G\+L\+Helium.\+cc}.
+
+\index{G\+L\+Helium@{G\+L\+Helium}!````~G\+L\+Helium@{$\sim$\+G\+L\+Helium}}
+\index{````~G\+L\+Helium@{$\sim$\+G\+L\+Helium}!G\+L\+Helium@{G\+L\+Helium}}
+\subsubsection[{$\sim$\+G\+L\+Helium}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Helium\+::$\sim$\+G\+L\+Helium (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_helium_a17f9a1bcd3bc8c25b84fe6de8348510c}
+
+
+Dstructeurs. 
+
+
+
+Définition à la ligne {\bf 34} du fichier {\bf G\+L\+Helium.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{G\+L\+Helium@{G\+L\+Helium}!dessine@{dessine}}
+\index{dessine@{dessine}!G\+L\+Helium@{G\+L\+Helium}}
+\subsubsection[{dessine}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Helium\+::dessine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_helium_a425b1c773fa42f6e244d4036cbcb6ea3}
+
+
+Prototype de la méthode evolue. 
+
+dessine la particule de couleur à la position souhaitée par une matrice de translation orange
+
+J'ai remis 10 partout 
+
+Implémente {\bf Dessinable} \doxyref{}{p.}{class_dessinable_aea37dacb2b67d6650a435d72c9a6fe79}.
+
+
+
+Définition à la ligne {\bf 55} du fichier {\bf G\+L\+Helium.\+cc}.
+
+\index{G\+L\+Helium@{G\+L\+Helium}!evolue@{evolue}}
+\index{evolue@{evolue}!G\+L\+Helium@{G\+L\+Helium}}
+\subsubsection[{evolue}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Helium\+::evolue (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_helium_ae26ea4b2eebe39c9d86be7db52e7d507}
+
+
+Prototype de la méthode evolue. 
+
+appelle la méthode évolue de la classe particule 
+\begin{DoxyParams}{Paramètres}
+{\em dt} & \+: le pas de temps \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de {\bf Particule} \doxyref{}{p.}{class_particule_a7c6a97e2b65d4326d36b6d3b6251b79c}.
+
+
+
+Définition à la ligne {\bf 46} du fichier {\bf G\+L\+Helium.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf G\+L\+Helium.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf G\+L\+Helium.\+cc}\end{DoxyCompactItemize}

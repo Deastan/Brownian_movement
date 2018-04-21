@@ -1,0 +1,25 @@
+\section{test\+Particule.\+cc}
+\label{test_particule_8cc_source}\index{/\+Users/burkhard/\+Dropbox/\+Projet d'info/\+Approche\+Fin/test\+Particule.\+cc@{/\+Users/burkhard/\+Dropbox/\+Projet d'info/\+Approche\+Fin/test\+Particule.\+cc}}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include <iostream>}
+00002 \textcolor{preprocessor}{#include "Particule.h"}
+00003 
+00004 \textcolor{keyword}{using namespace }std;
+00005 
+00006 \textcolor{keywordtype}{int} main() \{
+00007     
+00008     Particule p0;
+00009     Particule p1(Vecteur(1, 1, 1), Vecteur(0, 0, 0), 4.002602);
+00010     Particule p2(Vecteur(1, 18.5, 1), Vecteur(0, 0.2, 0), 20.1797);
+00011     Particule p3(Vecteur(1, 1, 3.1), Vecteur(0, 0, -0.5), 39.948);
+00012     Particule p4(p2);
+00013     
+00014     cout << \textcolor{stringliteral}{"particule 0 : "} << p0 << endl
+00015          << \textcolor{stringliteral}{"particule 1 : "} << p1 << endl
+00016          << \textcolor{stringliteral}{"particule 2 : "} << p2 << endl
+00017          << \textcolor{stringliteral}{"particule 3 : "} << p3 << endl
+00018          << \textcolor{stringliteral}{"particule 4 : "} << p4 << endl;
+00019     
+00020 \}
+\end{DoxyCode}

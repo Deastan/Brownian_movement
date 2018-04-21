@@ -1,0 +1,60 @@
+\section{Canon.\+cc}
+\label{_canon_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Canon.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Canon.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "wx/wxprec.h"}
+00010 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00011 \textcolor{preprocessor}{#include "wx/wx.h"}
+00012 \textcolor{preprocessor}{#endif}
+00013 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00014 \textcolor{preprocessor}{#include "Canon.h"}
+00015 \textcolor{preprocessor}{#include <iostream>}
+00016 
+00017 \textcolor{keyword}{using namespace }std;
+00018 
+00019 \textcolor{comment}{/*================================================================================}
+00020 \textcolor{comment}{ * Definition des constructeurs}
+00021 \textcolor{comment}{ *================================================================================*/}
+00032 Canon::Canon()
+00033 :rayon(3), longueur(10), cylindre(gluNewQuadric()), bouleFond(gluNewQuadric()), roue1(gluNewQuadric()),
+00034     roue2(gluNewQuadric()), enjoliveur1(gluNewQuadric()), enjoliveur2(gluNewQuadric())
+00035 \{\}
+00036 
+00037 \textcolor{comment}{/*================================================================================}
+00038 \textcolor{comment}{ * Definition des méthodes}
+00039 \textcolor{comment}{ *================================================================================*/}
+00046 \textcolor{keywordtype}{void} Canon::dessine()\textcolor{keyword}{ const}
+00047 \textcolor{keyword}{}\{
+00048     
+00049     glColor4d(0.0, 0.0, 0.0, 1); \textcolor{comment}{// couleur vert, 100%}
+00051 \textcolor{comment}{}    glPushMatrix();
+00052     glTranslated(-longueur/2,-longueur/2,-longueur/2);
+00053     glRotated(55, -1,1,0);
+00054     gluCylinder(cylindre, rayon, rayon, longueur, 10, 10);
+00055     glPopMatrix();
+00056     
+00058     glPushMatrix();
+00059     glTranslated(-longueur/2,-longueur/2,-longueur/2);
+00060     gluSphere(bouleFond, rayon, 10, 10);
+00061     glPopMatrix();
+00062     
+00064     glColor4d(0.7, 0.2, 0.2, 1);
+00065     glPushMatrix();
+00066     glTranslated(-longueur/1.5+rayon,-longueur/1.5,-longueur/1.5);
+00067     glRotated(90, 1,1,0);
+00068     gluDisk(enjoliveur1, 0, rayon/1.5, 10, 1);
+00069     gluCylinder(roue1, rayon/1.5, rayon/1.5, longueur/10, 10, 10);
+00070     glPopMatrix();
+00071     
+00073     glColor4d(0.7, 0.2, 0.2, 1);
+00074     glPushMatrix();
+00075     glTranslated(-longueur/1.5,-longueur/1.5+rayon,-longueur/1.5);
+00076     glRotated(90, 1,1,0);
+00077     gluDisk(enjoliveur2, 0,rayon/1.5, 10, 1);
+00078     gluCylinder(roue2, rayon/1.5, rayon/1.5, longueur/10, 10, 10);
+00079     glPopMatrix();
+00080 \}
+00081 
+00082 
+\end{DoxyCode}

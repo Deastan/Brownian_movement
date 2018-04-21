@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Simulation d&#39;un gaz parfait:  Fichier source de /Users/burkhard/Dropbox/projet d&#39;info/maximilian-g065/Simulation d&#39;un gaz parfait/GLFluor.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation d&#39;un gaz parfait
+   &#160;<span id="projectnumber">2.0</span>
+   </div>
+   <div id="projectbrief">par Emma Geoffray et Jonathan Bukhard</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1fc57af7395e7964fd1dc446c4fdc94a.html">maximilian-g065</a></li><li class="navelem"><a class="el" href="dir_998f0679318d51041f3dc98303027884.html">Simulation d'un gaz parfait</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GLFluor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_g_l_fluor_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;wx/wxprec.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef WX_PRECOMP</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;wx/wx.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;wx/glcanvas.h&quot;</span> <span class="comment">// Pour combiner wxWidgets et OpenGL</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vecteur_8h.html">Vecteur.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_particule_8h.html">Particule.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_g_l_fluor.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_g_l_fluor.html">GLFluor</a> : <span class="keyword">public</span> <a class="code" href="class_particule.html">Particule</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Prototyopes des constructeurs et destructeur</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_g_l_fluor.html#acfc934283cbecc868492a28eadbd0390">GLFluor</a>(<a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="class_particule.html#ac4ebb70316848d69fb600ee2d64e12bf">position</a>, <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="class_particule.html#af9eef46b603338ea88b238a777041204">vitesse</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_g_l_fluor.html#acfc934283cbecc868492a28eadbd0390">GLFluor</a>(<a class="code" href="class_enceinte.html">Enceinte</a> <span class="keyword">const</span>&amp; enceinte, <a class="code" href="class_generateur_aleatoire.html">GenerateurAleatoire</a>&amp; tirage, <span class="keywordtype">double</span> temperature);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_g_l_fluor.html#a4b7eb611e78635965d15f058262f79de">~GLFluor</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * Prototypes des methodes</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_g_l_fluor.html#a9fbbc20c3f158575d39fce6c9ca85931">evolue</a>(<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_g_l_fluor.html#ab4b02adef320b55887fea80a70c53131">dessine</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_l_fluor.html#a1071ae99d4253fe736dc1f5bf3f4990d">enregistrerCoordonnee</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * Definition des attributs</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    GLUquadric* sphere;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::deque&lt;Vecteur*&gt; dequePositions;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="ttc" id="class_particule_html_af9eef46b603338ea88b238a777041204"><div class="ttname"><a href="class_particule.html#af9eef46b603338ea88b238a777041204">Particule::vitesse</a></div><div class="ttdeci">Vecteur vitesse</div><div class="ttdef"><b>Definition:</b> <a href="_particule_8h_source.html#l00036">Particule.h:36</a></div></div>
+<div class="ttc" id="class_g_l_fluor_html"><div class="ttname"><a href="class_g_l_fluor.html">GLFluor</a></div><div class="ttdoc">Prototype de la classe GLluor. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8h_source.html#l00032">GLFluor.h:32</a></div></div>
+<div class="ttc" id="class_g_l_fluor_html_a9fbbc20c3f158575d39fce6c9ca85931"><div class="ttname"><a href="class_g_l_fluor.html#a9fbbc20c3f158575d39fce6c9ca85931">GLFluor::evolue</a></div><div class="ttdeci">virtual void evolue(double dt)</div><div class="ttdoc">Prototype de la méthode evolue. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8cc_source.html#l00054">GLFluor.cc:54</a></div></div>
+<div class="ttc" id="class_particule_html"><div class="ttname"><a href="class_particule.html">Particule</a></div><div class="ttdoc">Classe mère dont hérite toutes les classes de type : TXTNom et GLNom Représentation d&#39;une particule (...</div><div class="ttdef"><b>Definition:</b> <a href="_particule_8h_source.html#l00027">Particule.h:27</a></div></div>
+<div class="ttc" id="class_vecteur_html"><div class="ttname"><a href="class_vecteur.html">Vecteur</a></div><div class="ttdoc">Prototype de la classe Vecteur. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8h_source.html#l00023">Vecteur.h:23</a></div></div>
+<div class="ttc" id="class_g_l_fluor_html_ab4b02adef320b55887fea80a70c53131"><div class="ttname"><a href="class_g_l_fluor.html#ab4b02adef320b55887fea80a70c53131">GLFluor::dessine</a></div><div class="ttdeci">virtual void dessine() const </div><div class="ttdoc">Prototype de la méthode evolue. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8cc_source.html#l00080">GLFluor.cc:80</a></div></div>
+<div class="ttc" id="class_particule_html_ac4ebb70316848d69fb600ee2d64e12bf"><div class="ttname"><a href="class_particule.html#ac4ebb70316848d69fb600ee2d64e12bf">Particule::position</a></div><div class="ttdeci">Vecteur position</div><div class="ttdef"><b>Definition:</b> <a href="_particule_8h_source.html#l00034">Particule.h:34</a></div></div>
+<div class="ttc" id="class_g_l_fluor_html_acfc934283cbecc868492a28eadbd0390"><div class="ttname"><a href="class_g_l_fluor.html#acfc934283cbecc868492a28eadbd0390">GLFluor::GLFluor</a></div><div class="ttdeci">GLFluor(Vecteur position, Vecteur vitesse)</div><div class="ttdoc">Constructeur avec arguments sans la température du système. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8cc_source.html#l00022">GLFluor.cc:22</a></div></div>
+<div class="ttc" id="class_g_l_fluor_html_a4b7eb611e78635965d15f058262f79de"><div class="ttname"><a href="class_g_l_fluor.html#a4b7eb611e78635965d15f058262f79de">GLFluor::~GLFluor</a></div><div class="ttdeci">virtual ~GLFluor()</div><div class="ttdoc">Dstructeurs. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8cc_source.html#l00038">GLFluor.cc:38</a></div></div>
+<div class="ttc" id="class_enceinte_html"><div class="ttname"><a href="class_enceinte.html">Enceinte</a></div><div class="ttdef"><b>Definition:</b> <a href="_enceinte_8h_source.html#l00019">Enceinte.h:19</a></div></div>
+<div class="ttc" id="_particule_8h_html"><div class="ttname"><a href="_particule_8h.html">Particule.h</a></div><div class="ttdoc">Prototype de la classe mère Particule. </div></div>
+<div class="ttc" id="class_g_l_fluor_html_a1071ae99d4253fe736dc1f5bf3f4990d"><div class="ttname"><a href="class_g_l_fluor.html#a1071ae99d4253fe736dc1f5bf3f4990d">GLFluor::enregistrerCoordonnee</a></div><div class="ttdeci">void enregistrerCoordonnee()</div><div class="ttdoc">Prototye de la méthode qui va enregistrer les coordonnées. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8cc_source.html#l00063">GLFluor.cc:63</a></div></div>
+<div class="ttc" id="_vecteur_8h_html"><div class="ttname"><a href="_vecteur_8h.html">Vecteur.h</a></div><div class="ttdoc">est le prototype de la classe qui nous pourmet de gérer la position et la vitesse de nos particules m...</div></div>
+<div class="ttc" id="class_generateur_aleatoire_html"><div class="ttname"><a href="class_generateur_aleatoire.html">GenerateurAleatoire</a></div><div class="ttdoc">Représente des objets capables de générer des nombres aléatoires. </div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8h_source.html#l00020">GenerateurAleatoire.h:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 26 Mai 2014 23:22:52 pour Simulation d&#39;un gaz parfait par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

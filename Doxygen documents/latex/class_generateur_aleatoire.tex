@@ -1,0 +1,153 @@
+\section{Référence de la classe Generateur\+Aleatoire}
+\label{class_generateur_aleatoire}\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+
+
+Représente des objets capables de générer des nombres aléatoires.  
+
+
+
+
+{\ttfamily \#include $<$Generateur\+Aleatoire.\+h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Generateur\+Aleatoire} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+{\bf Generateur\+Aleatoire} (unsigned int graine)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+int {\bf uniforme\+\_\+entier} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de tirer uniformément un entier sur l'intervalle [min, max]. \end{DoxyCompactList}\item 
+double {\bf uniforme\+\_\+reel} (double min, double max)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de tirer uniformément un réel sur l'intervalle [min, max[. \end{DoxyCompactList}\item 
+double {\bf gaussienne} (double moyenne, double ecart\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de tirer un réel suivant la loi normale des probablités (dîtes loi de Gauss) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Représente des objets capables de générer des nombres aléatoires. 
+
+Plusieurs méthodes peuvent être utilisées pour réaliser différents types de tirage 
+
+Définition à la ligne {\bf 20} du fichier {\bf Generateur\+Aleatoire.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\subsubsection[{Generateur\+Aleatoire}]{\setlength{\rightskip}{0pt plus 5cm}Generateur\+Aleatoire\+::\+Generateur\+Aleatoire (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_generateur_aleatoire_ac816c2c7554428f5f6c1af497e788a96}
+
+
+Constructeur par défaut. 
+
+Constructeur sans paramètre. Permet d'initialiser l'attribut générateur avec un nombre aléatoire 
+
+Définition à la ligne {\bf 16} du fichier {\bf Generateur\+Aleatoire.\+cc}.
+
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\subsubsection[{Generateur\+Aleatoire}]{\setlength{\rightskip}{0pt plus 5cm}Generateur\+Aleatoire\+::\+Generateur\+Aleatoire (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{graine}
+\end{DoxyParamCaption}
+)}\label{class_generateur_aleatoire_a0bcc05dfe4e809c0bf9f4aff45d5dafa}
+
+
+Constructeur. 
+
+Constructeur prenant un paramètre de type int. Permet d'initialiser l'attribut générateur avec un nombre donné (utile pour debugger) 
+
+Définition à la ligne {\bf 23} du fichier {\bf Generateur\+Aleatoire.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!gaussienne@{gaussienne}}
+\index{gaussienne@{gaussienne}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\subsubsection[{gaussienne}]{\setlength{\rightskip}{0pt plus 5cm}double Generateur\+Aleatoire\+::gaussienne (
+\begin{DoxyParamCaption}
+\item[{double}]{moyenne, }
+\item[{double}]{ecart\+\_\+type}
+\end{DoxyParamCaption}
+)}\label{class_generateur_aleatoire_af6a12956bb6af401e9f2d850b52a2b14}
+
+
+Méthode permettant de tirer un réel suivant la loi normale des probablités (dîtes loi de Gauss) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em moyenne} & valeur autour de laquelle s'effectue le tirage \\
+\hline
+{\em ecart\+\_\+type} & valeur représentant l'écart moyen à la moyenne des valeurs du tirage\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne un réel tiré selon la loi normale N(moyenne, ecart\+\_\+type) 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 50} du fichier {\bf Generateur\+Aleatoire.\+cc}.
+
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!uniforme\+\_\+entier@{uniforme\+\_\+entier}}
+\index{uniforme\+\_\+entier@{uniforme\+\_\+entier}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\subsubsection[{uniforme\+\_\+entier}]{\setlength{\rightskip}{0pt plus 5cm}int Generateur\+Aleatoire\+::uniforme\+\_\+entier (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\label{class_generateur_aleatoire_a986164a020693bee0a8043fcd0c3953f}
+
+
+Méthode permettant de tirer uniformément un entier sur l'intervalle [min, max]. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em min} & minimum de l'intervalle sur lequel le tirage s'effectue \\
+\hline
+{\em max} & maximum de l'intervalle sur lequel le tirage s'effectue\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne un entier tiré uniformément sur [min, max] 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 32} du fichier {\bf Generateur\+Aleatoire.\+cc}.
+
+\index{Generateur\+Aleatoire@{Generateur\+Aleatoire}!uniforme\+\_\+reel@{uniforme\+\_\+reel}}
+\index{uniforme\+\_\+reel@{uniforme\+\_\+reel}!Generateur\+Aleatoire@{Generateur\+Aleatoire}}
+\subsubsection[{uniforme\+\_\+reel}]{\setlength{\rightskip}{0pt plus 5cm}double Generateur\+Aleatoire\+::uniforme\+\_\+reel (
+\begin{DoxyParamCaption}
+\item[{double}]{min, }
+\item[{double}]{max}
+\end{DoxyParamCaption}
+)}\label{class_generateur_aleatoire_a39d2eddd31748b5f35dfdc7bc7c7a7d2}
+
+
+Méthode permettant de tirer uniformément un réel sur l'intervalle [min, max[. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em min} & minimum de l'intervalle sur lequel le tirage s'effectue \\
+\hline
+{\em max} & maximum de l'intervalle sur lequel le tirage s'effectue\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne un réel tiré uniformément sur [min, max[ 
+\end{DoxyReturn}
+
+
+Définition à la ligne {\bf 41} du fichier {\bf Generateur\+Aleatoire.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Generateur\+Aleatoire.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf Generateur\+Aleatoire.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\section{Fenetre.\+h}
+\label{_fenetre_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Fenetre.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Fenetre.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_FENETRE\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_FENETRE\_H}
+00011 
+00012 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00013 \textcolor{preprocessor}{#include "wx/wx.h"}
+00014 \textcolor{preprocessor}{#endif}
+00015 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00016 \textcolor{preprocessor}{#include "Vue_OpenGL.h"}
+00017 
+00018 
+00023 \textcolor{keyword}{class }Fenetre: \textcolor{keyword}{public} wxFrame
+00024 \{
+00025     \textcolor{keyword}{public}:
+00026     
+00028     Fenetre( wxString \textcolor{keyword}{const}& titre 
+00029          , wxSize   \textcolor{keyword}{const}& taille   = wxDefaultSize
+00030          , wxPoint  \textcolor{keyword}{const}& position = wxDefaultPosition
+00031          , \textcolor{keywordtype}{long}            style    = wxDEFAULT\_FRAME\_STYLE
+00032          );
+00033     
+00035     Fenetre( wxString \textcolor{keyword}{const}& titre 
+00036          , \textcolor{keywordtype}{bool} reglage
+00037          , wxSize   \textcolor{keyword}{const}& taille   = wxDefaultSize
+00038          , wxPoint  \textcolor{keyword}{const}& position = wxDefaultPosition
+00039          , \textcolor{keywordtype}{long}            style    = wxDEFAULT\_FRAME\_STYLE
+00040          );
+00042     \textcolor{keyword}{virtual} ~Fenetre() \{\}
+00043 
+00044     \textcolor{keyword}{protected}:
+00046     \textcolor{keywordtype}{void} OnExit(wxCommandEvent& event) \{ Close(\textcolor{keyword}{true}); \}
+00047     
+00048     \textcolor{comment}{//attibut}
+00049     Vue_OpenGL* fogl;
+00050 
+00051 DECLARE\_EVENT\_TABLE()
+00052 \};
+00053 \textcolor{preprocessor}{#endif }
+\end{DoxyCode}

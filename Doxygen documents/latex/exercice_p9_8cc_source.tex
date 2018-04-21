@@ -1,0 +1,33 @@
+\section{exercice\+P9.\+cc}
+\label{exercice_p9_8cc_source}\index{/\+Users/burkhard/\+Dropbox/\+Projet d'info/\+Approche\+Fin/exercice\+P9.\+cc@{/\+Users/burkhard/\+Dropbox/\+Projet d'info/\+Approche\+Fin/exercice\+P9.\+cc}}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include <iostream>}
+00002 \textcolor{preprocessor}{#include "Systeme.h"}
+00003 \textcolor{preprocessor}{#include "TXTHelium.h"}
+00004 \textcolor{preprocessor}{#include "TXTNeon.h"}
+00005 \textcolor{preprocessor}{#include "TXTArgon.h"}
+00006 
+00007 \textcolor{keywordtype}{int} main() \{
+00008     
+00009     Systeme john;
+00010     john.ajouterParticule(\textcolor{keyword}{new} TXTHelium(Vecteur(1,1,1), Vecteur(0,0,0)));
+00011     john.ajouterParticule(\textcolor{keyword}{new} TXTNeon(Vecteur(1,18.5,1), Vecteur(0,0.2, 0)));
+00012     john.ajouterParticule(\textcolor{keyword}{new} TXTArgon(Vecteur(1,1,3.1), Vecteur(0,0,-0.5)));
+00013     
+00014     cout << \textcolor{stringliteral}{"Le système est constitué des trois particules suivantes :"} << endl;
+00015     
+00016     john.dessine();
+00017     
+00018     cout << \textcolor{stringliteral}{"Lancement de la simulation :"} << endl
+00019          << \textcolor{stringliteral}{"==========----------"} << endl;
+00020     
+00021     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i(1) ; i <= 10 ; ++i)
+00022     \{
+00023         john.evolue(1, \textcolor{keyword}{true});
+00024         john.dessine();
+00025         cout << \textcolor{stringliteral}{"==========----------"} << endl;
+00026     \}
+00027     
+00028 \}
+\end{DoxyCode}

@@ -1,0 +1,223 @@
+\section{Systeme.\+cc}
+\label{_systeme_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Systeme.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Systeme.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "Systeme.h"}
+00010 \textcolor{preprocessor}{#include "GLNeon.h"}
+00011 \textcolor{preprocessor}{#include "GLHelium.h"}
+00012 \textcolor{preprocessor}{#include "GLArgon.h"}
+00013 \textcolor{preprocessor}{#include "GLFluor.h"}
+00014 
+00015 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00016 \textcolor{preprocessor}{#include "wx/wx.h"}
+00017 \textcolor{preprocessor}{#endif}
+00018 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00019 
+00020 \textcolor{keyword}{using namespace }std;
+00021 
+00022 \textcolor{comment}{/*================================================================================}
+00023 \textcolor{comment}{ * Definition des constructeurs et du destructeur}
+00024 \textcolor{comment}{ *================================================================================*/}
+00025 
+00027 Systeme::Systeme()
+00028  : temperature(298) \textcolor{comment}{// Température normale : 25°C}
+00029 \{ initialise(); \}
+00030 
+00037 Systeme::Systeme(\textcolor{keywordtype}{bool} reglage)
+00038  : enceinte(reglage), temperature(298)
+00039 \{
+00040     \textcolor{keywordflow}{do}
+00041     \{
+00042         temperature = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez une température (entre 0 et 400 Kelvin)"}), wxT(\textcolor{stringliteral}{
+      "Température"})));
+00043     \} \textcolor{keywordflow}{while} (temperature <= 0 or temperature > 400);
+00044     
+00045     \textcolor{keywordtype}{double} nbrArgon(0);
+00046     \textcolor{keywordflow}{do}
+00047     \{
+00048         nbrArgon = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez le nombre de particules d'Argon (entre 0 et 425,
+       Attention : ne pas créer plus de 425 particules en tout)"}), wxT(\textcolor{stringliteral}{"Paramétrage du nombre de particules"})));
+00049     \} \textcolor{keywordflow}{while} (nbrArgon < 0 or nbrArgon > 425);
+00050     
+00051     \textcolor{keywordtype}{double} nbrFluor(0);
+00052     \textcolor{keywordflow}{do}
+00053     \{
+00054         nbrFluor = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez le nombre de particules de Fluor (entre 0 et 3,
+       Attention : ne pas créer plus de 425 particules en tout)"}), wxT(\textcolor{stringliteral}{"Paramétrage du nombre de particules"})));
+00055     \} \textcolor{keywordflow}{while} (nbrFluor < 0 or nbrFluor > 3);
+00056     
+00057     \textcolor{keywordtype}{double} nbrHelium(0);
+00058     \textcolor{keywordflow}{do}
+00059     \{
+00060         nbrHelium = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez le nombre de particules d'Helium (entre 0 et 425,
+       Attention : ne pas créer plus de 425 particules en tout)"}), wxT(\textcolor{stringliteral}{"Paramétrage du nombre de particules"})));
+00061     \} \textcolor{keywordflow}{while} (nbrHelium < 0 or nbrHelium > 425);
+00062     
+00063     \textcolor{keywordtype}{double} nbrNeon(0);
+00064     \textcolor{keywordflow}{do}
+00065     \{
+00066         nbrNeon = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez le nombre de particules de Néon (entre 0 et 425,
+       Attention : ne pas créer plus de 425 particules en tout)"}), wxT(\textcolor{stringliteral}{"Paramétrage du nombre de particules"})));
+00067     \} \textcolor{keywordflow}{while} (nbrNeon < 0 or nbrNeon > 425);
+00068     
+00069     initialise(nbrArgon,nbrFluor,nbrHelium,nbrNeon);
+00070 \}
+00071 
+00079 Systeme::Systeme(\textcolor{keywordtype}{double} largeur, \textcolor{keywordtype}{double} longueur, \textcolor{keywordtype}{double} hauteur, \textcolor{keywordtype}{double} temperature)
+00080  : enceinte(largeur, longueur, hauteur), temperature(temperature)
+00081 \{ initialise(); \}
+00082 
+00084 Systeme::~Systeme()
+00085 \{ supprimerParticules(); \}
+00086 
+00087 \textcolor{comment}{/*================================================================================}
+00088 \textcolor{comment}{ * Definition des methodes}
+00089 \textcolor{comment}{ *================================================================================*/}
+00090 
+00092 \textcolor{keywordtype}{void} Systeme::ajouterParticule(Particule* particule)
+00093 \{ 
+00094     \textcolor{keywordflow}{if}(particule != \textcolor{keyword}{nullptr})
+00095     \{ collectionParticules.push\_back(unique\_ptr<Particule>(particule)); \}
+00096 \}
+00097 
+00099 \textcolor{keywordtype}{void} Systeme::dessine()\textcolor{keyword}{ const}
+00100 \textcolor{keyword}{}\{   
+00101     glPushMatrix();
+00102     glTranslated(-enceinte.getLargeur()/2,-enceinte.getLongueur()/2,-enceinte.
+      getHauteur()/2);
+00103     enceinte.dessine();
+00104     canon.dessine();
+00105     
+00106     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const}& particule : collectionParticules) 
+00107     \{ particule->dessine(); \}
+00108     glPopMatrix();
+00109 \}
+00110 
+00114 \textcolor{keywordtype}{bool} Systeme::supprimerParticules()
+00115 \{
+00116     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}& particule : collectionParticules)
+00117     \{ particule.reset(); \}
+00118     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00119 \}
+00120 
+00126 \textcolor{keywordtype}{void} Systeme::evolue(\textcolor{keywordtype}{double} dt)
+00127 \{
+00128     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const}& particule : collectionParticules) 
+00129     \{
+00130         particule->evolue(dt);
+00131         
+00132         particule->gere_sorties(enceinte);
+00133         
+00134         vector<size\_t> collisions\_possibles (determine\_collisions\_possibles(particule));
+00135         \textcolor{keywordflow}{if} (collisions\_possibles.size() != 0)
+00136         \{ particule->collision(*collectionParticules[choisi\_collision(collisions\_possibles)], tirage); \}
+00137     \}
+00138 \}
+00139 
+00143 vector<size\_t> Systeme::determine\_collisions\_possibles(unique\_ptr<Particule> \textcolor{keyword}{const}& p1)
+00144 \{
+00145     vector<size\_t> tableau;
+00146     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i(0);i<collectionParticules.size();++i)
+00147     \{
+00148         \textcolor{keywordflow}{if}((p1 != collectionParticules[i]) and (p1->pavageCubique(epsilon) == collectionParticules[i]->
+      pavageCubique(epsilon)))
+00149         \{ tableau.push\_back(i); \}
+00150     \}
+00151     \textcolor{keywordflow}{return} tableau;
+00152 \}
+00153 
+00156 \textcolor{keywordtype}{size\_t} Systeme::choisi\_collision(vector<size\_t> \textcolor{keyword}{const}& collisions\_possibles)
+00157 \{ \textcolor{keywordflow}{return} collisions\_possibles[tirage.uniforme_entier(0, collisions\_possibles.size() - 1)]; \}
+00158   \textcolor{comment}{//le tirage uniforme d'ENTIER se faisant sur un intervalle fermé [a, b], il faut donc tirer sur [0,
+       collisions\_possibles.size() - 1] pour que ce soit juste}
+00159 
+00164 \textcolor{keywordtype}{void} Systeme::ajouterArgon(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_argon, \textcolor{keywordtype}{bool} canon)
+00165 \{
+00166     GLArgon argon(Vecteur(0,0,0), Vecteur(0,0,0));
+00167     \textcolor{keywordtype}{double} rayon\_argon(argon.get_rayon());
+00168     \textcolor{keywordflow}{if} (nbr\_argon != 0) \{ change\_epsilon(rayon\_argon); \}
+00169     \textcolor{keywordflow}{if} (canon) \{
+00170         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_argon ; ++i)
+00171         \{
+00172             \textcolor{keywordtype}{double} pas(i*rayon\_argon);
+00173             ajouterParticule(\textcolor{keyword}{new} GLArgon(Vecteur(pas,pas,pas), Vecteur(250,250,250)));
+00174         \}
+00175     \} \textcolor{keywordflow}{else} \{
+00176         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_argon ; ++i)
+00177         \{ ajouterParticule(\textcolor{keyword}{new} GLArgon(enceinte, tirage, temperature)); \}
+00178     \}
+00179 \}
+00180 
+00185 \textcolor{keywordtype}{void} Systeme::ajouterFluor(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_fluor, \textcolor{keywordtype}{bool} canon)
+00186 \{
+00187     GLFluor fluor(Vecteur(0,0,0), Vecteur(0,0,0));
+00188     \textcolor{keywordtype}{double} rayon\_fluor(fluor.get_rayon());
+00189     \textcolor{keywordflow}{if} (nbr\_fluor != 0) \{ change\_epsilon(rayon\_fluor); \}
+00190     \textcolor{keywordflow}{if} (canon) \{
+00191         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_fluor ; ++i)
+00192         \{
+00193             \textcolor{keywordtype}{double} pas(i*rayon\_fluor);
+00194             ajouterParticule(\textcolor{keyword}{new} GLFluor(Vecteur(pas,pas,pas), Vecteur(250,250,250)));
+00195         \}
+00196     \} \textcolor{keywordflow}{else} \{
+00197         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_fluor ; ++i)
+00198         \{ ajouterParticule(\textcolor{keyword}{new} GLFluor(enceinte, tirage, temperature)); \}
+00199     \}
+00200 \}
+00201 
+00206 \textcolor{keywordtype}{void} Systeme::ajouterHelium(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_helium, \textcolor{keywordtype}{bool} canon)
+00207 \{
+00208     GLHelium helium(Vecteur(0,0,0), Vecteur(0,0,0));
+00209     \textcolor{keywordtype}{double} rayon\_helium(helium.get_rayon());
+00210     \textcolor{keywordflow}{if} (nbr\_helium != 0) \{ change\_epsilon(rayon\_helium); \}
+00211     \textcolor{keywordflow}{if} (canon) \{
+00212         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_helium ; ++i)
+00213         \{
+00214             \textcolor{keywordtype}{double} pas(i*rayon\_helium);
+00215             ajouterParticule(\textcolor{keyword}{new} GLHelium(Vecteur(pas,pas,pas), Vecteur(250,250,250)));
+00216         \}
+00217     \} \textcolor{keywordflow}{else} \{
+00218         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_helium ; ++i)
+00219         \{ ajouterParticule(\textcolor{keyword}{new} GLHelium(enceinte, tirage, temperature)); \}
+00220     \}
+00221 \}
+00222 
+00227 \textcolor{keywordtype}{void} Systeme::ajouterNeon(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_neon, \textcolor{keywordtype}{bool} canon)
+00228 \{
+00229     GLNeon neon(Vecteur(0,0,0), Vecteur(0,0,0));
+00230     \textcolor{keywordtype}{double} rayon\_neon(neon.get_rayon());
+00231     \textcolor{keywordflow}{if} (nbr\_neon != 0) \{ change\_epsilon(rayon\_neon); \}
+00232     \textcolor{keywordflow}{if} (canon) \{
+00233         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_neon ; ++i)
+00234         \{
+00235             \textcolor{keywordtype}{double} pas(i*rayon\_neon);
+00236             ajouterParticule(\textcolor{keyword}{new} GLNeon(Vecteur(pas,pas,pas), Vecteur(250,250,250)));
+00237         \}
+00238     \} \textcolor{keywordflow}{else} \{
+00239         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i(1) ; i <= nbr\_neon ; ++i)
+00240         \{ ajouterParticule(\textcolor{keyword}{new} GLNeon(enceinte, tirage, temperature)); \}
+00241     \}
+00242 \}
+00243 
+00248 \textcolor{keywordtype}{void} Systeme::initialise(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_argon, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_fluor,
+00249                          \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_helium, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nbr\_neon)
+00250 \{
+00251     epsilon = enceinte.getLargeur();
+00252     ajouterArgon(nbr\_argon);
+00253     ajouterFluor(nbr\_fluor);
+00254     ajouterHelium(nbr\_helium);
+00255     ajouterNeon(nbr\_neon);
+00256 \}
+00257 
+00259 \textcolor{keywordtype}{void} Systeme::initialise()
+00260 \{
+00261     initialise(tirage.uniforme_entier(0, 75),
+00262                tirage.uniforme_entier(0, 3),
+00263                tirage.uniforme_entier(0, 100),
+00264                tirage.uniforme_entier(0, 75)); 
+00265 \}
+00266 
+00269 \textcolor{keywordtype}{void} Systeme::change\_epsilon(\textcolor{keywordtype}{double} rayon)
+00270 \{ \textcolor{keywordflow}{if} (epsilon > rayon) \{ epsilon = rayon; \}\}
+\end{DoxyCode}

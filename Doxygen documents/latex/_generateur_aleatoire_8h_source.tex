@@ -1,0 +1,32 @@
+\section{Generateur\+Aleatoire.\+h}
+\label{_generateur_aleatoire_8h_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Generateur\+Aleatoire.\+h@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Generateur\+Aleatoire.\+h}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#ifndef PRJ\_GENERATEURALEATOIRE\_H}
+00010 \textcolor{preprocessor}{#define PRJ\_GENERATEURALEATOIRE\_H}
+00011 
+00012 \textcolor{preprocessor}{#include <random>}
+00013 
+00020 \textcolor{keyword}{class }GenerateurAleatoire \{
+00021     
+00022     \textcolor{keyword}{public}:
+00023     
+00025     GenerateurAleatoire();
+00027     GenerateurAleatoire(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} graine);
+00028     
+00030     \textcolor{keywordtype}{int} uniforme_entier(\textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max);
+00032     \textcolor{keywordtype}{double} uniforme_reel(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max);
+00034     \textcolor{keywordtype}{double} gaussienne(\textcolor{keywordtype}{double} moyenne, \textcolor{keywordtype}{double} ecart\_type);
+00035     
+00036     \textcolor{keyword}{private}:
+00037     
+00039     std::default\_random\_engine generateur;
+00041     std::uniform\_int\_distribution<int> distribution\_uniforme\_entier;
+00043     std::uniform\_real\_distribution<double> distribution\_uniforme\_reel;
+00045     std::normal\_distribution<double> distribution\_gaussienne;
+00046   
+00047 \};
+00048 
+00049 \textcolor{preprocessor}{#endif // PRJ\_GENERATEURALEATOIRE\_H}
+\end{DoxyCode}

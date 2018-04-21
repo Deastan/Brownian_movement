@@ -1,0 +1,163 @@
+\section{Référence de la classe G\+L\+Argon}
+\label{class_g_l_argon}\index{G\+L\+Argon@{G\+L\+Argon}}
+
+
+Prototype de la classe \doxyref{G\+L\+Argon}{p.}{class_g_l_argon}.  
+
+
+
+
+{\ttfamily \#include $<$G\+L\+Argon.\+h$>$}
+
+Graphe d'héritage de G\+L\+Argon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_g_l_argon}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+{\bf G\+L\+Argon} ({\bf Vecteur} {\bf position}, {\bf Vecteur} {\bf vitesse})
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments sans la température du système. \end{DoxyCompactList}\item 
+{\bf G\+L\+Argon} ({\bf Enceinte} const \&enceinte, {\bf Generateur\+Aleatoire} \&tirage, double temperature)
+\begin{DoxyCompactList}\small\item\em Constructeur avec arguments avec la température du système et le tirage aléatoire des vecteurs positions. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+G\+L\+Argon} ()
+\begin{DoxyCompactList}\small\item\em Dstructeurs. \end{DoxyCompactList}\item 
+virtual void {\bf evolue} (double dt)
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode evolue. \end{DoxyCompactList}\item 
+virtual void {\bf dessine} () const 
+\begin{DoxyCompactList}\small\item\em Prototype de la méthode evolue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Prototype de la classe \doxyref{G\+L\+Argon}{p.}{class_g_l_argon}. 
+
+Cette classe est celle qui permet de créer une particule d'argon en Open\+G\+L 
+
+Définition à la ligne {\bf 25} du fichier {\bf G\+L\+Argon.\+h}.
+
+
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{G\+L\+Argon@{G\+L\+Argon}!G\+L\+Argon@{G\+L\+Argon}}
+\index{G\+L\+Argon@{G\+L\+Argon}!G\+L\+Argon@{G\+L\+Argon}}
+\subsubsection[{G\+L\+Argon}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Argon\+::\+G\+L\+Argon (
+\begin{DoxyParamCaption}
+\item[{{\bf Vecteur}}]{position, }
+\item[{{\bf Vecteur}}]{vitesse}
+\end{DoxyParamCaption}
+)}\label{class_g_l_argon_a99e2ba6207d052993736dc5ec0176506}
+
+
+Constructeur avec arguments sans la température du système. 
+
+sans le paramètre de température, initialise un rayon et une masse à notre particule
+
+
+\begin{DoxyParams}{Paramètres}
+{\em position} & \+: est la position de la particule que l'on souhaite \\
+\hline
+{\em vitesse} & \+: est la vitesse de la particule que l'on souhaite \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 20} du fichier {\bf G\+L\+Argon.\+cc}.
+
+\index{G\+L\+Argon@{G\+L\+Argon}!G\+L\+Argon@{G\+L\+Argon}}
+\index{G\+L\+Argon@{G\+L\+Argon}!G\+L\+Argon@{G\+L\+Argon}}
+\subsubsection[{G\+L\+Argon}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Argon\+::\+G\+L\+Argon (
+\begin{DoxyParamCaption}
+\item[{{\bf Enceinte} const \&}]{enceinte, }
+\item[{{\bf Generateur\+Aleatoire} \&}]{tirage, }
+\item[{double}]{temperature}
+\end{DoxyParamCaption}
+)}\label{class_g_l_argon_af3fa2c1411ba06ea93b0922f4ca949c4}
+
+
+Constructeur avec arguments avec la température du système et le tirage aléatoire des vecteurs positions. 
+
+sans le paramètre de température, initialise un rayon et une masse à notre particule
+
+
+\begin{DoxyParams}{Paramètres}
+{\em enceinte} & \+: permet de connaitre les dimmensions de l'emceinte pour calculer les positions \\
+\hline
+{\em tirage} & \+: donne une position aléatoire de la particule dans l'enceinte \\
+\hline
+{\em gtempérature} & \+: la température que l'on souhaite pour calculer la vitesse \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne {\bf 31} du fichier {\bf G\+L\+Argon.\+cc}.
+
+\index{G\+L\+Argon@{G\+L\+Argon}!````~G\+L\+Argon@{$\sim$\+G\+L\+Argon}}
+\index{````~G\+L\+Argon@{$\sim$\+G\+L\+Argon}!G\+L\+Argon@{G\+L\+Argon}}
+\subsubsection[{$\sim$\+G\+L\+Argon}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+Argon\+::$\sim$\+G\+L\+Argon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_argon_a4b63a77bed72014d211453e46de9a60c}
+
+
+Dstructeurs. 
+
+
+
+Définition à la ligne {\bf 35} du fichier {\bf G\+L\+Argon.\+cc}.
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{G\+L\+Argon@{G\+L\+Argon}!dessine@{dessine}}
+\index{dessine@{dessine}!G\+L\+Argon@{G\+L\+Argon}}
+\subsubsection[{dessine}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Argon\+::dessine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_argon_af46a155b29b7149c89db2b6b909f3269}
+
+
+Prototype de la méthode evolue. 
+
+dessine la particule de couleur à la position souhaitée par une matrice de translation couleur vert, 100\% 
+
+Implémente {\bf Dessinable} \doxyref{}{p.}{class_dessinable_aea37dacb2b67d6650a435d72c9a6fe79}.
+
+
+
+Définition à la ligne {\bf 56} du fichier {\bf G\+L\+Argon.\+cc}.
+
+\index{G\+L\+Argon@{G\+L\+Argon}!evolue@{evolue}}
+\index{evolue@{evolue}!G\+L\+Argon@{G\+L\+Argon}}
+\subsubsection[{evolue}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+Argon\+::evolue (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_g_l_argon_a18a22f3feb53956d69c52031d4f86b96}
+
+
+Prototype de la méthode evolue. 
+
+appelle la méthode évolue de la classe particule 
+\begin{DoxyParams}{Paramètres}
+{\em dt} & \+: le pas de temps \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de {\bf Particule} \doxyref{}{p.}{class_particule_a7c6a97e2b65d4326d36b6d3b6251b79c}.
+
+
+
+Définition à la ligne {\bf 47} du fichier {\bf G\+L\+Argon.\+cc}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf G\+L\+Argon.\+h}\item 
+/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/{\bf G\+L\+Argon.\+cc}\end{DoxyCompactItemize}

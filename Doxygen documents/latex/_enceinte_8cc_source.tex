@@ -1,0 +1,118 @@
+\section{Enceinte.\+cc}
+\label{_enceinte_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Enceinte.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Enceinte.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "wx/wxprec.h"}
+00010 \textcolor{preprocessor}{#ifndef WX\_PRECOMP}
+00011 \textcolor{preprocessor}{#include "wx/wx.h"}
+00012 \textcolor{preprocessor}{#endif}
+00013 \textcolor{preprocessor}{#include "wx/glcanvas.h"} \textcolor{comment}{// Pour combiner wxWidgets et OpenGL}
+00014 
+00015 \textcolor{preprocessor}{#include <iostream>}
+00016 \textcolor{preprocessor}{#include "Enceinte.h"}
+00017 
+00018 \textcolor{keyword}{using namespace }std;
+00019 
+00020 \textcolor{comment}{/*================================================================================}
+00021 \textcolor{comment}{ * Definition des constructeurs}
+00022 \textcolor{comment}{ *================================================================================*/}
+00027 Enceinte::Enceinte()
+00028 :largeur(100), longueur(100), hauteur(100)
+00029 \{\}
+00030 
+00038 Enceinte::Enceinte(\textcolor{keywordtype}{bool} reglage)
+00039 \{
+00040     \textcolor{keywordflow}{do}
+00041     \{
+00042         largeur = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez une largeur (entre 0 et 150)"}), wxT(\textcolor{stringliteral}{"Paramétrage de
+       l'enceinte"})));
+00043     \} \textcolor{keywordflow}{while} (largeur <= 0 or largeur > 150);
+00044     
+00045     \textcolor{keywordflow}{do}
+00046     \{
+00047         longueur = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez une longueur (entre 0 et 150)"}), wxT(\textcolor{stringliteral}{"Paramétrage
+       de l'enceinte"})));
+00048     \} \textcolor{keywordflow}{while} (longueur <= 0 or longueur > 150);
+00049     
+00050     \textcolor{keywordflow}{do}
+00051     \{
+00052         hauteur = wxAtoi(wxGetTextFromUser(wxT(\textcolor{stringliteral}{"Rentrez une hauteur (entre 0 et 150)"}), wxT(\textcolor{stringliteral}{"Paramétrage de
+       l'enceinte"})));
+00053     \} \textcolor{keywordflow}{while} (hauteur <= 0 or hauteur > 150);
+00054 \}
+00055 
+00064 Enceinte::Enceinte(\textcolor{keywordtype}{double} largeur, \textcolor{keywordtype}{double} longueur, \textcolor{keywordtype}{double} hauteur)
+00065 :largeur(largeur), longueur(longueur), hauteur(hauteur) 
+00066 \{\}
+00067 
+00068 \textcolor{comment}{/*================================================================================}
+00069 \textcolor{comment}{ * Definition des méthodes}
+00070 \textcolor{comment}{ *================================================================================*/}
+00076 \textcolor{keywordtype}{double} Enceinte::getLargeur()\textcolor{keyword}{ const}
+00077 \textcolor{keyword}{}\{
+00078     \textcolor{keywordflow}{return} largeur;
+00079 \}
+00085 \textcolor{keywordtype}{double} Enceinte::getLongueur()\textcolor{keyword}{ const}
+00086 \textcolor{keyword}{}\{
+00087     \textcolor{keywordflow}{return} longueur;
+00088 \}
+00094 \textcolor{keywordtype}{double} Enceinte::getHauteur()\textcolor{keyword}{ const}
+00095 \textcolor{keyword}{}\{
+00096     \textcolor{keywordflow}{return} hauteur;
+00097 \}
+00101 \textcolor{keywordtype}{void} Enceinte::display()\textcolor{keyword}{ const}
+00102 \textcolor{keyword}{}\{
+00103     cout << largeur << \textcolor{stringliteral}{", "} << longueur << \textcolor{stringliteral}{", "} << hauteur << endl;
+00104 \}
+00105 
+00113 \textcolor{keywordtype}{void} Enceinte::dessine()\textcolor{keyword}{ const}
+00114 \textcolor{keyword}{}\{
+00115     glColor4d(0.0, 0.0, 0.0, 0.5);
+00116     glPointSize(4);
+00117     
+00118     \textcolor{comment}{//fond de l'enceinte}
+00119     glBegin(GL\_LINE\_STRIP);
+00120     glVertex3d(0,0,0);
+00121     glVertex3d(largeur,0,0);
+00122     glVertex3d(largeur,longueur,0);
+00123     glVertex3d(0,longueur,0);
+00124     glVertex3d(0,0,0);
+00125     glEnd();
+00126     
+00127     \textcolor{comment}{//fond gauche de l'enceinte}
+00128     glBegin(GL\_LINE\_STRIP);
+00129     glVertex3d(0,0,0);
+00130     glVertex3d(0,0,hauteur);
+00131     glEnd();
+00132     
+00133     \textcolor{comment}{//fond droite de l'enceinte}
+00134     glBegin(GL\_LINE\_STRIP);
+00135     glVertex3d(0,longueur,0);
+00136     glVertex3d(0, longueur,hauteur);
+00137     glEnd();
+00138     
+00139     \textcolor{comment}{//devant gauche de l'enceinte}
+00140     glBegin(GL\_LINE\_STRIP);
+00141     glVertex3d(largeur,0,0);
+00142     glVertex3d(largeur,0,hauteur);
+00143     glEnd();
+00144     
+00145     \textcolor{comment}{//devant droite de l'enceinte}
+00146     glBegin(GL\_LINE\_STRIP);
+00147     glVertex3d(largeur, longueur,0);
+00148     glVertex3d(largeur,longueur,hauteur);
+00149     glEnd();
+00150     
+00151     \textcolor{comment}{//plafond  de l'enceinte}
+00152     glBegin(GL\_LINE\_STRIP);
+00153     glVertex3d(0,0,hauteur);
+00154     glVertex3d(largeur,0,hauteur);
+00155     glVertex3d(largeur,longueur,hauteur);
+00156     glVertex3d(0,longueur,hauteur);
+00157     glVertex3d(0,0,hauteur);
+00158     glEnd();
+00159 \}
+00160 
+00161 
+\end{DoxyCode}

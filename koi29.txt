@@ -1,0 +1,5 @@
+J'ai fini la classe Particule (je l'ai même testée et tout, et tout ...)
+Je te laisse lire le code, normalement ça marche tout bien, mais vérifie de ton côté.
+Oh et oublie pas de télécharger le Makefile modifié, sinon ça risque de bugger un peu ^^
+
+Voili voilou, bon weekend :-D

@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Simulation d&#39;un gaz parfait:  Fichier source de /Users/burkhard/Dropbox/projet d&#39;info/maximilian-g065/Simulation d&#39;un gaz parfait/Vecteur.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation d&#39;un gaz parfait
+   &#160;<span id="projectnumber">2.0</span>
+   </div>
+   <div id="projectbrief">par Emma Geoffray et Jonathan Bukhard</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1fc57af7395e7964fd1dc446c4fdc94a.html">maximilian-g065</a></li><li class="navelem"><a class="el" href="dir_998f0679318d51041f3dc98303027884.html">Simulation d'un gaz parfait</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Vecteur.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vecteur_8cc.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vecteur_8h.html">Vecteur.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Definition des constructeurs</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_vecteur.html#a8227543ef6aadc8f9fbbc93de68af43b">   20</a></span>&#160;<a class="code" href="class_vecteur.html#a8227543ef6aadc8f9fbbc93de68af43b">Vecteur::Vecteur</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    : x(0), y(0), z(0) {}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_vecteur.html#a74467c37b0023c84ee3f64d09348a660">   30</a></span>&#160;<a class="code" href="class_vecteur.html#a8227543ef6aadc8f9fbbc93de68af43b">Vecteur::Vecteur</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    : x(x), y(y), z(z) {}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * Definition des méthodes </span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_vecteur.html#a42f7a7f1dc44e088c278d3b3363c5a33">   41</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_vecteur.html#a42f7a7f1dc44e088c278d3b3363c5a33">Vecteur::getX</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_vecteur.html#a323d689fb951261b557ea65b10af3893">   50</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_vecteur.html#a323d689fb951261b557ea65b10af3893">Vecteur::getY</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> y;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_vecteur.html#a9ceff1802cdc94554cb8556fb9d94058">   59</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_vecteur.html#a9ceff1802cdc94554cb8556fb9d94058">Vecteur::getZ</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> z;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_vecteur.html#a9201e305c2028d0d596c24327560f8ca">   68</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_vecteur.html#a9201e305c2028d0d596c24327560f8ca">Vecteur::operator==</a>(<a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (x == v.x and y == v.y and z == v.z) </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    { </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }<span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    { </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_vecteur.html#a07fd3198ced9a6f4b746e1d406a5796f">   84</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_vecteur.html#a07fd3198ced9a6f4b746e1d406a5796f">Vecteur::operator!=</a>(<a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> not(*<span class="keyword">this</span> == v);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_vecteur.html#ae5976277e40ef72d4bd9e206010ebae9">   95</a></span>&#160;<a class="code" href="class_vecteur.html">Vecteur</a>&amp; <a class="code" href="class_vecteur.html#ae5976277e40ef72d4bd9e206010ebae9">Vecteur::operator+=</a>(<a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v1)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    x += v1.x;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    y += v1.y;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    z += v1.z;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_vecteur.html#a2e64b160a4df2b937b98a4f8341c0bd7">  109</a></span>&#160;<a class="code" href="class_vecteur.html">Vecteur</a>&amp; <a class="code" href="class_vecteur.html#a2e64b160a4df2b937b98a4f8341c0bd7">Vecteur::operator-=</a>(<a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v1) </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    x -= v1.x;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    y -= v1.y;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    z -= v1.z;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_vecteur.html#a57540f656ae1f3e6ee9ff22cd37ef081">  122</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="class_vecteur.html#a57540f656ae1f3e6ee9ff22cd37ef081">Vecteur::operator-</a>()</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> ((*<span class="keyword">this</span>)*= (-1.));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="class_vecteur.html#a46ab3e3e8a9baf796d7cce7ec6f56c74">  133</a></span>&#160;<a class="code" href="class_vecteur.html">Vecteur</a>&amp; <a class="code" href="class_vecteur.html#a46ab3e3e8a9baf796d7cce7ec6f56c74">Vecteur::operator*=</a>(<span class="keywordtype">double</span> <span class="keyword">const</span>&amp; scalaire)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    x *= scalaire;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    y *= scalaire;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    z *= scalaire;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}   </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_vecteur.html#a70e7d84a9e5bb9fe9ef06b6697324294">  148</a></span>&#160;<a class="code" href="class_vecteur.html">Vecteur</a>&amp; <a class="code" href="class_vecteur.html#a70e7d84a9e5bb9fe9ef06b6697324294">Vecteur::operator^=</a>(<a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v1)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">double</span> x_(x), y_(y);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    x = (y * v1.z - z * v1.y);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    y = (z * v1.x - x_ * v1.z);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    z = (x_ * v1.y - y_ * v1.x);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="class_vecteur.html#a5ee19aab50156659ac236029316209ea">  163</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_vecteur.html#a5ee19aab50156659ac236029316209ea">Vecteur::operator*</a>(<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a>&amp; v1)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> (v1.x*x + v1.y*y + v1.z*z);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="class_vecteur.html#ac0d4143f79e766d00a55ba86f7ba44fa">  172</a></span>&#160;ostream&amp; <a class="code" href="class_vecteur.html#ac0d4143f79e766d00a55ba86f7ba44fa">Vecteur::afficher</a>(ostream&amp; sortie)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> sortie &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; z;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment"> * Definition des fonctions </span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="_vecteur_8cc.html#aa3f635a4fd1bb293362264724df47cae">  190</a></span>&#160;ostream&amp; <a class="code" href="_vecteur_8cc.html#aa3f635a4fd1bb293362264724df47cae">operator&lt;&lt;</a>(ostream&amp; sortie, <a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v1)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> v1.<a class="code" href="class_vecteur.html#ac0d4143f79e766d00a55ba86f7ba44fa">afficher</a>(sortie);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">/* Les méthodes suivantes sont écrites sur 2 lignes pour éviter la copie</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment"> * inutile faîtes par certain compilateurs </span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="_vecteur_8h.html#a9dab57d4b95b2b07b556e57db34e237d">  204</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="_vecteur_8cc.html#a9dab57d4b95b2b07b556e57db34e237d">operator+</a>(<a class="code" href="class_vecteur.html">Vecteur</a> v1, <a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v2) </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    v1 += v2;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> v1;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="_vecteur_8h.html#a72eb905ad4efc0b51b3f10903a993023">  215</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="_vecteur_8cc.html#a72eb905ad4efc0b51b3f10903a993023">operator-</a>(<a class="code" href="class_vecteur.html">Vecteur</a> v1, <a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v2) </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    v1 -= v2;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> v1;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="_vecteur_8h.html#a85d7ca37434bb65a65f5868696f04c22">  228</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="_vecteur_8cc.html#a85d7ca37434bb65a65f5868696f04c22">operator*</a>(<span class="keywordtype">double</span> scalaire, <a class="code" href="class_vecteur.html">Vecteur</a> v1)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    v1 *= scalaire;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">return</span> v1;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="_vecteur_8h.html#a21345f9cdf1cb4981e0c809ae48e188e">  239</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="_vecteur_8cc.html#a85d7ca37434bb65a65f5868696f04c22">operator*</a>(<a class="code" href="class_vecteur.html">Vecteur</a> v1, <span class="keywordtype">double</span> scalaire)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    v1 *= scalaire;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> v1;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="_vecteur_8h.html#aea4879a17308d60d15d2f2240014fe00">  252</a></span>&#160;<span class="keyword">const</span> <a class="code" href="class_vecteur.html">Vecteur</a> <a class="code" href="_vecteur_8cc.html#aea4879a17308d60d15d2f2240014fe00">operator^</a>(<a class="code" href="class_vecteur.html">Vecteur</a> v1, <a class="code" href="class_vecteur.html">Vecteur</a> <span class="keyword">const</span>&amp; v2)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    v1 ^= v2;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">return</span> v1;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
+<div class="ttc" id="_vecteur_8cc_html_a72eb905ad4efc0b51b3f10903a993023"><div class="ttname"><a href="_vecteur_8cc.html#a72eb905ad4efc0b51b3f10903a993023">operator-</a></div><div class="ttdeci">const Vecteur operator-(Vecteur v1, Vecteur const &amp;v2)</div><div class="ttdoc">Prototype fonction - soustraction entre deux vecteurs. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00215">Vecteur.cc:215</a></div></div>
+<div class="ttc" id="class_vecteur_html_a42f7a7f1dc44e088c278d3b3363c5a33"><div class="ttname"><a href="class_vecteur.html#a42f7a7f1dc44e088c278d3b3363c5a33">Vecteur::getX</a></div><div class="ttdeci">double getX() const </div><div class="ttdoc">Prototype du getters de la première coordonnée. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00041">Vecteur.cc:41</a></div></div>
+<div class="ttc" id="class_vecteur_html_ac0d4143f79e766d00a55ba86f7ba44fa"><div class="ttname"><a href="class_vecteur.html#ac0d4143f79e766d00a55ba86f7ba44fa">Vecteur::afficher</a></div><div class="ttdeci">std::ostream &amp; afficher(std::ostream &amp;sortie) const </div><div class="ttdoc">Prototype méthode afficher. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00172">Vecteur.cc:172</a></div></div>
+<div class="ttc" id="class_vecteur_html_a9201e305c2028d0d596c24327560f8ca"><div class="ttname"><a href="class_vecteur.html#a9201e305c2028d0d596c24327560f8ca">Vecteur::operator==</a></div><div class="ttdeci">bool operator==(Vecteur const &amp;) const </div><div class="ttdoc">Prototype comparateurs ==. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00068">Vecteur.cc:68</a></div></div>
+<div class="ttc" id="class_vecteur_html_a57540f656ae1f3e6ee9ff22cd37ef081"><div class="ttname"><a href="class_vecteur.html#a57540f656ae1f3e6ee9ff22cd37ef081">Vecteur::operator-</a></div><div class="ttdeci">const Vecteur operator-()</div><div class="ttdoc">Prototype vecteur opposé </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00122">Vecteur.cc:122</a></div></div>
+<div class="ttc" id="class_vecteur_html_a2e64b160a4df2b937b98a4f8341c0bd7"><div class="ttname"><a href="class_vecteur.html#a2e64b160a4df2b937b98a4f8341c0bd7">Vecteur::operator-=</a></div><div class="ttdeci">Vecteur &amp; operator-=(Vecteur const &amp;v1)</div><div class="ttdoc">Prototype méthodes -=. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00109">Vecteur.cc:109</a></div></div>
+<div class="ttc" id="class_vecteur_html_a323d689fb951261b557ea65b10af3893"><div class="ttname"><a href="class_vecteur.html#a323d689fb951261b557ea65b10af3893">Vecteur::getY</a></div><div class="ttdeci">double getY() const </div><div class="ttdoc">Prototype du getters de la deuxième coordonnée. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00050">Vecteur.cc:50</a></div></div>
+<div class="ttc" id="class_vecteur_html_a07fd3198ced9a6f4b746e1d406a5796f"><div class="ttname"><a href="class_vecteur.html#a07fd3198ced9a6f4b746e1d406a5796f">Vecteur::operator!=</a></div><div class="ttdeci">bool operator!=(Vecteur const &amp;v) const </div><div class="ttdoc">Prototype comparateurs !=. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00084">Vecteur.cc:84</a></div></div>
+<div class="ttc" id="class_vecteur_html"><div class="ttname"><a href="class_vecteur.html">Vecteur</a></div><div class="ttdoc">Prototype de la classe Vecteur. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8h_source.html#l00023">Vecteur.h:23</a></div></div>
+<div class="ttc" id="class_vecteur_html_a46ab3e3e8a9baf796d7cce7ec6f56c74"><div class="ttname"><a href="class_vecteur.html#a46ab3e3e8a9baf796d7cce7ec6f56c74">Vecteur::operator*=</a></div><div class="ttdeci">Vecteur &amp; operator*=(double const &amp;scalaire)</div><div class="ttdoc">Prototype multiplication par un scalaire. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00133">Vecteur.cc:133</a></div></div>
+<div class="ttc" id="class_vecteur_html_ae5976277e40ef72d4bd9e206010ebae9"><div class="ttname"><a href="class_vecteur.html#ae5976277e40ef72d4bd9e206010ebae9">Vecteur::operator+=</a></div><div class="ttdeci">Vecteur &amp; operator+=(Vecteur const &amp;v1)</div><div class="ttdoc">Prototype méthodes +=. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00095">Vecteur.cc:95</a></div></div>
+<div class="ttc" id="class_vecteur_html_a9ceff1802cdc94554cb8556fb9d94058"><div class="ttname"><a href="class_vecteur.html#a9ceff1802cdc94554cb8556fb9d94058">Vecteur::getZ</a></div><div class="ttdeci">double getZ() const </div><div class="ttdoc">Prototype du getters de la deuxième coordonnée. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00059">Vecteur.cc:59</a></div></div>
+<div class="ttc" id="_vecteur_8cc_html_aea4879a17308d60d15d2f2240014fe00"><div class="ttname"><a href="_vecteur_8cc.html#aea4879a17308d60d15d2f2240014fe00">operator^</a></div><div class="ttdeci">const Vecteur operator^(Vecteur v1, Vecteur const &amp;v2)</div><div class="ttdoc">Prototype fonction ^ prduit vectoriel. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00252">Vecteur.cc:252</a></div></div>
+<div class="ttc" id="_vecteur_8cc_html_aa3f635a4fd1bb293362264724df47cae"><div class="ttname"><a href="_vecteur_8cc.html#aa3f635a4fd1bb293362264724df47cae">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;sortie, Vecteur const &amp;v1)</div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00190">Vecteur.cc:190</a></div></div>
+<div class="ttc" id="class_vecteur_html_a5ee19aab50156659ac236029316209ea"><div class="ttname"><a href="class_vecteur.html#a5ee19aab50156659ac236029316209ea">Vecteur::operator*</a></div><div class="ttdeci">double operator*(const Vecteur &amp;v1) const </div><div class="ttdoc">Prototype produit scalaire. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00163">Vecteur.cc:163</a></div></div>
+<div class="ttc" id="_vecteur_8cc_html_a85d7ca37434bb65a65f5868696f04c22"><div class="ttname"><a href="_vecteur_8cc.html#a85d7ca37434bb65a65f5868696f04c22">operator*</a></div><div class="ttdeci">const Vecteur operator*(double scalaire, Vecteur v1)</div><div class="ttdoc">fonction qui surcharge l&#39;opérateur * </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00228">Vecteur.cc:228</a></div></div>
+<div class="ttc" id="class_vecteur_html_a8227543ef6aadc8f9fbbc93de68af43b"><div class="ttname"><a href="class_vecteur.html#a8227543ef6aadc8f9fbbc93de68af43b">Vecteur::Vecteur</a></div><div class="ttdeci">Vecteur()</div><div class="ttdoc">Constructeur sans arguments. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00020">Vecteur.cc:20</a></div></div>
+<div class="ttc" id="_vecteur_8h_html"><div class="ttname"><a href="_vecteur_8h.html">Vecteur.h</a></div><div class="ttdoc">est le prototype de la classe qui nous pourmet de gérer la position et la vitesse de nos particules m...</div></div>
+<div class="ttc" id="_vecteur_8cc_html_a9dab57d4b95b2b07b556e57db34e237d"><div class="ttname"><a href="_vecteur_8cc.html#a9dab57d4b95b2b07b556e57db34e237d">operator+</a></div><div class="ttdeci">const Vecteur operator+(Vecteur v1, Vecteur const &amp;v2)</div><div class="ttdoc">Prototype fonction + entre deux vecteurs. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00204">Vecteur.cc:204</a></div></div>
+<div class="ttc" id="class_vecteur_html_a70e7d84a9e5bb9fe9ef06b6697324294"><div class="ttname"><a href="class_vecteur.html#a70e7d84a9e5bb9fe9ef06b6697324294">Vecteur::operator^=</a></div><div class="ttdeci">Vecteur &amp; operator^=(Vecteur const &amp;v1)</div><div class="ttdoc">Prototype produit vectoriel. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8cc_source.html#l00148">Vecteur.cc:148</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 26 Mai 2014 23:22:52 pour Simulation d&#39;un gaz parfait par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

@@ -1,0 +1,35 @@
+\section{G\+U\+I.\+cc}
+\label{_g_u_i_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+U\+I.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+G\+U\+I.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "GUI.h"}
+00010 \textcolor{preprocessor}{#include "Fenetre.h"}
+00011 
+00012 \textcolor{comment}{/* ===================================================================}
+00013 \textcolor{comment}{   Implementation de l'application principale}
+00014 \textcolor{comment}{   =================================================================== */}
+00015 
+00024 \textcolor{keywordtype}{bool} GUI::OnInit()
+00025 \{
+00027     \textcolor{keywordtype}{bool} reglage(\textcolor{keyword}{false});
+00030     \textcolor{keywordflow}{if} (wxMessageBox(wxT(\textcolor{stringliteral}{"Voulez-vous paramétrer le système ?"}), wxT(\textcolor{stringliteral}{"Lancement de la simulation"}),
+00031         wxYES\_NO | wxICON\_QUESTION)==wxYES)
+00032     \{ reglage = \textcolor{keyword}{true}; \}
+00033     
+00034     Fenetre* f (\textcolor{keyword}{nullptr});
+00035     
+00036     \textcolor{keywordflow}{if} (reglage) \{ f = \textcolor{keyword}{new} Fenetre(wxT(\textcolor{stringliteral}{"Simulation temps reel"}),
+00037                                    reglage, wxSize(800, 600)); \}
+00038     \textcolor{keywordflow}{else} \{ f = \textcolor{keyword}{new} Fenetre(wxT(\textcolor{stringliteral}{"Simulation temps reel"}),
+00039                            wxSize(800, 600)); \}
+00040     
+00041     SetTopWindow(f);
+00042     \textcolor{keywordflow}{return} (f != 0);
+00043 \}
+00044 
+00045 \textcolor{comment}{/* ===================================================================}
+00046 \textcolor{comment}{   Equivalent de main()}
+00047 \textcolor{comment}{   =================================================================== */}
+00049 IMPLEMENT\_APP(GUI)
+\end{DoxyCode}

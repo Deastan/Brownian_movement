@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Simulation d&#39;un gaz parfait:  Fichier source de /Users/burkhard/Dropbox/projet d&#39;info/maximilian-g065/Simulation d&#39;un gaz parfait/Systeme.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation d&#39;un gaz parfait
+   &#160;<span id="projectnumber">2.0</span>
+   </div>
+   <div id="projectbrief">par Emma Geoffray et Jonathan Bukhard</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1fc57af7395e7964fd1dc446c4fdc94a.html">maximilian-g065</a></li><li class="navelem"><a class="el" href="dir_998f0679318d51041f3dc98303027884.html">Simulation d'un gaz parfait</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Systeme.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_systeme_8cc.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_systeme_8h.html">Systeme.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_g_l_neon_8h.html">GLNeon.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_g_l_helium_8h.html">GLHelium.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_g_l_argon_8h.html">GLArgon.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_g_l_fluor_8h.html">GLFluor.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef WX_PRECOMP</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;wx/wx.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;wx/glcanvas.h&quot;</span> <span class="comment">// Pour combiner wxWidgets et OpenGL</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Definition des constructeurs et du destructeur</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">   27</a></span>&#160;<a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme::Systeme</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; : temperature(298) <span class="comment">// Température normale : 25°C</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{ initialise(); }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_systeme.html#a12e7a9debbec8334b00173e8c93f9f92">   37</a></span>&#160;<a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme::Systeme</a>(<span class="keywordtype">bool</span> reglage)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; : enceinte(reglage), temperature(298)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        temperature = wxAtoi(wxGetTextFromUser(wxT(<span class="stringliteral">&quot;Rentrez une température (entre 0 et 400 Kelvin)&quot;</span>), wxT(<span class="stringliteral">&quot;Température&quot;</span>)));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    } <span class="keywordflow">while</span> (temperature &lt;= 0 or temperature &gt; 400);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> nbrArgon(0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        nbrArgon = wxAtoi(wxGetTextFromUser(wxT(<span class="stringliteral">&quot;Rentrez le nombre de particules d&#39;Argon (entre 0 et 425, Attention : ne pas créer plus de 425 particules en tout)&quot;</span>), wxT(<span class="stringliteral">&quot;Paramétrage du nombre de particules&quot;</span>)));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">while</span> (nbrArgon &lt; 0 or nbrArgon &gt; 425);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">double</span> nbrFluor(0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        nbrFluor = wxAtoi(wxGetTextFromUser(wxT(<span class="stringliteral">&quot;Rentrez le nombre de particules de Fluor (entre 0 et 3, Attention : ne pas créer plus de 425 particules en tout)&quot;</span>), wxT(<span class="stringliteral">&quot;Paramétrage du nombre de particules&quot;</span>)));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">while</span> (nbrFluor &lt; 0 or nbrFluor &gt; 3);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> nbrHelium(0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        nbrHelium = wxAtoi(wxGetTextFromUser(wxT(<span class="stringliteral">&quot;Rentrez le nombre de particules d&#39;Helium (entre 0 et 425, Attention : ne pas créer plus de 425 particules en tout)&quot;</span>), wxT(<span class="stringliteral">&quot;Paramétrage du nombre de particules&quot;</span>)));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="keywordflow">while</span> (nbrHelium &lt; 0 or nbrHelium &gt; 425);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> nbrNeon(0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        nbrNeon = wxAtoi(wxGetTextFromUser(wxT(<span class="stringliteral">&quot;Rentrez le nombre de particules de Néon (entre 0 et 425, Attention : ne pas créer plus de 425 particules en tout)&quot;</span>), wxT(<span class="stringliteral">&quot;Paramétrage du nombre de particules&quot;</span>)));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    } <span class="keywordflow">while</span> (nbrNeon &lt; 0 or nbrNeon &gt; 425);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    initialise(nbrArgon,nbrFluor,nbrHelium,nbrNeon);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_systeme.html#af1350122550243c381d6ff5d2b4ef38c">   79</a></span>&#160;<a class="code" href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme::Systeme</a>(<span class="keywordtype">double</span> largeur, <span class="keywordtype">double</span> longueur, <span class="keywordtype">double</span> hauteur, <span class="keywordtype">double</span> temperature)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; : enceinte(largeur, longueur, hauteur), temperature(temperature)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{ initialise(); }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_systeme.html#ae5b0d713664daee67f170ddc0bdf5c4f">   84</a></span>&#160;<a class="code" href="class_systeme.html#ae5b0d713664daee67f170ddc0bdf5c4f">Systeme::~Systeme</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ supprimerParticules(); }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/*================================================================================</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * Definition des methodes</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> *================================================================================*/</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">void</span> Systeme::ajouterParticule(<a class="code" href="class_particule.html">Particule</a>* particule)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{ </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span>(particule != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    { collectionParticules.push_back(unique_ptr&lt;Particule&gt;(particule)); }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">   99</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">Systeme::dessine</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword"></span>{   </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    glPushMatrix();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    glTranslated(-enceinte.<a class="code" href="class_enceinte.html#a553db9446669114f47a28e59ebbd4064">getLargeur</a>()/2,-enceinte.<a class="code" href="class_enceinte.html#ab5a4c9f43bc1640f14e0e960e8fe76b9">getLongueur</a>()/2,-enceinte.<a class="code" href="class_enceinte.html#a313cc6bc2baf718a99cf0b10bb9e7f51">getHauteur</a>()/2);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    enceinte.<a class="code" href="class_enceinte.html#aa2cdbb9cd5acf1a8593bc182f5ced6d1">dessine</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    canon.<a class="code" href="class_canon.html#a2b43d0c2037d44c89b4c6d57b2f00fc1">dessine</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> <span class="keyword">const</span>&amp; particule : collectionParticules) </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    { particule-&gt;<a class="code" href="class_dessinable.html#aea37dacb2b67d6650a435d72c9a6fe79">dessine</a>(); }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    glPopMatrix();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">bool</span> Systeme::supprimerParticules()</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; particule : collectionParticules)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    { particule.reset(); }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">Systeme::evolue</a>(<span class="keywordtype">double</span> dt)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; particule : collectionParticules) </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        particule-&gt;<a class="code" href="class_particule.html#a7c6a97e2b65d4326d36b6d3b6251b79c">evolue</a>(dt);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        particule-&gt;<a class="code" href="class_particule.html#abdd1239a60f7099dcecd8a8269ce1b4d">gere_sorties</a>(enceinte);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        vector&lt;size_t&gt; collisions_possibles (determine_collisions_possibles(particule));</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (collisions_possibles.size() != 0)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        { particule-&gt;<a class="code" href="class_particule.html#a91283a1702ac9f40728e58613ad97ac9">collision</a>(*collectionParticules[choisi_collision(collisions_possibles)], tirage); }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;vector&lt;size_t&gt; Systeme::determine_collisions_possibles(unique_ptr&lt;Particule&gt; <span class="keyword">const</span>&amp; p1)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    vector&lt;size_t&gt; tableau;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i(0);i&lt;collectionParticules.size();++i)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span>((p1 != collectionParticules[i]) and (p1-&gt;pavageCubique(epsilon) == collectionParticules[i]-&gt;pavageCubique(epsilon)))</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        { tableau.push_back(i); }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> tableau;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">size_t</span> Systeme::choisi_collision(vector&lt;size_t&gt; <span class="keyword">const</span>&amp; collisions_possibles)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{ <span class="keywordflow">return</span> collisions_possibles[tirage.<a class="code" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">uniforme_entier</a>(0, collisions_possibles.size() - 1)]; }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">//le tirage uniforme d&#39;ENTIER se faisant sur un intervalle fermé [a, b], il faut donc tirer sur [0, collisions_possibles.size() - 1] pour que ce soit juste</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">  164</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">Systeme::ajouterArgon</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_argon, <span class="keywordtype">bool</span> canon)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="class_g_l_argon.html">GLArgon</a> argon(<a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0), <a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">double</span> rayon_argon(argon.<a class="code" href="class_particule.html#a50d7ab965780895a97d00a13cbb2dfde">get_rayon</a>());</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">if</span> (nbr_argon != 0) { change_epsilon(rayon_argon); }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (canon) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_argon ; ++i)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordtype">double</span> pas(i*rayon_argon);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_argon.html">GLArgon</a>(<a class="code" href="class_vecteur.html">Vecteur</a>(pas,pas,pas), <a class="code" href="class_vecteur.html">Vecteur</a>(250,250,250)));</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_argon ; ++i)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        { ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_argon.html">GLArgon</a>(enceinte, tirage, temperature)); }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">  185</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">Systeme::ajouterFluor</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_fluor, <span class="keywordtype">bool</span> canon)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="class_g_l_fluor.html">GLFluor</a> fluor(<a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0), <a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">double</span> rayon_fluor(fluor.<a class="code" href="class_particule.html#a50d7ab965780895a97d00a13cbb2dfde">get_rayon</a>());</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (nbr_fluor != 0) { change_epsilon(rayon_fluor); }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (canon) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_fluor ; ++i)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordtype">double</span> pas(i*rayon_fluor);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_fluor.html">GLFluor</a>(<a class="code" href="class_vecteur.html">Vecteur</a>(pas,pas,pas), <a class="code" href="class_vecteur.html">Vecteur</a>(250,250,250)));</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_fluor ; ++i)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        { ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_fluor.html">GLFluor</a>(enceinte, tirage, temperature)); }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">  206</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">Systeme::ajouterHelium</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_helium, <span class="keywordtype">bool</span> canon)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="class_g_l_helium.html">GLHelium</a> helium(<a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0), <a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0));</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">double</span> rayon_helium(helium.<a class="code" href="class_particule.html#a50d7ab965780895a97d00a13cbb2dfde">get_rayon</a>());</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (nbr_helium != 0) { change_epsilon(rayon_helium); }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (canon) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_helium ; ++i)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordtype">double</span> pas(i*rayon_helium);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_helium.html">GLHelium</a>(<a class="code" href="class_vecteur.html">Vecteur</a>(pas,pas,pas), <a class="code" href="class_vecteur.html">Vecteur</a>(250,250,250)));</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_helium ; ++i)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        { ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_helium.html">GLHelium</a>(enceinte, tirage, temperature)); }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">  227</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">Systeme::ajouterNeon</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_neon, <span class="keywordtype">bool</span> canon)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;{</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="class_g_l_neon.html">GLNeon</a> neon(<a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0), <a class="code" href="class_vecteur.html">Vecteur</a>(0,0,0));</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">double</span> rayon_neon(neon.<a class="code" href="class_particule.html#a50d7ab965780895a97d00a13cbb2dfde">get_rayon</a>());</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">if</span> (nbr_neon != 0) { change_epsilon(rayon_neon); }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">if</span> (canon) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_neon ; ++i)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordtype">double</span> pas(i*rayon_neon);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_neon.html">GLNeon</a>(<a class="code" href="class_vecteur.html">Vecteur</a>(pas,pas,pas), <a class="code" href="class_vecteur.html">Vecteur</a>(250,250,250)));</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i(1) ; i &lt;= nbr_neon ; ++i)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        { ajouterParticule(<span class="keyword">new</span> <a class="code" href="class_g_l_neon.html">GLNeon</a>(enceinte, tirage, temperature)); }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;}</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="keywordtype">void</span> Systeme::initialise(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_argon, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_fluor,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_helium, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nbr_neon)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    epsilon = enceinte.<a class="code" href="class_enceinte.html#a553db9446669114f47a28e59ebbd4064">getLargeur</a>();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">ajouterArgon</a>(nbr_argon);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">ajouterFluor</a>(nbr_fluor);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">ajouterHelium</a>(nbr_helium);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">ajouterNeon</a>(nbr_neon);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keywordtype">void</span> Systeme::initialise()</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    initialise(tirage.<a class="code" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">uniforme_entier</a>(0, 75),</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;               tirage.<a class="code" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">uniforme_entier</a>(0, 3),</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;               tirage.<a class="code" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">uniforme_entier</a>(0, 100),</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;               tirage.<a class="code" href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">uniforme_entier</a>(0, 75)); </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keywordtype">void</span> Systeme::change_epsilon(<span class="keywordtype">double</span> rayon)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;{ <span class="keywordflow">if</span> (epsilon &gt; rayon) { epsilon = rayon; }}</div>
+<div class="ttc" id="class_enceinte_html_aa2cdbb9cd5acf1a8593bc182f5ced6d1"><div class="ttname"><a href="class_enceinte.html#aa2cdbb9cd5acf1a8593bc182f5ced6d1">Enceinte::dessine</a></div><div class="ttdeci">virtual void dessine() const </div><div class="ttdoc">Prototype de la méthode dessine en OpenGL. </div><div class="ttdef"><b>Definition:</b> <a href="_enceinte_8cc_source.html#l00113">Enceinte.cc:113</a></div></div>
+<div class="ttc" id="class_systeme_html_ae5b0d713664daee67f170ddc0bdf5c4f"><div class="ttname"><a href="class_systeme.html#ae5b0d713664daee67f170ddc0bdf5c4f">Systeme::~Systeme</a></div><div class="ttdeci">~Systeme()</div><div class="ttdoc">Destructeur. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00084">Systeme.cc:84</a></div></div>
+<div class="ttc" id="class_g_l_neon_html"><div class="ttname"><a href="class_g_l_neon.html">GLNeon</a></div><div class="ttdoc">Prototype de la classe GLNeon. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_neon_8h_source.html#l00024">GLNeon.h:24</a></div></div>
+<div class="ttc" id="class_g_l_fluor_html"><div class="ttname"><a href="class_g_l_fluor.html">GLFluor</a></div><div class="ttdoc">Prototype de la classe GLluor. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_fluor_8h_source.html#l00032">GLFluor.h:32</a></div></div>
+<div class="ttc" id="class_systeme_html_a57d47c92404c5ebb87724545a750b445"><div class="ttname"><a href="class_systeme.html#a57d47c92404c5ebb87724545a750b445">Systeme::ajouterFluor</a></div><div class="ttdeci">void ajouterFluor(unsigned int nbr_fluor, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_fluor particules de Fluor. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00185">Systeme.cc:185</a></div></div>
+<div class="ttc" id="class_systeme_html_a3308846e3013176c71954ba5e3ae23d1"><div class="ttname"><a href="class_systeme.html#a3308846e3013176c71954ba5e3ae23d1">Systeme::evolue</a></div><div class="ttdeci">void evolue(double dt)</div><div class="ttdoc">Evolue le systeme d&#39;un temps dt. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00126">Systeme.cc:126</a></div></div>
+<div class="ttc" id="class_particule_html_a7c6a97e2b65d4326d36b6d3b6251b79c"><div class="ttname"><a href="class_particule.html#a7c6a97e2b65d4326d36b6d3b6251b79c">Particule::evolue</a></div><div class="ttdeci">virtual void evolue(double dt)</div><div class="ttdoc">S&#39;occupe de faire évoluer la particule d&#39;un temps dt. </div><div class="ttdef"><b>Definition:</b> <a href="_particule_8cc_source.html#l00064">Particule.cc:64</a></div></div>
+<div class="ttc" id="_g_l_neon_8h_html"><div class="ttname"><a href="_g_l_neon_8h.html">GLNeon.h</a></div><div class="ttdoc">est le prototype de la classe de la particule néon en OpenGL </div></div>
+<div class="ttc" id="class_generateur_aleatoire_html_a986164a020693bee0a8043fcd0c3953f"><div class="ttname"><a href="class_generateur_aleatoire.html#a986164a020693bee0a8043fcd0c3953f">GenerateurAleatoire::uniforme_entier</a></div><div class="ttdeci">int uniforme_entier(int min, int max)</div><div class="ttdoc">Méthode permettant de tirer uniformément un entier sur l&#39;intervalle [min, max]. </div><div class="ttdef"><b>Definition:</b> <a href="_generateur_aleatoire_8cc_source.html#l00032">GenerateurAleatoire.cc:32</a></div></div>
+<div class="ttc" id="class_particule_html"><div class="ttname"><a href="class_particule.html">Particule</a></div><div class="ttdoc">Classe mère dont hérite toutes les classes de type : TXTNom et GLNom Représentation d&#39;une particule (...</div><div class="ttdef"><b>Definition:</b> <a href="_particule_8h_source.html#l00027">Particule.h:27</a></div></div>
+<div class="ttc" id="class_enceinte_html_ab5a4c9f43bc1640f14e0e960e8fe76b9"><div class="ttname"><a href="class_enceinte.html#ab5a4c9f43bc1640f14e0e960e8fe76b9">Enceinte::getLongueur</a></div><div class="ttdeci">double getLongueur() const </div><div class="ttdoc">Prototype du getters de la longueur de l&#39;enceinte. </div><div class="ttdef"><b>Definition:</b> <a href="_enceinte_8cc_source.html#l00085">Enceinte.cc:85</a></div></div>
+<div class="ttc" id="class_canon_html_a2b43d0c2037d44c89b4c6d57b2f00fc1"><div class="ttname"><a href="class_canon.html#a2b43d0c2037d44c89b4c6d57b2f00fc1">Canon::dessine</a></div><div class="ttdeci">virtual void dessine() const </div><div class="ttdoc">Prototype de la méthode dessine en OpenGL. </div><div class="ttdef"><b>Definition:</b> <a href="_canon_8cc_source.html#l00046">Canon.cc:46</a></div></div>
+<div class="ttc" id="class_enceinte_html_a313cc6bc2baf718a99cf0b10bb9e7f51"><div class="ttname"><a href="class_enceinte.html#a313cc6bc2baf718a99cf0b10bb9e7f51">Enceinte::getHauteur</a></div><div class="ttdeci">double getHauteur() const </div><div class="ttdoc">Prototype du getters de la hauteur de l&#39;enceinte. </div><div class="ttdef"><b>Definition:</b> <a href="_enceinte_8cc_source.html#l00094">Enceinte.cc:94</a></div></div>
+<div class="ttc" id="class_vecteur_html"><div class="ttname"><a href="class_vecteur.html">Vecteur</a></div><div class="ttdoc">Prototype de la classe Vecteur. </div><div class="ttdef"><b>Definition:</b> <a href="_vecteur_8h_source.html#l00023">Vecteur.h:23</a></div></div>
+<div class="ttc" id="class_enceinte_html_a553db9446669114f47a28e59ebbd4064"><div class="ttname"><a href="class_enceinte.html#a553db9446669114f47a28e59ebbd4064">Enceinte::getLargeur</a></div><div class="ttdeci">double getLargeur() const </div><div class="ttdoc">Prototype du getters de la largeur de l&#39;enceinte. </div><div class="ttdef"><b>Definition:</b> <a href="_enceinte_8cc_source.html#l00076">Enceinte.cc:76</a></div></div>
+<div class="ttc" id="class_systeme_html_a2599ade4fd47e65b7192d227f60a5482"><div class="ttname"><a href="class_systeme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme::Systeme</a></div><div class="ttdeci">Systeme()</div><div class="ttdoc">Constructeur par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00027">Systeme.cc:27</a></div></div>
+<div class="ttc" id="_g_l_helium_8h_html"><div class="ttname"><a href="_g_l_helium_8h.html">GLHelium.h</a></div><div class="ttdoc">est le prototype de la classe de la particule Helium en OpenGL </div></div>
+<div class="ttc" id="class_particule_html_a91283a1702ac9f40728e58613ad97ac9"><div class="ttname"><a href="class_particule.html#a91283a1702ac9f40728e58613ad97ac9">Particule::collision</a></div><div class="ttdeci">void collision(Particule &amp;p, GenerateurAleatoire &amp;tirage)</div><div class="ttdoc">Effectue la collision de deux particules. </div><div class="ttdef"><b>Definition:</b> <a href="_particule_8cc_source.html#l00132">Particule.cc:132</a></div></div>
+<div class="ttc" id="class_particule_html_a50d7ab965780895a97d00a13cbb2dfde"><div class="ttname"><a href="class_particule.html#a50d7ab965780895a97d00a13cbb2dfde">Particule::get_rayon</a></div><div class="ttdeci">double get_rayon()</div><div class="ttdoc">Getter. </div><div class="ttdef"><b>Definition:</b> <a href="_particule_8cc_source.html#l00150">Particule.cc:150</a></div></div>
+<div class="ttc" id="class_dessinable_html_aea37dacb2b67d6650a435d72c9a6fe79"><div class="ttname"><a href="class_dessinable.html#aea37dacb2b67d6650a435d72c9a6fe79">Dessinable::dessine</a></div><div class="ttdeci">virtual void dessine() const =0</div><div class="ttdoc">une méthode virtuelle pure car on veut qu&#39;elle soit redéfinie dans toutes les sous-classes ...</div></div>
+<div class="ttc" id="class_systeme_html_abc34a6c64e42d303be77d5df97ff377f"><div class="ttname"><a href="class_systeme.html#abc34a6c64e42d303be77d5df97ff377f">Systeme::dessine</a></div><div class="ttdeci">void dessine() const override</div><div class="ttdoc">Dessine le systeme (version graphique) </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00099">Systeme.cc:99</a></div></div>
+<div class="ttc" id="class_systeme_html_ae08dde7f90dfa367d96be1351f7c8c14"><div class="ttname"><a href="class_systeme.html#ae08dde7f90dfa367d96be1351f7c8c14">Systeme::ajouterNeon</a></div><div class="ttdeci">void ajouterNeon(unsigned int nbr_neon, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_neon particules de Neon. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00227">Systeme.cc:227</a></div></div>
+<div class="ttc" id="class_particule_html_abdd1239a60f7099dcecd8a8269ce1b4d"><div class="ttname"><a href="class_particule.html#abdd1239a60f7099dcecd8a8269ce1b4d">Particule::gere_sorties</a></div><div class="ttdeci">void gere_sorties(Enceinte const &amp;enceinte)</div><div class="ttdoc">Gére les sorties de l&#39;enceinte. </div><div class="ttdef"><b>Definition:</b> <a href="_particule_8cc_source.html#l00073">Particule.cc:73</a></div></div>
+<div class="ttc" id="_g_l_argon_8h_html"><div class="ttname"><a href="_g_l_argon_8h.html">GLArgon.h</a></div><div class="ttdoc">est le prototype de la classe de la particule argon en OpenGL </div></div>
+<div class="ttc" id="_g_l_fluor_8h_html"><div class="ttname"><a href="_g_l_fluor_8h.html">GLFluor.h</a></div><div class="ttdoc">est le prototype de la classe de la particule fluor en OpenGL qui a en plus une mémorisation et affic...</div></div>
+<div class="ttc" id="class_g_l_argon_html"><div class="ttname"><a href="class_g_l_argon.html">GLArgon</a></div><div class="ttdoc">Prototype de la classe GLArgon. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_argon_8h_source.html#l00025">GLArgon.h:25</a></div></div>
+<div class="ttc" id="_systeme_8h_html"><div class="ttname"><a href="_systeme_8h.html">Systeme.h</a></div><div class="ttdoc">Prototype de la classe de la classe Systeme (objet formé d&#39;une enceinte et de particules) ...</div></div>
+<div class="ttc" id="class_systeme_html_ad99fa9b3d52815b1c24c2e886291fa45"><div class="ttname"><a href="class_systeme.html#ad99fa9b3d52815b1c24c2e886291fa45">Systeme::ajouterHelium</a></div><div class="ttdeci">void ajouterHelium(unsigned int nbr_helium, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_helium particules d&#39;Helium. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00206">Systeme.cc:206</a></div></div>
+<div class="ttc" id="class_g_l_helium_html"><div class="ttname"><a href="class_g_l_helium.html">GLHelium</a></div><div class="ttdoc">Prototype de la classe GLHelium. </div><div class="ttdef"><b>Definition:</b> <a href="_g_l_helium_8h_source.html#l00023">GLHelium.h:23</a></div></div>
+<div class="ttc" id="class_systeme_html_a8a1047862e11ebfe4b267dbc5ab67a17"><div class="ttname"><a href="class_systeme.html#a8a1047862e11ebfe4b267dbc5ab67a17">Systeme::ajouterArgon</a></div><div class="ttdeci">void ajouterArgon(unsigned int nbr_argon, bool canon=false)</div><div class="ttdoc">Permet l&#39;ajout de nbr_argon particules d&#39;Argon. </div><div class="ttdef"><b>Definition:</b> <a href="_systeme_8cc_source.html#l00164">Systeme.cc:164</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Lundi 26 Mai 2014 23:22:52 pour Simulation d&#39;un gaz parfait par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

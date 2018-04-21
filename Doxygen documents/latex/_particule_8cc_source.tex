@@ -1,0 +1,143 @@
+\section{Particule.\+cc}
+\label{_particule_8cc_source}\index{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Particule.\+cc@{/\+Users/burkhard/\+Dropbox/projet d'info/maximilian-\/g065/\+Simulation d'un gaz parfait/\+Particule.\+cc}}
+
+\begin{DoxyCode}
+00001 
+00009 \textcolor{preprocessor}{#include "Particule.h"}
+00010 \textcolor{preprocessor}{#include <cmath>}
+00011 
+00012 \textcolor{keyword}{using namespace }std;
+00013 
+00014 \textcolor{comment}{/*================================================================================}
+00015 \textcolor{comment}{ * Definition des constructeurs}
+00016 \textcolor{comment}{ *================================================================================*/}
+00018 Particule::Particule()
+00019     : position(Vecteur(0,0,0)), vitesse(Vecteur(0,0,0)), masse(0), rayon(0) \{\}
+00020 
+00027 Particule::Particule(Vecteur position, Vecteur vitesse, \textcolor{keywordtype}{double} masse, \textcolor{keywordtype}{double} rayon)
+00028     : position(position), vitesse(vitesse), masse(masse), rayon(rayon) \{\}
+00029 
+00033 Particule::Particule(Enceinte \textcolor{keyword}{const}& enceinte, GenerateurAleatoire& tirage, \textcolor{keywordtype}{double} temperature, \textcolor{keywordtype}{double} 
+      masse, \textcolor{keywordtype}{double} rayon)
+00034     : position(Vecteur(tirage.uniforme\_reel(0, enceinte.getLargeur()),
+00035                        tirage.uniforme\_reel(0, enceinte.getLongueur()),
+00036                        tirage.uniforme\_reel(0, enceinte.getHauteur()))), 
+00037       masse(masse), rayon(rayon)
+00038 \{
+00039     \textcolor{keywordtype}{double} ecart\_type (sqrt(8314.472 * temperature / masse));
+00040     vitesse = Vecteur(tirage.gaussienne(0, ecart\_type),
+00041                       tirage.gaussienne(0, ecart\_type),
+00042                       tirage.gaussienne(0, ecart\_type));
+00043 \}                     
+00044 
+00045 \textcolor{comment}{/*================================================================================}
+00046 \textcolor{comment}{ * Definition des méthodes}
+00047 \textcolor{comment}{ *================================================================================*/}
+00051 Vecteur Particule::getPosition()\textcolor{keyword}{ const}
+00052 \textcolor{keyword}{}\{
+00053     \textcolor{keywordflow}{return} position;
+00054 \}
+00057 ostream& Particule::afficher(ostream& sortie)\textcolor{keyword}{ const}
+00058 \textcolor{keyword}{}\{
+00059     \textcolor{keywordflow}{return} sortie << \textcolor{stringliteral}{"pos : "} << position << \textcolor{stringliteral}{" ; v : "} << vitesse
+00060                   << \textcolor{stringliteral}{" ; m : "} << masse;
+00061 \}
+00062 
+00064 \textcolor{keywordtype}{void} Particule::evolue(\textcolor{keywordtype}{double} dt)
+00065 \{
+00066     position += vitesse * dt;
+00067 \}
+00068 
+00073 \textcolor{keywordtype}{void} Particule::gere_sorties(Enceinte \textcolor{keyword}{const}& enceinte)
+00074 \{
+00075     \textcolor{comment}{// Par rapport a X}
+00076     \textcolor{keywordflow}{while} (position.getX() - rayon < 0 or position.getX() + rayon > enceinte.
+      getLargeur()) \{
+00077         \textcolor{keywordflow}{if} (position.getX() - rayon < 0)
+00078         \{
+00079             position = Vecteur (-(position.getX() - rayon) + rayon, position.
+      getY(), position.getZ());
+00080             vitesse = Vecteur (-vitesse.getX(), vitesse.getY(), vitesse.getZ());
+00081             \textcolor{comment}{// Rebond sur la face 1}
+00082         \} \textcolor{keywordflow}{else}
+00083         \{
+00084             position = Vecteur (enceinte.getLargeur() - (position.getX() + rayon - enceinte.
+      getLargeur()) - rayon, position.getY(), position.getZ());
+00085             vitesse = Vecteur (-vitesse.getX(), vitesse.getY(), vitesse.getZ());
+00086             \textcolor{comment}{// Rebond sur la face 2}
+00087         \}
+00088     \}
+00089  
+00090     \textcolor{comment}{// Par rapport a Y}
+00091     \textcolor{keywordflow}{while} (position.getY() - rayon < 0 or position.getY() + rayon > enceinte.
+      getLongueur()) \{
+00092         \textcolor{keywordflow}{if} (position.getY() - rayon < 0)
+00093         \{
+00094             position = Vecteur (position.getX(), -(position.getY() - rayon) + 
+      rayon, position.getZ());
+00095             vitesse = Vecteur (vitesse.getX(), -vitesse.getY(), vitesse.getZ());
+00096             \textcolor{comment}{// Rebond sur la face 3}
+00097         \} \textcolor{keywordflow}{else}
+00098         \{
+00099             position = Vecteur (position.getX(), enceinte.getLongueur() - (
+      position.getY() + rayon - enceinte.getLongueur()) - rayon, position.getZ());
+00100             vitesse = Vecteur (vitesse.getX(), -vitesse.getY(), vitesse.getZ());
+00101             \textcolor{comment}{// Rebond sur la face 4}
+00102         \}
+00103     \}
+00104     
+00105     \textcolor{comment}{// Par rapport a Z}
+00106     \textcolor{keywordflow}{while} (position.getZ() - rayon < 0 or position.getZ() + rayon > enceinte.
+      getHauteur()) \{
+00107         \textcolor{keywordflow}{if} (position.getZ() - rayon < 0)
+00108         \{
+00109             position = Vecteur (position.getX(), position.getY(), -(position.
+      getZ() - rayon) + rayon);
+00110             vitesse = Vecteur (vitesse.getX(), vitesse.getY(), -vitesse.getZ());
+00111             \textcolor{comment}{// Rebond sur la face 5}
+00112         \} \textcolor{keywordflow}{else}
+00113         \{
+00114             position = Vecteur (position.getX(), position.getY(), enceinte.
+      getHauteur() - (position.getZ() + rayon - enceinte.getHauteur()) - rayon);
+00115             vitesse = Vecteur (vitesse.getX(), vitesse.getY(), -vitesse.getZ());
+00116             \textcolor{comment}{// Rebond sur la face 6}
+00117         \}
+00118     \}
+00119 \}
+00120 
+00124 Vecteur Particule::pavageCubique(\textcolor{keywordtype}{double} epsilon)\textcolor{keyword}{ const}
+00125 \textcolor{keyword}{}\{ \textcolor{keywordflow}{return} Vecteur (floor(position.getX()*(1/epsilon)),
+00126                   floor(position.getY()*(1/epsilon)),
+00127                   floor(position.getZ()*(1/epsilon))); \}
+00128 
+00132 \textcolor{keywordtype}{void} Particule::collision(Particule& p, GenerateurAleatoire& tirage)
+00133 \{
+00134     Vecteur vg (masse/(masse + p.masse) * vitesse + p.masse/(masse + p.masse) * p.
+      vitesse);
+00135     
+00136     \textcolor{keywordtype}{double} L (sqrt((vitesse-vg) * (vitesse-vg))); \textcolor{comment}{// racine carrée du produit scalaire d'un vecteur avec
+       lui-même = norme de ce vecteur}
+00137     
+00138     \textcolor{keywordtype}{double} z(tirage.uniforme_reel(-L, L));
+00139     \textcolor{keywordtype}{double} phi(tirage.uniforme_reel(0, 2 * M\_PI));
+00140     
+00141     \textcolor{keywordtype}{double} r (sqrt(L * L - z * z));
+00142     Vecteur v0 (r * cos(phi), r * sin(phi), z);
+00143     
+00144     vitesse = vg + v0;
+00145     p.vitesse = vg - (masse/p.masse) * v0;
+00146 \}
+00147 
+00150 \textcolor{keywordtype}{double} Particule::get_rayon() 
+00151 \{ \textcolor{keywordflow}{return} rayon; \}
+00152 
+00153 \textcolor{comment}{/*================================================================================}
+00154 \textcolor{comment}{ * Definition des fonctions}
+00155 \textcolor{comment}{ *================================================================================*/}
+00156 
+00160 ostream& operator<<(ostream& sortie, Particule \textcolor{keyword}{const}& p)
+00161 \{
+00162     \textcolor{keywordflow}{return} p.afficher(sortie);
+00163 \}
+00164 
+\end{DoxyCode}
