@@ -1,16 +1,10 @@
-Réponses aux questions du README
-
-1. Nous avons été jusqu’au P13 et n’avons pas fait le p14 pour cause de temps.
-2. Nous avons une version graphique avec les bibliothèques WxWidget, OpenGL
-3. Nous avons passé environ 5 heures par semaine et par personne. Au début, très peu de l’ordre de une à deux heures et à partir du P8, nous avons commencé à travailler beaucoup plus et là depuis 3 semaines, il y a je pense une 10 heures chacun et même plus. Cela sans l’ajout du canon et des boxes interactives avec l’utilisateurs.
-
 README
 
 LA simulation marche sur les ordinateurs du co, bureau a distance, machine virtuelle sous windows et un ordinateur d’un ami ayant installé les bibliothèques.
 
 Application dans le dossier “Simulation d’un gaz parfait”
 
-POUR LE LANCER :
+POUR LE LANCER (to launch the code):
 
 Nous rendons notre projet de programmation sur une simulation d’un gaz parfait.
 Le fichier principal est GUI et permet de lancer l’application en ayant compilé une fois sur l’OS que l’on utilise. 
@@ -57,6 +51,13 @@ Pour compiler, construire et exécuter, il faut aller dans le dossier rendu et c
 Il faut taper dans le terminal, la commande make, et ensuite la commande associé a chacune des parties (écrites juste en haut).
 
 Pour le P12 et P13, il n’y a pas de fichiers .cc séparés car on peut voir que ça fonctionne dans le projet final.
+
+Réponses aux questions du README
+
+1. Nous avons été jusqu’au P13 et n’avons pas fait le p14 pour cause de temps.
+2. Nous avons une version graphique avec les bibliothèques WxWidget, OpenGL
+3. Nous avons passé environ 5 heures par semaine et par personne. Au début, très peu de l’ordre de une à deux heures et à partir du P8, nous avons commencé à travailler beaucoup plus et là depuis 3 semaines, il y a je pense une 10 heures chacun et même plus. Cela sans l’ajout du canon et des boxes interactives avec l’utilisateurs.
+
 
 
  
